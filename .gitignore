@@ -14,9 +14,11 @@
 .idea
 .project
 .strong-pm
+.otto
 coverage
 node_modules
-./client/node_modules
-./client/jspm_packages
-./client/dist
+./client-src/node_modules
+./client-src/jspm_packages/
+./client-src/dist
+./client
 npm-debug.log
