@@ -18,7 +18,7 @@
 coverage
 node_modules
 ./client-src/node_modules
-./client-src/jspm_packages/
+./client-src/jspm_packages
 ./client-src/dist
 ./client
 npm-debug.log
