@@ -1,4 +1,4 @@
-# CV app to test
+# CV - anapp to test the following technologies:
 
 * loopback
 * Angular2
