@@ -1,8 +1,6 @@
-import 'whatwg-fetch';
-import {reposForUser} from './api';
 
-console.log('hello');
+import {myGithubRepos} from './my_github_repos';
 
-reposForUser('abhustoft').then(function (repos){
+myGithubRepos('abhustoft').then(function (repos){
   repos.forEach(repo => console.log(repo.name));
 });

@@ -1,2 +1,4 @@
-npm install -g strongloop
-npm install -g jspm
+sudo npm install -g strongloop
+sudo npm install -g jspm
+export PATH=$PATH:/opt/node-v4.1.0-linux-x64/bin
+
