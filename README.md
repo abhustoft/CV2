@@ -1,8 +1,7 @@
 # CV - an app to test the following technologies:
 
 * loopback
-* Angular2
-* Angular Material
+* React
 * CSS Stylus
 * CSS helpers: Gridly? Milligram?
 * CSS http://philipwalton.com/articles/css-architecture/#organize-your-css-into-a-logical-structure
