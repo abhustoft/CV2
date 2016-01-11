@@ -7,21 +7,25 @@ myGithubRepos('abhustoft').then(function (repos){
 
 
 
-import * as React from "react";
-import * as ReactDom from "react-dom";
-//import * as marked from "marked";
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
 
-//ReactDom.render(
-//<p>First example!</p>,
-//  document.getElementById('example')
-//);
+//import * as marked from 'marked';
+console.log(marked('I am using __markdown__.'));
+
+
+var data = [
+  {id: 1, author: "Pete Hunt", text: "This is one comment"},
+  {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
+];
+
 
 var CommentBox = React.createClass({
   render: function() {
     return (
       <div className="commentBox">
       <h1>Comments</h1>
-      <CommentList />
+      <CommentList data={this.props.data} />
       <CommentForm />
     </div>
     );
@@ -30,10 +34,17 @@ var CommentBox = React.createClass({
 
 var CommentList = React.createClass({
   render: function() {
+    var commentNodes = this.props.data.map(function(comment) {
+      return (
+        <Comment author={comment.author} key={comment.id}>
+      {comment.text}
+      </Comment>
+      );
+    });
+
     return (
       <div className="commentList">
-        <Comment author="Pete Hunt">This is one comment<pre>in pre</pre></Comment>
-        <Comment author="Jordan Walke">This is *another* comment</Comment>
+      {commentNodes}
     </div>
     );
   }
@@ -50,20 +61,25 @@ var CommentForm = React.createClass({
 });
 
 var Comment = React.createClass({
+  rawMarkup: function() {
+    var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+    return { __html: rawMarkup };
+  },
+
   render: function() {
     return (
       <div className="comment">
       <h2 className="commentAuthor">
       {this.props.author}
     </h2>
-    {this.props.children}
+    <span dangerouslySetInnerHTML={this.rawMarkup()} />
     </div>
     );
   }
 });
 
 ReactDom.render(
-  <CommentBox />,
+  <CommentBox data={data}/>,
   document.getElementById('content')
 );
 
