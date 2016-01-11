@@ -14,30 +14,42 @@ import * as ReactDom from 'react-dom';
 console.log(marked('I am using __markdown__.'));
 
 
-var data = [
-  {id: 1, author: "Pete Hunt", text: "This is one comment"},
-  {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
-];
-
-
 var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+
+    fetch(this.props.url)
+      .then(response => response.json())
+      .then(json => this.setState({data: json}));
+
+  },
+
+  getInitialState: function() {
+    return {data: []};
+  },
+
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+
   render: function() {
     return (
       <div className="commentBox">
       <h1>Comments</h1>
-      <CommentList data={this.props.data} />
+      <CommentList data={this.state.data} />
       <CommentForm />
     </div>
     );
   }
+
 });
 
 var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function(comment) {
       return (
-        <Comment author={comment.author} key={comment.id}>
-      {comment.text}
+        <Comment author={comment.company} key={comment.id}>
+      {comment.description}
       </Comment>
       );
     });
@@ -79,7 +91,7 @@ var Comment = React.createClass({
 });
 
 ReactDom.render(
-  <CommentBox data={data}/>,
+  <CommentBox url="/api/JobExperiences" pollInterval={200000} />,
   document.getElementById('content')
 );
 
