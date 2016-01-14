@@ -20,9 +20,24 @@ module.exports = function(app) {
     mongoDS.automigrate('JobExperience', function(err) {
       if (err) return cb(err);
       var JobExperience = app.models.JobExperience;
+
       JobExperience.create([
-        {title: 'siving',company: 'scanvest',description: 'first job'},
-        {title: 'Software developer',company: 'IK',description: 'Second job'}
+        {
+          id: 1,
+          company: 'scanvest',
+          role: 'Developer',
+          description: 'first job',
+          start: new Date(1995, 10, 17),
+          end: new Date(1995, 12, 17)
+        },
+        {
+          id: 2,
+          role: 'Project Manager',
+          company: 'IK',
+          description: 'Second job',
+          start: new Date(1997, 0, 17),
+          end: new Date(1999, 7, 17)
+        }
       ], cb);
     });
   }
