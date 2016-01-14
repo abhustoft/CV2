@@ -32,7 +32,7 @@
     "dataSource": "db",
     "public": false
   },
-  "JobExperience": {
+  "WorkExperience": {
     "dataSource": "mongoDS",
     "public": true
   }

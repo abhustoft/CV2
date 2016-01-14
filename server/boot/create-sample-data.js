@@ -6,22 +6,22 @@ module.exports = function(app) {
 
   //create all models
   async.parallel({
-    jobExperiences: async.apply(createJobExperiences),
+    workExperiences: async.apply(createWorkExperiences),
     //coffeeShops: async.apply(createCoffeeShops),
   }, function(err, results) {
     if (err) throw err;
-    createJobExperiences(function(err) {
+    createWorkExperiences(function(err) {
       console.log('> models created sucessfully');
     });
   });
 
   //create reviewers
-  function createJobExperiences(cb) {
-    mongoDS.automigrate('JobExperience', function(err) {
+  function createWorkExperiences(cb) {
+    mongoDS.automigrate('WorkExperience', function(err) {
       if (err) return cb(err);
-      var JobExperience = app.models.JobExperience;
+      var WorkExperience = app.models.WorkExperience;
 
-      JobExperience.create([
+      WorkExperience.create([
         {
           id: 1,
           company: 'scanvest',

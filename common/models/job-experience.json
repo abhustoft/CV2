@@ -1,5 +1,5 @@
 {
-  "name": "JobExperience",
+  "name": "WorkExperience",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
