@@ -12,7 +12,7 @@ myGithubRepos('abhustoft').then(function (repos){
 console.log(marked('I am using __markdown__.'));
 
 ReactDom.render(
-  <WorkExperience url="/api/JobExperiences" pollInterval={2000} />,
+  <WorkExperience url="/api/WorkExperiences" pollInterval={2000} />,
   document.getElementById('content')
 );
 
