@@ -1,5 +1,6 @@
 
 import {myGithubRepos} from './my_github_repos';
+import {WorkRole} from './job-experience/role';
 
 myGithubRepos('abhustoft').then(function (repos){
   repos.forEach(repo => console.log(repo.name));
@@ -77,9 +78,10 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function(comment) {
       return (
-        <Comment author={comment.company} key={comment.id}>
-      {comment.description}
-      </Comment>
+        <div key={comment.id}>
+
+          <WorkRole name={comment.company} description={comment.description}>childish text</WorkRole>
+        </div>
       );
     });
 
