@@ -27,4 +27,4 @@
 * npm install
 * jspm install
 * node server.js
-* In the browser, load <otto dev address>:3000
+* In the browser, load `otto dev address`:3000
