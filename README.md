@@ -16,3 +16,15 @@
 * Rx.js/Cycle.js
 * Otto or Strongloop deploy
 * Greensock animation?
+
+## Set up
+
+* otto dev
+* otto dev ssh
+* make serve-src (Or: make build; make serve-dist)
+* npm install
+* cd server
+* npm install
+* jspm install
+* node server.js
+* In the browser, load <otto dev address>:3000
