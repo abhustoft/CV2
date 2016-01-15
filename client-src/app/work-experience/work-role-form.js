@@ -3,27 +3,53 @@ import * as ReactDom from 'react-dom';
 
 var WorkRoleForm = React.createClass({
   getInitialState: function() {
-    return {company: '', description: ''};
+    return {company: '', companyDescription: ''};
   },
 
   handleCompanyChange: function(e) {
     this.setState({company: e.target.value});
   },
 
-  handleDescriptionChange: function(e) {
-    this.setState({description: e.target.value});
+  handleCompanyDescriptionChange: function(e) {
+    this.setState({companyDescription: e.target.value});
+  },
+
+  handleRoleChange: function(e) {
+    this.setState({role: e.target.value});
+  },
+
+  handleRoleDescriptionChange: function(e) {
+    this.setState({roleDescription: e.target.value});
   },
 
   handleSubmit: function(e) {
     e.preventDefault();
-    var company = this.state.company.trim();
-    var description = this.state.description.trim();
-    if (!description || !company) {
+
+    var
+      company = this.state.company.trim(),
+      companyDescription = this.state.companyDescription.trim(),
+      role = this.state.role.trim(),
+      roleDescription = this.state.roleDescription.trim();
+
+    if (!companyDescription || !company) {
       return;
     }
 
-    this.props.onCommentSubmit({company: company, description: description});
-    this.setState({company: '', description: ''});
+    this.props.onCommentSubmit(
+      {
+        company: company,
+        companyDescription: companyDescription,
+        role: role,
+        roleDescription: roleDescription
+      });
+
+    this.setState(
+      {
+        company: '',
+        companyDescription: '',
+        role: '',
+        roleDescription: ''
+      });
   },
 
   render: function() {
@@ -38,8 +64,20 @@ var WorkRoleForm = React.createClass({
         <input
           type="text"
           placeholder="Company description..."
-          value={this.state.description}
-          onChange={this.handleDescriptionChange}
+          value={this.state.companyDescription}
+          onChange={this.handleCompanyDescriptionChange}
+        />
+        <input
+        type="text"
+        placeholder="Role"
+        value={this.state.role}
+        onChange={this.handleRoleChange}
+      />
+        <input
+          type="text"
+          placeholder="Role description..."
+          value={this.state.roleDescription}
+          onChange={this.handleRoleDescriptionChange}
         />
         <input type="submit" value="Post" />
       </form>

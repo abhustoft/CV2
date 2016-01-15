@@ -8,10 +8,12 @@ var RoleList = React.createClass({
     var roleNodes = this.props.workRoles.map(function(role) {
       return (
         <div key={role.id}>
-          <WorkRole name={role.company}
-                    description={role.description}
+          <WorkRole company={role.company}
+                    companyDescription={role.companyDescription}
                     start={role.start}
-                    end={role.end}>
+                    end={role.end}
+                    role={role.role}
+                    roleDescription={role.roleDescription}>
           </WorkRole>
         </div>
       );

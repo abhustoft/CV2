@@ -36,10 +36,11 @@ var WorkExperience = React.createClass({
       },
       body: JSON.stringify({
         "company": comment.company,
+        "companyDescription": comment.companyDescription,
         "start":  new Date(1992, 10, 17),
         "end":  new Date(1993, 3, 1),
-        "description": comment.description,
-        "role": "from form",
+        "role": comment.role,
+        "roleDescription": comment.roleDescription,
         "id": Date.now()
       })
     })
