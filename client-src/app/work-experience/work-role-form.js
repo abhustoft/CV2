@@ -3,27 +3,27 @@ import * as ReactDom from 'react-dom';
 
 var WorkRoleForm = React.createClass({
   getInitialState: function() {
-    return {company: '', text: ''};
+    return {company: '', description: ''};
   },
 
   handleCompanyChange: function(e) {
     this.setState({company: e.target.value});
   },
 
-  handleTextChange: function(e) {
-    this.setState({text: e.target.value});
+  handleDescriptionChange: function(e) {
+    this.setState({description: e.target.value});
   },
 
   handleSubmit: function(e) {
     e.preventDefault();
     var company = this.state.company.trim();
-    var text = this.state.text.trim();
-    if (!text || !company) {
+    var description = this.state.description.trim();
+    if (!description || !company) {
       return;
     }
 
-    this.props.onCommentSubmit({company: company, text: text});
-    this.setState({company: '', text: ''});
+    this.props.onCommentSubmit({company: company, description: description});
+    this.setState({company: '', description: ''});
   },
 
   render: function() {
@@ -37,9 +37,9 @@ var WorkRoleForm = React.createClass({
         />
         <input
           type="text"
-          placeholder="Say something..."
-          value={this.state.text}
-          onChange={this.handleTextChange}
+          placeholder="Company description..."
+          value={this.state.description}
+          onChange={this.handleDescriptionChange}
         />
         <input type="submit" value="Post" />
       </form>

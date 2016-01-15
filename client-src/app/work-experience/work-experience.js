@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
 import {RoleList} from './role-list';
-import {WorkRoleForm} from './comment-form';
+import {WorkRoleForm} from './work-role-form';
 
 var WorkExperience = React.createClass({
   loadCommentsFromServer: function() {
@@ -16,7 +16,7 @@ var WorkExperience = React.createClass({
 
   },
 
-  handleCommentSubmit: function(comment) {
+  handleWorkRoleSubmit: function(comment) {
     console.log('send to server', comment);
 
     //var comments = this.state.data;
@@ -37,8 +37,8 @@ var WorkExperience = React.createClass({
       body: JSON.stringify({
         "company": comment.company,
         "start":  new Date(1992, 10, 17),
-        "end":  new Date(1993, 9, 1),
-        "description": comment.text,
+        "end":  new Date(1993, 3, 1),
+        "description": comment.description,
         "role": "from form",
         "id": Date.now()
       })
@@ -59,7 +59,7 @@ var WorkExperience = React.createClass({
       <div className="workExperience">
         <h4>Work Experience</h4>
         <RoleList workRoles={this.state.data} />
-        <WorkRoleForm onCommentSubmit={this.handleCommentSubmit} />
+        <WorkRoleForm onCommentSubmit={this.handleWorkRoleSubmit} />
       </div>
     );
   }
