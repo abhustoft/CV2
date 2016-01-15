@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
 import {RoleList} from './role-list';
-import {CommentForm} from './comment-form';
+import {WorkRoleForm} from './comment-form';
 
 var WorkExperience = React.createClass({
   loadCommentsFromServer: function() {
@@ -35,11 +35,11 @@ var WorkExperience = React.createClass({
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "company": comment.author,
-        "start": "2015-10-11",
-        "end": "2016-04-01",
+        "company": comment.company,
+        "start":  new Date(1992, 10, 17),
+        "end":  new Date(1993, 9, 1),
         "description": comment.text,
-        "title": "from form",
+        "role": "from form",
         "id": Date.now()
       })
     })
@@ -58,8 +58,8 @@ var WorkExperience = React.createClass({
     return (
       <div className="workExperience">
         <h4>Work Experience</h4>
-        <RoleList data={this.state.data} />
-        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
+        <RoleList workRoles={this.state.data} />
+        <WorkRoleForm onCommentSubmit={this.handleCommentSubmit} />
       </div>
     );
   }

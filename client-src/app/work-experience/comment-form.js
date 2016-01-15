@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-var CommentForm = React.createClass({
+var WorkRoleForm = React.createClass({
   getInitialState: function() {
-    return {author: '', text: ''};
+    return {company: '', text: ''};
   },
 
-  handleAuthorChange: function(e) {
-    this.setState({author: e.target.value});
+  handleCompanyChange: function(e) {
+    this.setState({company: e.target.value});
   },
 
   handleTextChange: function(e) {
@@ -16,14 +16,14 @@ var CommentForm = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    var author = this.state.author.trim();
+    var company = this.state.company.trim();
     var text = this.state.text.trim();
-    if (!text || !author) {
+    if (!text || !company) {
       return;
     }
 
-    this.props.onCommentSubmit({author: author, text: text});
-    this.setState({author: '', text: ''});
+    this.props.onCommentSubmit({company: company, text: text});
+    this.setState({company: '', text: ''});
   },
 
   render: function() {
@@ -31,9 +31,9 @@ var CommentForm = React.createClass({
       <form className="commentForm" onSubmit={this.handleSubmit}>
         <input
           type="text"
-          placeholder="Your name"
-          value={this.state.author}
-          onChange={this.handleAuthorChange}
+          placeholder="Company"
+          value={this.state.company}
+          onChange={this.handleCompanyChange}
         />
         <input
           type="text"
@@ -47,4 +47,4 @@ var CommentForm = React.createClass({
   }
 });
 
-export {CommentForm}
+export {WorkRoleForm}
