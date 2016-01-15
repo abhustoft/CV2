@@ -5,7 +5,7 @@ import {RoleList} from './role-list';
 import {WorkRoleForm} from './work-role-form';
 
 var WorkExperience = React.createClass({
-  loadCommentsFromServer: function() {
+  loadRolesFromServer: function() {
 
     fetch(this.props.url)
       .then(response => response.json())
@@ -16,8 +16,8 @@ var WorkExperience = React.createClass({
 
   },
 
-  handleWorkRoleSubmit: function(comment) {
-    console.log('send to server', comment);
+  handleWorkRoleSubmit: function(role) {
+    console.log('send to server', role);
 
     //var comments = this.state.data;
     //// Optimistically set an id on the new comment. It will be replaced by an
@@ -35,12 +35,12 @@ var WorkExperience = React.createClass({
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "company": comment.company,
-        "companyDescription": comment.companyDescription,
+        "company": role.company,
+        "companyDescription": role.companyDescription,
         "start":  new Date(1992, 10, 17),
         "end":  new Date(1993, 3, 1),
-        "role": comment.role,
-        "roleDescription": comment.roleDescription,
+        "role": role.role,
+        "roleDescription": role.roleDescription,
         "id": Date.now()
       })
     })
@@ -51,8 +51,8 @@ var WorkExperience = React.createClass({
   },
 
   componentDidMount: function() {
-    this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+    this.loadRolesFromServer();
+    setInterval(this.loadRolesFromServer, this.props.pollInterval);
   },
 
   render: function() {
@@ -60,7 +60,7 @@ var WorkExperience = React.createClass({
       <div className="workExperience">
         <h4>Work Experience</h4>
         <RoleList workRoles={this.state.data} />
-        <WorkRoleForm onCommentSubmit={this.handleWorkRoleSubmit} />
+        <WorkRoleForm onRoleSubmit={this.handleWorkRoleSubmit} />
       </div>
     );
   }

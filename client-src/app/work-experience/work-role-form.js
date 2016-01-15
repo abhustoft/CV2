@@ -35,7 +35,7 @@ var WorkRoleForm = React.createClass({
       return;
     }
 
-    this.props.onCommentSubmit(
+    this.props.onRoleSubmit(
       {
         company: company,
         companyDescription: companyDescription,
@@ -54,7 +54,7 @@ var WorkRoleForm = React.createClass({
 
   render: function() {
     return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
+      <form className="roleForm" onSubmit={this.handleSubmit}>
         <input
           type="text"
           placeholder="Company"
