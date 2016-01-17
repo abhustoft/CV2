@@ -2,7 +2,11 @@ build:
 	cd client;rm -rf dist;mkdir dist
 	cd client;jspm bundle-sfx app/main dist/app.js
 	cd client;./node_modules/.bin/uglifyjs dist/app.js -o dist/app.min.js
-	cd client;./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.min.js -o dist/index.html
+	cd client;cp jspm_packages/npm/marked@0.3.5/lib/marked.js dist
+	cd client;./node_modules/.bin/html-dist index.html --remove-all --minify--insert marked.js --insert app.min.js  -o dist/index.html
+	cd client;mkdir -p dist/app/styles
+	cd client;cp app/styles/screen.css dist/app/styles
+	cd client;cp app/styles/screen.css.map dist/app/styles
 
 serve-dist:
 	rm client
