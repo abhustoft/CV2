@@ -1,64 +1,26 @@
 // include the required packages.
-var gulp = require('gulp');
-var stylus = require('gulp-stylus');
+var gulp = require('gulp'),
+  stylus = require('gulp-stylus'),
+  gp_concat = require('gulp-concat'),
+  gp_rename = require('gulp-rename');
 
 
 // include, if you want to work with sourcemaps
 var sourcemaps = require('gulp-sourcemaps');
 
 // Get one .styl file and render
-gulp.task('one', function () {
-  gulp.src('./app/work-experience/work-role.styl')
-    .pipe(stylus())
-    .pipe(gulp.dest('./app/work-experience/'));
-});
-
-// Options
-// Options compress
-gulp.task('compress', function () {
-  gulp.src('./css/compressed.styl')
-    .pipe(stylus({
-      compress: true
-    }))
-    .pipe(gulp.dest('./css/build'));
-});
-
-
-// Set linenos
-gulp.task('linenos', function () {
-  gulp.src('./css/linenos.styl')
-    .pipe(stylus({linenos: true}))
-    .pipe(gulp.dest('./css/build'));
-});
-
-// Include css
-// Stylus has an awkward and perplexing 'include css' option
-gulp.task('include-css', function() {
-  gulp.src('./css/*.styl')
-    .pipe(stylus({
-      'include css': true
-    }))
-    .pipe(gulp.dest('./'));
-
-});
-
-// Inline sourcemaps
-gulp.task('sourcemaps-inline', function () {
-  gulp.src('./css/sourcemaps-inline.styl')
+gulp.task('styl', function () {
+  gulp.src('./app/**/*.styl')
     .pipe(sourcemaps.init())
-    .pipe(stylus())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./css/build'));
-});
-
-// External sourcemaps
-gulp.task('sourcemaps-external', function () {
-  gulp.src('./css/sourcemaps-external.styl')
-    .pipe(sourcemaps.init())
-    .pipe(stylus())
+    .pipe(stylus({
+      compress: false,
+      linenos: false,
+      'include css': false
+    }))
+    .pipe(gp_concat('screen.css'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./css/build'));
+    .pipe(gulp.dest('./app/styles'));
 });
 
 // Default gulp task to run
-gulp.task('default', ['one', 'compress', 'linenos', 'sourcemaps-inline', 'sourcemaps-external']);
+gulp.task('default', ['styl']);
