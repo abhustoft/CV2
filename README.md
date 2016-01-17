@@ -21,6 +21,8 @@
 
 * otto dev
 * otto dev ssh
+* sudo npm install gulp -g
+* sudo npm install -g strongloop
 * make serve-src (Or: make build; make serve-dist)
 * npm install
 * cd server
