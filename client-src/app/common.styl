@@ -1,0 +1,15 @@
+/* prevents spacing of a given element if it's the last child */
+prevent-last-child-spacing(element = '*', property = 'padding-bottom')
+  if element is '*'
+    element = unquote(element)
+
+  & > {element}:last-child
+    {property} 0
+
+
+/* Sets an input tag's placeholder styles; called within the INPUT itself */
+set-placeholder-style(prop, value)
+    &::-webkit-input-placeholder
+            {prop} value
+    &::-moz-input-placeholder
+            {prop} value
