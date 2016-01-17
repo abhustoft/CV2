@@ -23,6 +23,7 @@
     }
   },
   "devDependencies": {
+    "gulp-stylus": "^2.2.0",
     "html-dist": "^0.1.0",
     "uglifyjs": "^2.4.10"
   }
