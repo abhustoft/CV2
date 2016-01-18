@@ -1,3 +1,4 @@
+'use strict';
 // include the required packages.
 var gulp = require('gulp'),
   stylus = require('gulp-stylus'),
@@ -5,10 +6,16 @@ var gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   rename = require("gulp-rename"),
   jspm = require('gulp-jspm'),
+  argv = require('yargs').argv,
   uglify = require('gulp-uglify');
 
 // Get one .styl file and render
 gulp.task('styl', function () {
+
+  var destPath = argv.dev ? './app/styles' : './dist/app/styles';
+
+  console.log(destPath);
+
   gulp.src('./app/**/*.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({
@@ -22,6 +29,14 @@ gulp.task('styl', function () {
 });
 
 gulp.task('bundle', function(){
+  return gulp.src('app/main.js')
+    .pipe(jspm({selfExecutingBundle: true}))
+    .pipe(rename("app.min.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('bunildcss', function(){
   return gulp.src('app/main.js')
     .pipe(jspm({selfExecutingBundle: true}))
     .pipe(rename("app.min.js"))
