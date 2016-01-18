@@ -1,12 +1,11 @@
 // include the required packages.
 var gulp = require('gulp'),
   stylus = require('gulp-stylus'),
-  gp_concat = require('gulp-concat'),
-  gp_rename = require('gulp-rename');
-
-
-// include, if you want to work with sourcemaps
-var sourcemaps = require('gulp-sourcemaps');
+  concat = require('gulp-concat'),
+  sourcemaps = require('gulp-sourcemaps'),
+  rename = require("gulp-rename"),
+  jspm = require('gulp-jspm'),
+  uglify = require('gulp-uglify');
 
 // Get one .styl file and render
 gulp.task('styl', function () {
@@ -17,10 +16,18 @@ gulp.task('styl', function () {
       linenos: false,
       'include css': false
     }))
-    .pipe(gp_concat('screen.css'))
+    .pipe(concat('screen.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./app/styles'));
 });
 
+gulp.task('bundle', function(){
+  return gulp.src('app/main.js')
+    .pipe(jspm({selfExecutingBundle: true}))
+    .pipe(rename("app.min.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/'));
+});
+
 // Default gulp task to run
-gulp.task('default', ['styl']);
+gulp.task('default', ['styl', 'bundle']);
