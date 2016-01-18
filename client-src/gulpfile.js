@@ -17,14 +17,14 @@ gulp.task('styl', function () {
   console.log(destPath);
 
   gulp.src('./app/**/*.styl')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(stylus({
       compress: false,
       linenos: false,
       'include css': false
     }))
     .pipe(concat('screen.css'))
-    .pipe(sourcemaps.write('.'))
+    //.pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./app/styles'));
 });
 
