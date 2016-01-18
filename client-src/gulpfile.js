@@ -12,9 +12,8 @@ var gulp = require('gulp'),
 // Get one .styl file and render
 gulp.task('styl', function () {
 
-  var destPath = argv.dev ? './app/styles' : './dist/app/styles';
-
-  console.log(destPath);
+  var destPath = './app/styles';
+  var distPath = argv.dist ? './dist/app/styles' : '';
 
   gulp.src('./app/**/*.styl')
     //.pipe(sourcemaps.init())
@@ -25,18 +24,24 @@ gulp.task('styl', function () {
     }))
     .pipe(concat('screen.css'))
     //.pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./app/styles'));
+    .pipe(gulp.dest(destPath))
+    .pipe(gulp.dest(distPath));
 });
 
 gulp.task('bundle', function(){
-  return gulp.src('app/main.js')
-    .pipe(jspm({selfExecutingBundle: true}))
-    .pipe(rename("app.min.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/'));
+
+  if (argv.dist) {
+    return gulp.src('app/main.js')
+      .pipe(jspm({selfExecutingBundle: true}))
+      .pipe(rename("app.min.js"))
+      .pipe(uglify())
+      .pipe(gulp.dest('dist/'));
+  } else {
+    return;
+  }
 });
 
-gulp.task('bunildcss', function(){
+gulp.task('buildcss', function(){
   return gulp.src('app/main.js')
     .pipe(jspm({selfExecutingBundle: true}))
     .pipe(rename("app.min.js"))
