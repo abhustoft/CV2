@@ -54,8 +54,8 @@ var WorkExperience = React.createClass({
     return (
       <div className="workExperience">
         <h4>Work Experience</h4>
-        <RoleList workRoles={this.state.data} />
-        <WorkRoleForm onRoleSubmit={this.handleWorkRoleSubmit} />
+        <RoleList workRoles={this.state.data}/>
+        <WorkRoleForm onRoleSubmit={this.handleWorkRoleSubmit}/>
       </div>
     );
   }
