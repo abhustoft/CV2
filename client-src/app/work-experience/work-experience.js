@@ -15,7 +15,12 @@ var WorkExperience = React.createClass({
       });
   },
 
-  handleWorkRoleSubmit: function({company, companyDescription, role, roleDescription}) {
+  handleWorkRoleSubmit: function({
+    company = 'NOT PROVIDED',
+    companyDescription = 'NOT PROVIDED',
+    role = 'NOT PROVIDED',
+    roleDescription = 'NOT PROVIDED'}) {
+
     console.log('send to server', role);
 
     fetch(this.props.url, {
