@@ -25,7 +25,7 @@ var WorkRoleForm = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
 
-    var
+    const
       company = this.state.company.trim(),
       companyDescription = this.state.companyDescription.trim(),
       role = this.state.role.trim(),
