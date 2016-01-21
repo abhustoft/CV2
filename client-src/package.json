@@ -11,9 +11,11 @@
   "jspm": {
     "configFile": "config/jspm-config.js",
     "dependencies": {
+      "jquery": "npm:jquery@^2.2.0",
       "marked": "npm:marked@^0.3.5",
       "react": "npm:react@^0.14.6",
       "react-dom": "npm:react-dom@^0.14.6",
+      "rx": "npm:rx@^4.0.7",
       "whatwg-fetch": "npm:whatwg-fetch@^0.10.1"
     },
     "devDependencies": {

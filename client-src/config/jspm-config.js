@@ -17,9 +17,11 @@ System.config({
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
+    "jquery": "npm:jquery@2.2.0",
     "marked": "npm:marked@0.3.5",
     "react": "npm:react@0.14.6",
     "react-dom": "npm:react-dom@0.14.6",
+    "rx": "npm:rx@4.0.7",
     "whatwg-fetch": "npm:whatwg-fetch@0.10.1",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -62,6 +64,9 @@ System.config({
     },
     "npm:react@0.14.6": {
       "fbjs": "npm:fbjs@0.6.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:rx@4.0.7": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:util@0.10.3": {
