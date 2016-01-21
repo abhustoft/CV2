@@ -35,13 +35,12 @@ var WorkRoleForm = React.createClass({
       return;
     }
 
-    this.props.onRoleSubmit(
-      {
-        company: company,
-        companyDescription: companyDescription,
-        role: role,
-        roleDescription: roleDescription
-      });
+    this.props.onRoleSubmit({
+      company: company,
+      companyDescription: companyDescription,
+      role: role,
+      roleDescription: roleDescription
+    });
 
     this.setState(
       {

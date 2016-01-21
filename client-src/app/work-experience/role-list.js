@@ -5,15 +5,17 @@ import {WorkRole} from './work-role';
 
 var RoleList = React.createClass({
   render: function() {
-    const roleNodes = this.props.workRoles.map(function(role) {
+    var roleNodes = this.props.workRoles
+      .map(function(
+        {id, company: companyName, companyDescription, role, start, end, roleDescription}) {
       return (
-        <div key={role.id}>
-          <WorkRole company={role.company}
-                    companyDescription={role.companyDescription}
-                    start={role.start}
-                    end={role.end}
-                    role={role.role}
-                    roleDescription={role.roleDescription}>
+        <div key={id}>
+          <WorkRole company = {companyName}
+                    companyDescription = {companyDescription}
+                    start = {start}
+                    end   = {end}
+                    role  = {role}
+                    roleDescription = {roleDescription}>
           </WorkRole>
         </div>
       );
