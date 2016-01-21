@@ -20,5 +20,6 @@ node_modules
 client-src/node_modules
 client-src/jspm_packages
 client-src/dist
+client-src/app/styles
 client
 npm-debug.log

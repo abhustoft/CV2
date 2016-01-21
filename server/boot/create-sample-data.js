@@ -6,23 +6,46 @@ module.exports = function(app) {
 
   //create all models
   async.parallel({
-    jobExperiences: async.apply(createJobExperiences),
+    workExperiences: async.apply(createWorkExperiences),
     //coffeeShops: async.apply(createCoffeeShops),
   }, function(err, results) {
     if (err) throw err;
-    createJobExperiences(function(err) {
+    createWorkExperiences(function(err) {
       console.log('> models created sucessfully');
     });
   });
 
   //create reviewers
-  function createJobExperiences(cb) {
-    mongoDS.automigrate('JobExperience', function(err) {
+  function createWorkExperiences(cb) {
+    mongoDS.automigrate('WorkExperience', function(err) {
       if (err) return cb(err);
-      var JobExperience = app.models.JobExperience;
-      JobExperience.create([
-        {title: 'siving',company: 'scanvest',description: 'first job'},
-        {title: 'Software developer',company: 'IK',description: 'Second job'}
+      var WorkExperience = app.models.WorkExperience;
+
+      WorkExperience.create([
+        {
+          company: 'scanvest',
+          companyDescription: 'scanvest makes interkom',
+          role: 'Developer',
+          roleDescription: 'I made stuff',
+          start: new Date(1995, 10, 17),
+          end: new Date(1995, 12, 17)
+        },
+        {
+          company: 'IK',
+          companyDescription: 'SA place in Asker',
+          role: 'Project Manager',
+          roleDescription: 'watched stuff being made',
+          start: new Date(1997, 0, 17),
+          end: new Date(1999, 7, 17)
+        },
+        {
+          company: 'IK',
+          companyDescription: 'SA place in Asker - repeating company description!!!',
+          role: 'Developer',
+          roleDescription: 'Making things in Asker',
+          start: new Date(1997, 0, 17),
+          end: new Date(1999, 7, 17)
+        }
       ], cb);
     });
   }

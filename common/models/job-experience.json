@@ -1,5 +1,5 @@
 {
-  "name": "JobExperience",
+  "name": "WorkExperience",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -16,11 +16,15 @@
     "end": {
       "type": "date"
     },
-    "description": {
+    "companyDescription": {
+      "type": "string",
+      "required": false
+    },
+    "roleDescription": {
       "type": "string",
       "required": true
     },
-    "title": {
+    "role": {
       "type": "string",
       "required": true
     }

@@ -1,8 +1,11 @@
 build:
-	cd client;rm -rf dist;mkdir dist
-	cd client;jspm bundle-sfx app/main dist/app.js
-	cd client;./node_modules/.bin/uglifyjs dist/app.js -o dist/app.min.js
-	cd client;./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.min.js -o dist/index.html
+	cd client-src;rm -rf dist;mkdir -p dist/app/styles
+	# JS
+	cd client-src;gulp --dist
+	#HTML
+	cd client-src;./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.min.js  -o dist/index.html
+	# CSS
+	#cd client;cp app/styles/screen.css.map dist/app/styles
 
 serve-dist:
 	rm client
