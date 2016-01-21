@@ -7,13 +7,13 @@
 * Babel transpiler
 * jspm module loader
 * Otto VM
+* CSS Stylus
  
 
 ## To do
-* CSS Stylus
 * CSS helpers: Gridly? Milligram?
 * CSS http://philipwalton.com/articles/css-architecture/#organize-your-css-into-a-logical-structure
-* Rx.js/Cycle.js
+* Rx.js/Cycle.js - vbs Redux
 * Otto or Strongloop deploy
 * Greensock animation?
 
