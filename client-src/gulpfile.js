@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 gulp.task('styl', function () {
 
   var destPath = './app/styles';
-  var distPath = argv.dist ? './dist/app/styles' : '';
+  var distPath = argv.dist ? './dist/app/styles' : './app/styles';
 
   gulp.src('./app/**/*.styl')
     //.pipe(sourcemaps.init())
