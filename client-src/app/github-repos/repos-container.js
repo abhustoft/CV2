@@ -6,49 +6,35 @@ import * as Rx from 'rx';
 
 import {GetRepos} from './get-repos';
 import {GitHubRepos} from './github-repos';
-import {myGithubRepos} from '../my_github_repos';
 
 var ReposContainer = React.createClass({
 
   componentDidMount: function() {
     const containerThis = this;
-    const url = `https://api.github.com/users/abhustoft/repos`;
-    const getButton = document.querySelector('.repo-button');
+    const url = `https://api.github.com/users/${this.props.user}/repos`;
+
+    const getButton   = document.querySelector('.repo-button');
     const clearButton = document.querySelector('.clear-button');
+
     const getReposClickStream = Rx.Observable.fromEvent(getButton, 'click');
-    const clearClickStream = Rx.Observable.fromEvent(clearButton, 'click');
+    const clearClickStream    = Rx.Observable.fromEvent(clearButton, 'click');
 
     const requestStream = getReposClickStream.startWith('startup click')
-      .map(function() {
-        return url;
-      }).flatMap(function(url) {
-        console.log('Requesting data from', url);
+      .map(() => url)
+      .flatMap((url) => {
         return Rx.Observable.fromPromise(jQuery.getJSON(url));
       });
 
-    requestStream.subscribe(function(response) {
-      // render `response` to the DOM however you wish
-      console.log('Stream response in my_github-repos.js:', response);
-      containerThis.setState({repos: response});
+    requestStream.subscribe(function(repos) {
+      const trimmedRepos = repos.map((bigRepo) => {
+        return {name: bigRepo.name, id: bigRepo.id};
+      });
+      containerThis.setState({repos: trimmedRepos});
     });
 
-
-    //const clearStream = clearClickStream
-    //  .map(function() {
-    //    return url;
-    //  }).flatMap(function(url) {
-    //    console.log('Requesting data from', url);
-    //    return Rx.Observable.fromPromise(jQuery.getJSON(url));
-    //  });
-
-    clearClickStream.subscribe(function(theClickEvent) {
-      // render `response` to the DOM however you wish
-      console.log('Clear click:', theClickEvent);
-      containerThis.setState({repos: []});
-    });
+    clearClickStream.subscribe(() => containerThis.setState({repos: []}));
   },
-
-
+  
   getInitialState: function() {
     return {repos: []};
   },
