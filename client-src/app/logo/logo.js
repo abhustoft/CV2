@@ -5,7 +5,7 @@ var Logo = React.createClass({
   render: function() {
     return (
       <div className="logo">
-        the logo
+        <img src="app/images/logo.png" alt="Cap Gemini logo"/>
       </div>
     );
   }

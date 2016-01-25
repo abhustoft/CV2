@@ -4,8 +4,8 @@ import * as ReactDom from 'react-dom';
 var Photo = React.createClass({
   render: function() {
     return (
-      <div className="photo">
-        the Photo
+      <div className="picture">
+        <img className="photo" src="app/images/consultant.jpg" alt="Picture of the consultant"/>
       </div>
     );
   }
