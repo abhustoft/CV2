@@ -11,8 +11,8 @@ var gulp = require('gulp'),
   watch = require('gulp-watch'),
   batch = require('gulp-batch');
 
-var destPath = './app/styles',
-  distPath = argv.dist ? './dist/app/styles' : './app/styles',
+var destPath = './app/css',
+  distPath = argv.dist ? './dist/app/styles' : destPath,
   stylusFiles = './app/**/*.styl';
 
 // Get one .styl file and render
