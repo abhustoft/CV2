@@ -13,28 +13,28 @@ var ReposContainer = React.createClass({
     const containerThis = this;
     const url = `https://api.github.com/users/${this.props.user}/repos`;
 
-    const getButton   = document.querySelector('.repo-button');
+    const getButton = document.querySelector('.repo-button');
     const clearButton = document.querySelector('.clear-button');
 
     const getReposClickStream = Rx.Observable.fromEvent(getButton, 'click');
-    const clearClickStream    = Rx.Observable.fromEvent(clearButton, 'click');
+    const clearClickStream = Rx.Observable.fromEvent(clearButton, 'click').map(() => []);
 
     const requestStream = getReposClickStream.startWith('startup click')
       .map(() => url)
-      .flatMap((url) => {
-        return Rx.Observable.fromPromise(jQuery.getJSON(url));
-      });
+      .flatMap((url) => {return Rx.Observable.fromPromise(jQuery.getJSON(url));})
+      .map((repoArray) => {
+        const trimmedRepos = repoArray.map((bigRepo) => {
+          return {name: bigRepo.name, id: bigRepo.id};
+        });
+        return trimmedRepos;})
+      .merge(clearClickStream);
 
     requestStream.subscribe(function(repos) {
-      const trimmedRepos = repos.map((bigRepo) => {
-        return {name: bigRepo.name, id: bigRepo.id};
-      });
-      containerThis.setState({repos: trimmedRepos});
+      containerThis.setState({repos: repos});
     });
 
-    clearClickStream.subscribe(() => containerThis.setState({repos: []}));
   },
-  
+
   getInitialState: function() {
     return {repos: []};
   },
