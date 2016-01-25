@@ -8,7 +8,6 @@ var CondensedInfo = React.createClass({
   render: function() {
     return (
       <div className="condensed-info">
-        condensed info
         <Photo />
         <Subjects />
         <Languages />

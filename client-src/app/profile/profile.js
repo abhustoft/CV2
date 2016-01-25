@@ -5,6 +5,8 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div className="profile">
+        <h3>Konsulentprofil</h3>
+        <h2>Alf Bjørn Hustoft</h2>
         the profile the profile the profile the profile the profile the profile the profile the profile he profile
         the profile the profile the profile the profile the profile the profile the profile he profile the profile
         the profile the profile the profile the profile the profile
