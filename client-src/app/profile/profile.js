@@ -12,7 +12,7 @@ var Profile = React.createClass({
         the profile the profile the profile the profile the profile the profile the profile the profile he profile
         the profile the profile the profile the profile the profile the profile the profile he profile the profile
         the profile the profile the profile the profile the profile
-        the profile he profile the profile the profile the profile the profile the profile the profile the profile
+        the profile he profile the profile the profile the profile the profile the profile the pro the e t e the profile
       </div>
     );
   }

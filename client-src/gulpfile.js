@@ -7,15 +7,18 @@ var gulp = require('gulp'),
   rename = require("gulp-rename"),
   jspm = require('gulp-jspm'),
   argv = require('yargs').argv,
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  watch = require('gulp-watch'),
+  batch = require('gulp-batch');
+
+var destPath = './app/styles',
+  distPath = argv.dist ? './dist/app/styles' : './app/styles',
+  stylusFiles = './app/**/*.styl';
 
 // Get one .styl file and render
 gulp.task('styl', function () {
 
-  var destPath = './app/styles';
-  var distPath = argv.dist ? './dist/app/styles' : './app/styles';
-
-  gulp.src('./app/**/*.styl')
+  gulp.src(stylusFiles)
     //.pipe(sourcemaps.init())
     .pipe(stylus({
       compress: false,
@@ -47,6 +50,10 @@ gulp.task('buildcss', function(){
     .pipe(rename("app.min.js"))
     .pipe(uglify())
     .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('watch', function() {
+  gulp.watch(stylusFiles, ['styl']);
 });
 
 // Default gulp task to run
