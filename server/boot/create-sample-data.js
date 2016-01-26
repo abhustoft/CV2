@@ -1,7 +1,8 @@
 var async = require('async');
 module.exports = function(app) {
   //data sources
-  var mongoDS = app.dataSources.mongoDS;
+  //var mongoDS = app.dataSources.mongoDS;
+  var mongoDS = app.dataSources.db;
   //var mysqlDs = app.dataSources.mysqlDs;
 
   //create all models

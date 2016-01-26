@@ -33,7 +33,7 @@
     "public": false
   },
   "WorkExperience": {
-    "dataSource": "mongoDS",
+    "dataSource": "db",
     "public": true
   }
 }

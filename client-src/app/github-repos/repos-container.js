@@ -41,7 +41,7 @@ var ReposContainer = React.createClass({
 
   render: function() {
     return (
-      <div className="ReposContainer">
+      <div className="repos-container">
         <GetRepos />
         <GitHubRepos repos={this.state.repos} />
       </div>

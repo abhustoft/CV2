@@ -21,6 +21,6 @@ ReactDom.render(
 
 ReactDom.render(
   <ReposContainer user="abhustoft"/>,
-  document.getElementById('reposContainer')
+  document.getElementById('repos-container')
 );
 
