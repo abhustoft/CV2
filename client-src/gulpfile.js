@@ -9,7 +9,8 @@ var gulp = require('gulp'),
   argv = require('yargs').argv,
   uglify = require('gulp-uglify'),
   watch = require('gulp-watch'),
-  batch = require('gulp-batch');
+  batch = require('gulp-batch'),
+  eslint = require('gulp-eslint');
 
 var destPath = './app/css',
   distPath = argv.dist ? './dist/app/styles' : destPath,
@@ -55,6 +56,25 @@ gulp.task('buildcss', function(){
 gulp.task('watch', function() {
   gulp.watch(stylusFiles, ['styl']);
 });
+
+gulp.task('lint', function() {
+  return gulp.src('app/**/*.js').pipe(eslint({
+      "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+      },
+      "ecmaFeatures": {
+        "modules": true
+      },
+      "rules": {
+      }
+    }))
+    .pipe(eslint.format())
+    // Brick on failure to be super strict
+    .pipe(eslint.failOnError());
+});
+
 
 // Default gulp task to run
 gulp.task('default', ['styl', 'bundle']);
