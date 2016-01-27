@@ -29,5 +29,5 @@
 * CSS http://philipwalton.com/articles/css-architecture/#organize-your-css-into-a-logical-structure
 * Otto or Strongloop deploy
 * Greensock animation?
-* Offline? Service Workers? Upup?
+* Offline? Upup (service workers)? PouchDB?
 
