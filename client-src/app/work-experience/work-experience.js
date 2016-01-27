@@ -30,13 +30,13 @@ var WorkExperience = React.createClass({
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "company": company,
-        "companyDescription": companyDescription,
-        "start":  new Date(1992, 10, 17),
-        "end":  new Date(1993, 3, 1),
-        "role": role,
-        "roleDescription": roleDescription,
-        "id": Date.now()
+        'company': company,
+        'companyDescription': companyDescription,
+        'start':  new Date(1992, 10, 17),
+        'end':  new Date(1993, 3, 1),
+        'role': role,
+        'roleDescription': roleDescription,
+        'id': Date.now()
       })
     })
   },

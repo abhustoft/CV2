@@ -14,7 +14,8 @@ var gulp = require('gulp'),
 
 var destPath = './app/css',
   distPath = argv.dist ? './dist/app/styles' : destPath,
-  stylusFiles = './app/**/*.styl';
+  stylusFiles = './app/**/*.styl',
+  jsFiles = 'app/**/*.js';
 
 // Get one .styl file and render
 gulp.task('styl', function () {
@@ -57,19 +58,9 @@ gulp.task('watch', function() {
   gulp.watch(stylusFiles, ['styl']);
 });
 
-gulp.task('lint', function() {
-  return gulp.src('app/**/*.js').pipe(eslint({
-      "env": {
-        "browser": true,
-        "node": true,
-        "es6": true
-      },
-      "ecmaFeatures": {
-        "modules": true
-      },
-      "rules": {
-      }
-    }))
+gulp.task('eslint', function() {
+  return gulp.src(jsFiles)
+    .pipe(eslint())
     .pipe(eslint.format())
     // Brick on failure to be super strict
     .pipe(eslint.failOnError());
@@ -77,4 +68,4 @@ gulp.task('lint', function() {
 
 
 // Default gulp task to run
-gulp.task('default', ['styl', 'bundle']);
+gulp.task('default', ['eslint', 'styl', 'bundle']);
