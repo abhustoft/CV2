@@ -10,7 +10,6 @@ var FrontPage = React.createClass({
       .then(response => response.json())
       .then(json => {
         this.setState({profileTexts: json});
-        console.log(json);
       });
   },
 

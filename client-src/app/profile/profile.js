@@ -5,7 +5,7 @@ var Profile = React.createClass({
 
   render: function() {
     var paragraphs = this.props.profileTexts
-      .map(function({id, Paragraph, Sequence}) {
+      .map(function({Paragraph, Sequence}) {
         return (
           <div key={Sequence}>
             <p>{Paragraph}</p>
@@ -13,8 +13,6 @@ var Profile = React.createClass({
         );
       })
       .sort((a, b) => {return a.key - b.key;});
-
-    console.log('Sorted texts: ', paragraphs);
 
       return (
       <div className="profile">
