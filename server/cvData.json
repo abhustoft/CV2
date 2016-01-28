@@ -1,0 +1,33 @@
+{
+  "ids": {
+    "User": 1,
+    "AccessToken": 1,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "WorkExperience": 4,
+    "Name": 2,
+    "ProfileText": 14
+  },
+  "models": {
+    "User": {},
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "WorkExperience": {
+      "1": "{\"company\":\"scanvest\",\"start\":\"1995-11-17T00:00:00.000Z\",\"end\":\"1996-01-17T00:00:00.000Z\",\"companyDescription\":\"scanvest makes interkom\",\"roleDescription\":\"I made stuff\",\"role\":\"Developer\",\"id\":1}",
+      "2": "{\"company\":\"IK\",\"start\":\"1997-01-17T00:00:00.000Z\",\"end\":\"1999-08-17T00:00:00.000Z\",\"companyDescription\":\"SA place in Asker\",\"roleDescription\":\"watched stuff being made\",\"role\":\"Project Manager\",\"id\":2}",
+      "3": "{\"company\":\"IK\",\"start\":\"1997-01-17T00:00:00.000Z\",\"end\":\"1999-08-17T00:00:00.000Z\",\"companyDescription\":\"SA place in Asker - repeating company description!!!\",\"roleDescription\":\"Making things in Asker\",\"role\":\"Developer\",\"id\":3}"
+    },
+    "Name": {
+      "1": "{\"FullName\":\"Alf Bjørn Hustoft\",\"id\":1}"
+    },
+    "ProfileText": {
+      "1": "{\"Paragraph\":\"Alf Bjørn er en erfaren programvareutvikler med over 20 års erfaring i prosjekter for private og offentlige bedrifter, både norske og internasjonale. Han har levert løsninger til Forsvarets sikkerhetstjeneste, UD, Kongsberg, IBM, Nintendo, Nokia, Sony Ericsson og Messerschmitt-Bölkow-Blohm. Han har utviklet for et vidt spenn av hardware. Fra håndholdte spillkonsoller og opp til den internasjonale romstasjonen.\",\"id\":1,\"Sequence\":0}",
+      "3": "{\"Paragraph\":\"Alf Bjørn har de siste 15 årene fokuset på web-teknologi - og front-end i særdeleshet. Han har god kunnskap i de grunnleggende teknologier som HTML, ECMAScript, CSS og HTTP fra sin tid i Opera Software. Alf Bjørn brenner for å bruke de beste og mest effektive verktøy for utvikling.  Han har erfaring med Angular, SASS, Git, Jira, m.m. Han søker stadig etter verktøy og metoder som kan bidra til økt kodekvalitet med færre bugs og oversiktlig vedlikehold over lang tid.\",\"id\":3,\"Sequence\":2}",
+      "4": "{\"Paragraph\":\"Alf Bjørn er strukturert, systematisk og løsningsorientert. Med over 10 års prosjektleder-erfaring setter han utviklingen i et større bilde og forstår utfordringene til produkteiere og kunder. Alf Bjørn har erfaring fra både vannfall og smidige utviklingsprosesser og trekker kunnskap fra begge. Han trives i humørfylte team og kommuniserer godt med både kolleger og forretningssiden.\",\"Sequence\":3,\"id\":4}",
+      "5": "{\"Paragraph\":\"Alf Bjørn er utdannet sivilingeniør ved NTH med spesialisering i styring av kjemiske analyse-instrumenter med mikromaskiner.\",\"Sequence\":4,\"id\":5}"
+    }
+  }
+}

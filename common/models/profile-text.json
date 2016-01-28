@@ -1,0 +1,22 @@
+{
+  "name": "ProfileText",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Paragraph": {
+      "type": "string",
+      "required": true
+    },
+    "Sequence": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
