@@ -8,7 +8,7 @@ var MainContent = React.createClass({
     return (
       <div className="main-content">
         <Logo />
-        <Profile />
+        <Profile profileTexts = {this.props.profileTexts} />
       </div>
     );
   }

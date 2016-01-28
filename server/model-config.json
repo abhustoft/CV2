@@ -35,5 +35,13 @@
   "WorkExperience": {
     "dataSource": "db",
     "public": true
+  },
+  "ProfileText": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Name": {
+    "dataSource": "db",
+    "public": true
   }
 }

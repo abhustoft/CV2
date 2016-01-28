@@ -1,15 +1,16 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "memory",
+    "file": "cvData.json"
   },
   "mongoDS": {
-    "name": "mongoDS",
-    "connector": "mongodb",
     "host": "demo.strongloop.com",
     "port": 27017,
     "database": "getting_started_intermediate",
     "username": "demo",
-    "password": "L00pBack"
+    "password": "L00pBack",
+    "name": "mongoDS",
+    "connector": "mongodb"
   }
 }
