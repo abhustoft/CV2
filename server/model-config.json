@@ -43,5 +43,9 @@
   "Name": {
     "dataSource": "db",
     "public": true
+  },
+  "Project": {
+    "dataSource": "db",
+    "public": true
   }
 }

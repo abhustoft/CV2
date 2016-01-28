@@ -7,7 +7,8 @@
     "Role": 1,
     "WorkExperience": 4,
     "Name": 2,
-    "ProfileText": 14
+    "ProfileText": 14,
+    "Project": 2
   },
   "models": {
     "User": {},
@@ -28,6 +29,9 @@
       "3": "{\"Paragraph\":\"Alf Bjørn har de siste 15 årene fokuset på web-teknologi - og front-end i særdeleshet. Han har god kunnskap i de grunnleggende teknologier som HTML, ECMAScript, CSS og HTTP fra sin tid i Opera Software. Alf Bjørn brenner for å bruke de beste og mest effektive verktøy for utvikling.  Han har erfaring med Angular, SASS, Git, Jira, m.m. Han søker stadig etter verktøy og metoder som kan bidra til økt kodekvalitet med færre bugs og oversiktlig vedlikehold over lang tid.\",\"id\":3,\"Sequence\":2}",
       "4": "{\"Paragraph\":\"Alf Bjørn er strukturert, systematisk og løsningsorientert. Med over 10 års prosjektleder-erfaring setter han utviklingen i et større bilde og forstår utfordringene til produkteiere og kunder. Alf Bjørn har erfaring fra både vannfall og smidige utviklingsprosesser og trekker kunnskap fra begge. Han trives i humørfylte team og kommuniserer godt med både kolleger og forretningssiden.\",\"Sequence\":3,\"id\":4}",
       "5": "{\"Paragraph\":\"Alf Bjørn er utdannet sivilingeniør ved NTH med spesialisering i styring av kjemiske analyse-instrumenter med mikromaskiner.\",\"Sequence\":4,\"id\":5}"
+    },
+    "Project": {
+      "1": "{\"From\":\"2006-01-28T00:00:00.000Z\",\"To\":\"2007-05-28T00:00:00.000Z\",\"Company\":\"Opera Software\",\"CompanyDescription\":\"Opera Software har 900 ansatte og utvikler en internett-leser for PC, mobiltelefoner, TV, spillplatformer, nettbrett, m.m. for det globale markedet.\",\"Description\":\"Alf Bjørn var prosjektleder for utvikling av  ny web-teknologi i Opera Software sin nettleser-motor. Avdelingen hadde ca 60 utviklere. Enkelt-prosjektene var av størrelse 2-6 utviklere over 2 til 12 måneder. Prosjektene implementerte deler av HTTP, CSS3, HTML5, ARIA, SVG etter W3C-spesifikasjonene i tillegg til JavaScript debugger-verktøy, off-line lagring, enhets-orientering, media-deteksjon, m.m. Alf Bjørn var aktiv i omlegging av utviklingsprosessen fra vannfallsmetoden til smidig metode. Han bidro også med testing og utprøving av ny web-teknologi.\",\"Role\":\"PM\",\"SWFramework\":\"C++\",\"Technology\":\"All of them web\",\"Tool\":\"Jira\",\"id\":1}"
     }
   }
 }
