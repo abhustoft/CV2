@@ -13,17 +13,30 @@ var FrontPage = React.createClass({
       });
   },
 
+  loadName: function() {
+    fetch('/api/Names')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({name: json});
+      });
+  },
+
   getInitialState: function() {
-    return {profileTexts: []};
+    return {
+      profileTexts: [],
+      name: []};
   },
 
   componentDidMount: function() {
     this.loadProfileText();
+    this.loadName();
   },
   render: function() {
     return (
       <div className="front-page">
-        <MainContent profileTexts = {this.state.profileTexts} />
+        <MainContent
+          profileTexts = {this.state.profileTexts}
+          name = {this.state.name}/>
         <CondensedInfo />
       </div>
     );
