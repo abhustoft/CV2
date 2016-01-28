@@ -8,7 +8,7 @@
     "WorkExperience": 4,
     "Name": 2,
     "ProfileText": 14,
-    "Project": 2
+    "Project": 4
   },
   "models": {
     "User": {},
@@ -31,7 +31,8 @@
       "5": "{\"Paragraph\":\"Alf Bjørn er utdannet sivilingeniør ved NTH med spesialisering i styring av kjemiske analyse-instrumenter med mikromaskiner.\",\"Sequence\":4,\"id\":5}"
     },
     "Project": {
-      "1": "{\"From\":\"2006-01-28T00:00:00.000Z\",\"To\":\"2007-05-28T00:00:00.000Z\",\"Company\":\"Opera Software\",\"CompanyDescription\":\"Opera Software har 900 ansatte og utvikler en internett-leser for PC, mobiltelefoner, TV, spillplatformer, nettbrett, m.m. for det globale markedet.\",\"Description\":\"Alf Bjørn var prosjektleder for utvikling av  ny web-teknologi i Opera Software sin nettleser-motor. Avdelingen hadde ca 60 utviklere. Enkelt-prosjektene var av størrelse 2-6 utviklere over 2 til 12 måneder. Prosjektene implementerte deler av HTTP, CSS3, HTML5, ARIA, SVG etter W3C-spesifikasjonene i tillegg til JavaScript debugger-verktøy, off-line lagring, enhets-orientering, media-deteksjon, m.m. Alf Bjørn var aktiv i omlegging av utviklingsprosessen fra vannfallsmetoden til smidig metode. Han bidro også med testing og utprøving av ny web-teknologi.\",\"Role\":\"PM\",\"SWFramework\":\"C++\",\"Technology\":\"All of them web\",\"Tool\":\"Jira\",\"id\":1}"
+      "1": "{\"From\":\"2006-01-28T00:00:00.000Z\",\"To\":\"2007-05-28T00:00:00.000Z\",\"Company\":\"Opera Software\",\"CompanyDescription\":\"Opera Software har 900 ansatte og utvikler en internett-leser for PC, mobiltelefoner, TV, spillplatformer, nettbrett, m.m. for det globale markedet.\",\"Description\":\"Alf Bjørn var prosjektleder for utvikling av  ny web-teknologi i Opera Software sin nettleser-motor. Avdelingen hadde ca 60 utviklere. Enkelt-prosjektene var av størrelse 2-6 utviklere over 2 til 12 måneder. Prosjektene implementerte deler av HTTP, CSS3, HTML5, ARIA, SVG etter W3C-spesifikasjonene i tillegg til JavaScript debugger-verktøy, off-line lagring, enhets-orientering, media-deteksjon, m.m. Alf Bjørn var aktiv i omlegging av utviklingsprosessen fra vannfallsmetoden til smidig metode. Han bidro også med testing og utprøving av ny web-teknologi.\",\"Role\":\"PM\",\"SWFramework\":\"C++\",\"Technology\":\"All of them web\",\"Tool\":\"Jira\",\"id\":1}",
+      "2": "{\"From\":\"1996-01-28T00:00:00.000Z\",\"To\":\"1997-05-28T00:00:00.000Z\",\"Company\":\"Fronter Dashboard\",\"CompanyDescription\":\"Fronter har 75 ansatte og utvikler en læringsplatform for skoler og universiteter. Produktet selges globalt og har flere millioner brukere. Ny funksjonalitet utvikles som selvstendige produkter (micro services).\",\"Description\":\"Alf Bjørn videreutviklet funksjonaliteten til en webkomponent for visning av statusinformasjon i Fronter sin læringsplatform. Komponenten ble bygget som en selvstendig web-applikasjon som henter data fra Fronter via et REST API. Arbeidet omfattet design av ny funksjonalitet, utvikling av enhetstester og ende-til-ende tester, tilgjengelighets-testing, kode-gjennomgang og release.\",\"Role\":\"Frontend developer\",\"SWFramework\":\"AngularJS, Bootstrap, ExpressJS, REST API, responsive design.\",\"Technology\":\" Scrum, Linux virtuell maskin på Mac.\",\"Tool\":\"Phabricator, Vagrant, Ansible, Jira, JAWS, VoiceOver, Karma, Selenium, Git, Gulp, JSDoc, gettext.\",\"id\":2}"
     }
   }
 }

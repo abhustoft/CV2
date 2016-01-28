@@ -1,0 +1,50 @@
+{
+  "name": "Project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "From": {
+      "type": "date",
+      "required": true
+    },
+    "To": {
+      "type": "date",
+      "required": true
+    },
+    "Company": {
+      "type": "string",
+      "required": true
+    },
+    "CompanyDescription": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "Role": {
+      "type": "string",
+      "required": true
+    },
+    "SWFramework": {
+      "type": "string",
+      "required": true
+    },
+    "Technology": {
+      "type": "string",
+      "required": true
+    },
+    "Tool": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

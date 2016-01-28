@@ -1,0 +1,55 @@
+@import "../stylus/common.styl";
+@import "../stylus/variables.styl";
+
+text-width = 40rem;
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+.projects-period {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  font-weight: bold;
+  min-width: 10rem;
+  white-space: pre;
+  padding-right: 5rem;
+}
+
+.project-company {
+  font-weight: bold;
+}
+
+.project-company-description {
+  max-width: text-width;
+}
+.project-description {
+  max-width: text-width;
+}
+
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 20rem;
+
+  p {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+}
+
+.projects-heading {
+  color: capgemini-light-blue;
+  font-size: small-header;
+}
+
