@@ -36,13 +36,13 @@ var Projects = React.createClass({
             </div>
 
             <div className="projects-content">
-              <div className="project-company">{Company} </div>
-              <p className="project-company-description">{CompanyDescription} </p>
-              <p className="project-description">{Description} </p>
-              <p className="project-swframework">{SWFramework} </p>
-              <p className="project-role">{Role} </p>
-              <p className="project-technology">{Technology} </p>
-              <p className="project-tool">{Tool} </p>
+              <div className="project-company">{Company}</div>
+              <p className="project-company-description">{CompanyDescription}</p>
+              <p className="project-description">{Description}</p>
+              <p className="project-swframework"><span>Software/Rammeverk: </span>{SWFramework}</p>
+              <p className="project-role"><span>Rolle: </span>{Role}</p>
+              <p className="project-technology"><span>Teknologi: </span>{Technology}</p>
+              <p className="project-tool"><span>Verktøy: </span>{Tool}</p>
             </div>
           </div>
         );
