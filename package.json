@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
+    "postinstall": "cd client-src; npm install; cd ../server; node server.js",
     "start": "node .",
     "pretest": "jshint ."
   },
