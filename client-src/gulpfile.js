@@ -68,4 +68,4 @@ gulp.task('eslint', function() {
 
 
 // Default gulp task to run
-gulp.task('default', ['eslint', 'styl', 'bundle']);
+gulp.task('default', ['styl', 'bundle']);
