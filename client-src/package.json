@@ -4,8 +4,7 @@
   "description": "Prototyping new tech",
   "main": "index.js",
   "scripts": {
-    "install": "$(npm bin)/jspm install",
-    "postinstall": "$(npm bin)/gulp styl",
+    "postinstall": "$(npm bin)/jspm install;$(npm bin)/gulp styl",
     "test": "echo \"No test specified!\" && exit 1"
   },
   "author": "Alf Bjørn Hustoft",
