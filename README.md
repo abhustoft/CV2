@@ -8,9 +8,11 @@
 * sudo npm install -g strongloop
 * make serve-src (Or: make build; make serve-dist)
 * npm install
-* cd server
+* cd client-src
 * npm install
 * jspm install
+* gulp styl
+* cd ../server
 * node server.js
 * In the browser, load `otto dev address`:3000
 
