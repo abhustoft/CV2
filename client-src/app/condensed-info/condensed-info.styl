@@ -4,14 +4,13 @@
 .condensed-info {
   display: flex;
   flex-direction: column;
-  flex: 0 1 auto;
-  max-width: condensed-info-width;
+  max-width: 25rem;
+  order: 4;
   padding: 1rem;
 }
 
-
-@media all and (max-width:1000px) {
+@media all and (max-width:1200px) {
   .condensed-info {
-    order: 0;
+    flex-direction: row;
   }
 }

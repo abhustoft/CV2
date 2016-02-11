@@ -1,11 +1,18 @@
 @import "../stylus/common.styl";
 
 .picture {
-
+  order: 4;
+  width: 300px;
 }
 
 .photo {
-  height: 80%;
-  width: 80%;
-  margin-left: 10%;
+  height: 100%;
+  width: 100%;
+}
+
+@media all and (max-width:1200px) {
+  .picture {
+  align-self: flex-end;
+    order: 1;
+  }
 }

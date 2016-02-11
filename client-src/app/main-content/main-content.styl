@@ -4,14 +4,16 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  flex: 0 1 auto;
-  max-width: main-content-width;
+  flex-wrap: wrap;
+  max-height: 60rem;
+  max-width: 50rem;
   padding-right: 1rem;
 }
 
-
-@media all and (max-width:1000px) {
+@media all and (max-width:1200px) {
   .main-content {
-    order: 1;
+    flex-wrap: nowrap;
+    border: 1px solid red;
+    max-height: 100rem;
   }
 }
