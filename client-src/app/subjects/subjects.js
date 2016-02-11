@@ -14,6 +14,11 @@ var Subjects = React.createClass({
           <div>Application development</div>
           <div>SASS</div>
           <div>Git</div>
+          <div>Grunt</div>
+          <div>Gulp</div>
+          <div>Jira</div>
+          <div>Less</div>
+          <div>Stylus</div>
         </div>
       </div>
     );
