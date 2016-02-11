@@ -1,5 +1,20 @@
 @import "../stylus/common.styl";
+@import "../stylus/variables.styl";
 
-.subjects {
-  background-color: lightgrey;
+.subjects-heading {
+  color: capgemini-light-blue;
+  font-size: small-header;
+}
+
+@media all and (max-width:1200px) {
+  .subjects {
+    flex-grow: 3;
+  }
+
+  .subjects-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 3rem;
+    flex-wrap: wrap;
+  }
 }

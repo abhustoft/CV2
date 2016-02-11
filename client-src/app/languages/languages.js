@@ -5,6 +5,8 @@ var Languages = React.createClass({
   render: function() {
     return (
       <div className="languages">
+        <div className="languages-heading">Languages</div>
+        <hr/>
         <div>
           <span>English</span><span> Fluent</span>
         </div>
