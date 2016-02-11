@@ -1,9 +1,17 @@
 @import "../stylus/common.styl";
+@import "../stylus/variables.styl";
 
 .condensed-info {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  max-width: 15rem;
+  flex: 0 1 auto;
+  max-width: condensed-info-width;
   padding: 1rem;
+}
+
+
+@media all and (max-width:1000px) {
+  .condensed-info {
+    order: 0;
+  }
 }

@@ -5,7 +5,12 @@ var Languages = React.createClass({
   render: function() {
     return (
       <div className="languages">
-        the Languages
+        <div>
+          <span>English</span><span> Fluent</span>
+        </div>
+        <div>
+          <span>Norwegian</span><span>Mother tongue</span>
+        </div>
       </div>
     );
   }

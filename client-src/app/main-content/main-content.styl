@@ -1,9 +1,17 @@
 @import "../stylus/common.styl";
+@import "../stylus/variables.styl";
 
 .main-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  max-width: 40rem;
+  flex: 0 1 auto;
+  max-width: main-content-width;
   padding-right: 1rem;
+}
+
+
+@media all and (max-width:1000px) {
+  .main-content {
+    order: 1;
+  }
 }
