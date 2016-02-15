@@ -5,7 +5,7 @@ import * as Rx from 'rx';
 
 import {FrontPage} from './front-page/front-page';
 import {Projects} from './projects/projects';
-import {ReposContainer} from './github-repos/repos-container';
+import {ReposContainer} from './gitHub/gitHub';
 import {WorkExperience} from './work-experience/work-experience';
 
 console.log(marked('I am using __markdown__.'));
@@ -22,7 +22,7 @@ ReactDom.render(
 
 ReactDom.render(
   <WorkExperience url="/api/WorkExperiences" pollInterval={8000} />,
-  document.getElementById('content')
+  document.getElementById('cv-work')
 );
 
 ReactDom.render(

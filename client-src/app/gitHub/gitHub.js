@@ -4,8 +4,8 @@ import * as ReactDom from 'react-dom';
 import * as JQuery from 'jquery';
 import * as Rx from 'rx';
 
-import {GetRepos} from './get-repos';
-import {GitHubRepos} from './github-repos';
+import {GetRepos} from './gitHub__buttons';
+import {GitHubRepos} from './gitHub__repos';
 
 var ReposContainer = React.createClass({
 
