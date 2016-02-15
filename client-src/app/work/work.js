@@ -52,7 +52,7 @@ var WorkExperience = React.createClass({
 
   render: function() {
     return (
-      <div className="workExperience">
+      <div className="cv-work">
         <h4>Work Experience</h4>
         <RoleList workRoles={this.state.data}/>
         <WorkRoleForm onRoleSubmit={this.handleWorkRoleSubmit}/>

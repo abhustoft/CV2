@@ -6,18 +6,18 @@ import * as Rx from 'rx';
 import {FrontPage} from './front-page/front-page';
 import {Projects} from './projects/projects';
 import {ReposContainer} from './gitHub/gitHub';
-import {WorkExperience} from './work-experience/work-experience';
+import {WorkExperience} from './work/work';
 
 console.log(marked('I am using __markdown__.'));
 
 ReactDom.render(
   <FrontPage />,
-  document.getElementById('front-page')
+  document.getElementById('cv-profile')
 );
 
 ReactDom.render(
   <Projects />,
-  document.getElementById('projects')
+  document.getElementById('cv-projects')
 );
 
 ReactDom.render(
