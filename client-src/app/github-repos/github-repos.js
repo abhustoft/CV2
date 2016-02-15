@@ -5,14 +5,14 @@ var GitHubRepos = React.createClass({
   render: function() {
     var GitHubReposNodes = this.props.repos.map(function({id, name}) {
       return (
-        <div key={id} className="github-repo">
+        <div key={id} className="cv-gitHub__repoItem">
           {name}
         </div>
       );
     });
 
     return (
-      <div className="github-repos-list">
+      <div className="cv-gitHub__repos">
         {GitHubReposNodes}
       </div>
     );

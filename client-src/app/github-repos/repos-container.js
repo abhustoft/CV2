@@ -13,8 +13,8 @@ var ReposContainer = React.createClass({
     const containerThis = this;
     const url = `https://api.github.com/users/${this.props.user}/repos`;
 
-    const getButton = document.querySelector('.repo-button');
-    const clearButton = document.querySelector('.clear-button');
+    const getButton   = document.querySelector('.js-gitHub__btn--get');
+    const clearButton = document.querySelector('.js-gitHub__btn--clear');
 
     const getReposClickStream = Rx.Observable.fromEvent(getButton, 'click');
     const clearClickStream = Rx.Observable.fromEvent(clearButton, 'click').map(() => []);
@@ -41,7 +41,7 @@ var ReposContainer = React.createClass({
 
   render: function() {
     return (
-      <div className="repos-container">
+      <div className="cv-gitHub">
         <GetRepos />
         <GitHubRepos repos={this.state.repos} />
       </div>

@@ -13,3 +13,63 @@ set-placeholder-style(prop, value)
             {prop} value
     &::-moz-input-placeholder
             {prop} value
+
+
+/*
+// SCSS
+.block {
+  background-color: white;
+
+  &--active {
+    background-color: gray;
+  }
+
+  &__element {
+    color: red;
+
+    &--active {
+      color: blue;
+    }
+  }
+
+  &__another-element {
+    background-color: red;
+
+    &--active {
+      background-color: blue;
+    }
+  }
+}
+
+-------------------------------
+.block
+  +e(child)
+    background: teal
+    +m(featured, important)
+      background: crimson
+gracefully compiles into
+
+.block__child {background: teal;}
+.block__child--featured, .block__child--important {background: crimson;}
+
+The mixins:
+=e($elements...)
+  $selector: ()
+  @each $element in $elements
+    $selector: append($selector, unquote("&__" + $element), comma)
+  #{$selector}
+    @content
+=m($modifiers...)
+  $selector: ()
+  @each $modifier in $modifiers
+    $selector: append($selector, unquote("&--" + $modifier), comma)
+  #{$selector}
+    @content
+------------------------------
+
+*/
+
+
+
+
+

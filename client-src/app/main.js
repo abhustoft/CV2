@@ -27,6 +27,6 @@ ReactDom.render(
 
 ReactDom.render(
   <ReposContainer user="abhustoft"/>,
-  document.getElementById('repos-container')
+  document.getElementById('cv-gitHub')
 );
 
