@@ -29,30 +29,30 @@ var Projects = React.createClass({
           formattedTo = To.substring(0,7)
 
         return (
-          <div key={id} className="project">
-            <div className="projects-period">
-              <div className="project-from">{formattedFrom} - </div>
-              <div className="project-to">{formattedTo}</div>
+          <div key={id} className="cv-project">
+            <div className="cv-project__period">
+              <div className="cv-project__from">{formattedFrom} - </div>
+              <div className="cv-project__to">{formattedTo}</div>
             </div>
 
-            <div className="projects-content">
-              <div className="project-company">{Company}</div>
-              <p className="project-company-description">{CompanyDescription}</p>
-              <p className="project-description">{Description}</p>
-              <p className="project-swframework"><span>Software/Rammeverk: </span>{SWFramework}</p>
-              <p className="project-role"><span>Rolle: </span>{Role}</p>
-              <p className="project-technology"><span>Teknologi: </span>{Technology}</p>
-              <p className="project-tool"><span>Verktøy: </span>{Tool}</p>
+            <div className="cv-projects__content">
+              <div className="cv-project__company">{Company}</div>
+              <p className="cv-project__company-description">{CompanyDescription}</p>
+              <p className="cv-project__description">{Description}</p>
+              <p className="cv-project__swframework"><span>Software/Rammeverk: </span>{SWFramework}</p>
+              <p className="cv-project__role"><span>Rolle: </span>{Role}</p>
+              <p className="cv-project__technology"><span>Teknologi: </span>{Technology}</p>
+              <p className="cv-project__tools"><span>Verktøy: </span>{Tool}</p>
             </div>
           </div>
         );
       });
 
     return (
-      <div>
-        <div className="projects-heading">Prosjektreferanser</div>
+      <div className="cv-projects">
+        <div className="cv-projects__heading">Prosjektreferanser</div>
         <hr/>
-        <div className="projects">{projects}</div>
+        <div className="cv-projects__list">{projects}</div>
       </div>
     );
   }

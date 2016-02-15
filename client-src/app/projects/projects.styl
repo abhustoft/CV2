@@ -3,19 +3,19 @@
 
 text-width = 40rem;
 
-.projects {
+.cv-projects__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.project {
+.cv-project {
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
 }
 
-.projects-period {
+.cv-project__period {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -26,23 +26,23 @@ text-width = 40rem;
 }
 
 @media all and (max-width:900px) {
-  .projects-period {
+  .cv-project__period {
     padding-right: 1rem;
   }
 }
 
-.project-company {
+.cv-project__company {
   font-weight: bold;
 }
 
-.project-company-description {
+.cv-project__company-description {
   max-width: text-width;
 }
-.project-description {
+.cv-project__description {
   max-width: text-width;
 }
 
-.projects-content {
+.cv-projects__content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -54,7 +54,7 @@ text-width = 40rem;
   }
 }
 
-.projects-heading {
+.cv-projects__heading {
   color: capgemini-light-blue;
   font-size: small-header;
 }
