@@ -42,6 +42,8 @@ var ReposContainer = React.createClass({
   render: function() {
     return (
       <div className="cv-gitHub">
+        <img  src="app/images/github-octocat.svg" alt="GitHub logo"
+              className="cv-gitHub__cat"></img>
         <GetRepos />
         <GitHubRepos repos={this.state.repos} />
       </div>
