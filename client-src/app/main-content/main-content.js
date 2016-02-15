@@ -6,12 +6,38 @@ import {Profile} from '../profile/profile';
 import {CondensedInfo} from '../condensed-info/condensed-info';
 
 var MainContent = React.createClass({
+  loadProfileText: function() {
+    fetch('/api/ProfileTexts')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({profileTexts: json});
+      });
+  },
+
+  loadName: function() {
+    fetch('/api/Names')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({name: json});
+      });
+  },
+
+  getInitialState: function() {
+    return {
+      profileTexts: [],
+      name: []};
+  },
+
+  componentDidMount: function() {
+    this.loadProfileText();
+    this.loadName();
+  },
   render: function() {
     return (
       <div className="main-content">
         <Logo />
-        <Profile profileTexts = {this.props.profileTexts}
-        name = {this.props.name}/>
+        <Profile profileTexts = {this.state.profileTexts}
+        name = {this.state.name}/>
         <Photo />
         <CondensedInfo />
       </div>

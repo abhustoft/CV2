@@ -3,7 +3,7 @@ import * as ReactDom from 'react-dom';
 import marked from 'marked';
 import * as Rx from 'rx';
 
-import {FrontPage} from './front-page/front-page';
+import {MainContent} from './main-content/main-content';
 import {Projects} from './projects/projects';
 import {ReposContainer} from './gitHub/gitHub';
 import {WorkExperience} from './work/work';
@@ -11,7 +11,7 @@ import {WorkExperience} from './work/work';
 console.log(marked('I am using __markdown__.'));
 
 ReactDom.render(
-  <FrontPage />,
+  <MainContent />,
   document.getElementById('cv-profile')
 );
 
