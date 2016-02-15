@@ -3,7 +3,7 @@ import * as ReactDom from 'react-dom';
 import marked from 'marked';
 import * as Rx from 'rx';
 
-import {MainContent} from './main-content/main-content';
+import {MainContent} from './profile/profile';
 import {Projects} from './projects/projects';
 import {ReposContainer} from './gitHub/gitHub';
 import {WorkExperience} from './work/work';

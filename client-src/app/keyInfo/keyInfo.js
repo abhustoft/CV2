@@ -3,10 +3,10 @@ import * as ReactDom from 'react-dom';
 import {Subjects} from '../subjects/subjects';
 import {Languages} from '../languages/languages';
 
-var CondensedInfo = React.createClass({
+var KeyInfo = React.createClass({
   render: function() {
     return (
-      <div className="condensed-info">
+      <div className="cv-keyInfo">
         <Subjects />
         <Languages />
       </div>
@@ -14,4 +14,4 @@ var CondensedInfo = React.createClass({
   }
 });
 
-export {CondensedInfo}
+export {KeyInfo}

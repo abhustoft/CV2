@@ -4,10 +4,10 @@ import * as ReactDom from 'react-dom';
 var Subjects = React.createClass({
   render: function() {
     return (
-      <div className="subjects">
-        <div className="subjects-heading">Subjects</div>
+      <div className="cv-subjects">
+        <div className="cv-subjects__heading">Subjects</div>
         <hr/>
-        <div className="subjects-container">
+        <div className="cv-subjects__container">
           <div>Flexbox</div>
           <div>HTML5</div>
           <div>Responsive design</div>

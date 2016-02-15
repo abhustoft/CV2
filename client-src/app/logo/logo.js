@@ -4,7 +4,7 @@ import * as ReactDom from 'react-dom';
 var Logo = React.createClass({
   render: function() {
     return (
-      <div className="logo">
+      <div className="cv-logo">
         <img src="app/images/logo.png" alt="Cap Gemini logo"/>
       </div>
     );

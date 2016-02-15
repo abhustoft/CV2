@@ -1,28 +1,19 @@
 @import "../stylus/common.styl";
 @import "../stylus/variables.styl";
 
-.profile {
-  color: black;
-  order: 3;
-  padding-right: 3rem;
-  padding-top: 3rem;
-}
-
-.consultant-heading {
-  color: capgemini-light-blue;
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.consultant-name {
-  color: capgemini-dark-blue;
-  font-size: large-header;
+.cv-profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 60rem;
+  max-width: 50rem;
+  min-width: 500px;
+  padding-right: 1rem;
 }
 
 @media all and (max-width:1200px) {
-.profile {
-  padding-top: 0;
-}
-
+  .cv-profile {
+    flex-wrap: nowrap;
+    max-height: 100rem;
+  }
 }

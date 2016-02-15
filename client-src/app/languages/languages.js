@@ -4,8 +4,8 @@ import * as ReactDom from 'react-dom';
 var Languages = React.createClass({
   render: function() {
     return (
-      <div className="languages">
-        <div className="languages-heading">Languages</div>
+      <div className="cv-languages">
+        <div className="cv-languages__heading">Languages</div>
         <hr/>
         <div>
           <span>English</span><span> Fluent</span>
