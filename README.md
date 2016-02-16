@@ -24,6 +24,7 @@
 * jspm module loader
 * Otto VM
 * CSS Stylus
+* BEM
 * Rx.js
 * Gulp file
 
