@@ -21,7 +21,7 @@ var destPath = './app/css',
 gulp.task('styl', function () {
 
   gulp.src(stylusFiles)
-     //.pipe(sourcemaps.init())
+     .pipe(sourcemaps.init())
     .pipe(stylus({
       paths:  ['stylus'],
       compress: false,
@@ -29,7 +29,7 @@ gulp.task('styl', function () {
       'include css': false
     }))
     .pipe(concat('screen.css'))
-    //.pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(destPath))
     .pipe(gulp.dest(distPath));
 });
