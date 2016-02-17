@@ -5,7 +5,22 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "$(npm bin)/jspm install;$(npm bin)/gulp styl",
-    "test": "echo \"No test specified!\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "./node_modules/babel-jest",
+    "testPathDirs": ["app/"],
+    "testFileExtensions": ["js"],
+    "testPathIgnorePatterns": [
+      "./node_modules/",
+      "./jspm_packages"
+    ],
+    "unmockedModulePathPatterns": [
+      "./node_modules/react",
+      "./node_modules/fbjs",
+      "./node_modules/react-dom",
+      "./node_modules/react-addons-test-utils"
+    ]
   },
   "author": "Alf Bjørn Hustoft",
   "license": "ISC",
@@ -14,8 +29,8 @@
     "dependencies": {
       "jquery": "npm:jquery@^2.2.0",
       "marked": "npm:marked@^0.3.5",
-      "react": "npm:react@^0.14.6",
-      "react-dom": "npm:react-dom@^0.14.6",
+      "react": "npm:react@^0.14.7",
+      "react-dom": "npm:react-dom@^0.14.7",
       "rx": "npm:rx@^4.0.7",
       "whatwg-fetch": "npm:whatwg-fetch@^0.10.1"
     },
@@ -27,6 +42,9 @@
   },
   "devDependencies": {
     "html-dist": "^0.1.0",
+    "jest-cli": "*",
+    "babel-jest": "*",
+    "react-addons-test-utils": "~0.14.0",
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
@@ -41,6 +59,11 @@
     "gulp-stylus": "^2.2.0",
     "gulp-uglify": "^1.5.1",
     "gulp-watch": "^4.3.5",
-    "yargs": "^3.32.0"
+    "yargs": "^3.32.0",
+    "harmonize": "^1.4.1",
+    "jest-cli": "^0.8",
+    "react": "^0.14",
+    "react-addons-test-utils": "~0.14.0",
+    "react-dom": "~0.14.0"
   }
 }
