@@ -23,7 +23,9 @@ System.config({
     "react": "npm:react@0.14.7",
     "react-addons-test-utils": "npm:react-addons-test-utils@0.14.7",
     "react-dom": "npm:react-dom@0.14.7",
+    "react-redux": "npm:react-redux@4.4.0",
     "react-tools": "npm:react-tools@0.13.3",
+    "redux": "npm:redux@3.3.1",
     "rx": "npm:rx@4.0.8",
     "whatwg-fetch": "npm:whatwg-fetch@0.10.1",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -755,6 +757,10 @@ System.config({
     "npm:ini@1.3.4": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:invariant@2.2.0": {
+      "loose-envify": "npm:loose-envify@1.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:is-binary-path@1.0.1": {
       "binary-extensions": "npm:binary-extensions@1.4.0",
       "path": "github:jspm/nodelibs-path@0.1.0"
@@ -873,6 +879,16 @@ System.config({
     "npm:lodash.templatesettings@3.1.1": {
       "lodash._reinterpolate": "npm:lodash._reinterpolate@3.0.0",
       "lodash.escape": "npm:lodash.escape@3.1.1"
+    },
+    "npm:lodash@4.5.0": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:loose-envify@1.1.0": {
+      "js-tokens": "npm:js-tokens@1.0.2",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:loud-rejection@1.2.0": {
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -1109,6 +1125,15 @@ System.config({
     "npm:react-dom@0.14.7": {
       "react": "npm:react@0.14.7"
     },
+    "npm:react-redux@4.4.0": {
+      "hoist-non-react-statics": "npm:hoist-non-react-statics@1.0.5",
+      "invariant": "npm:invariant@2.2.0",
+      "lodash": "npm:lodash@4.5.0",
+      "loose-envify": "npm:loose-envify@1.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@0.14.7",
+      "redux": "npm:redux@3.3.1"
+    },
     "npm:react-tools@0.13.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "commoner": "npm:commoner@0.10.4",
@@ -1171,6 +1196,12 @@ System.config({
     "npm:redent@1.0.0": {
       "indent-string": "npm:indent-string@2.1.0",
       "strip-indent": "npm:strip-indent@1.0.1"
+    },
+    "npm:redux@3.3.1": {
+      "lodash": "npm:lodash@4.5.0",
+      "lodash-es": "npm:lodash-es@4.5.0",
+      "loose-envify": "npm:loose-envify@1.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:regex-cache@0.4.2": {
       "is-equal-shallow": "npm:is-equal-shallow@0.1.3",
