@@ -30,7 +30,7 @@
 
 ## To do
 * Test: http://facebook.github.io/react/docs/test-utils.html#shallow-rendering, https://github.com/airbnb/enzyme, Karma/Mocha, Chai, Sinon
-* CSS helpers: Gridly? Milligram?
+* CSS helpers: Gridly? Milligram? Material Design Lite?
 * CSS http://philipwalton.com/articles/css-architecture/#organize-your-css-into-a-logical-structure
 * Otto or Strongloop deploy
 * Greensock animation?
