@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from './actions'
 const { SHOW_ALL } = VisibilityFilters
 
-function visibilityFilter(state = SHOW_ALL, action) {
+function visibilityFilterReducer(state = SHOW_ALL, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return action.filter
@@ -11,7 +11,7 @@ function visibilityFilter(state = SHOW_ALL, action) {
   }
 }
 
-function todo(state, action) {
+function todoReducer(state, action) {
   switch (action.type) {
     case ADD_TODO:
       return {
@@ -33,16 +33,16 @@ function todo(state, action) {
   }
 }
 
-function todos(state = [], action) {
+function todosReducer(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
       return [
         ...state,
-        todo(undefined, action)
+        todoReducer(undefined, action)
       ]
     case COMPLETE_TODO:
       return state.map(t =>
-        todo(t, action)
+        todoReducer(t, action)
       )
     default:
       return state
@@ -50,8 +50,20 @@ function todos(state = [], action) {
 }
 
 const reducer = combineReducers({
-  visibilityFilter,
-  todos
+  visibilityFilter: visibilityFilterReducer,
+  todos: todosReducer
 })
+
+// Equivalent with:
+//function reducer(state, action) {
+//  return {
+//    a: doSomethingWithA(state.a, action),
+//    b: processB(state.b, action),
+//    c: c(state.c, action)
+//  }
+//}
+
+
+
 
 export default reducer

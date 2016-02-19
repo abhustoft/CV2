@@ -9,9 +9,9 @@ import reducer from './redux/reducers'
 
 let store = createStore(reducer);
 
-//store.subscribe(() => {
-//  console.log(store.getState());
-//});
+store.subscribe(() => {
+  console.log('Current state: ', store.getState());
+});
 
 ReactDom.render(
   <Provider store={store}>
