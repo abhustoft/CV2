@@ -31,6 +31,7 @@
   "jspm": {
     "configFile": "config/jspm-config.js",
     "dependencies": {
+      "immutable": "npm:immutable@^3.7.6",
       "jquery": "npm:jquery@^2.2.0",
       "marked": "npm:marked@^0.3.5",
       "react": "npm:react@^0.14.7",

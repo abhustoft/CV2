@@ -18,6 +18,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "core-js": "npm:core-js@1.2.6",
     "gulp-watch": "npm:gulp-watch@4.3.5",
+    "immutable": "npm:immutable@3.7.6",
     "jquery": "npm:jquery@2.2.0",
     "marked": "npm:marked@0.3.5",
     "react": "npm:react@0.14.7",
