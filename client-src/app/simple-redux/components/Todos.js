@@ -2,13 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import NewTodo from './NewTodo'
-import { addTodo } from '../actions/index'
-import { editNew } from '../actions/index'
+import { addTodo } from '../actions/actions'
+import { editNew } from '../actions/actions'
 
 var Todos = React.createClass({
   render: function() {
     const dispatch = this.props.dispatch;
     const myToDos = this.props.myState.todosList;
+    const editState = this.props.myState.edit;
 
     console.log('This state for Todos: ', this.props);
     return (

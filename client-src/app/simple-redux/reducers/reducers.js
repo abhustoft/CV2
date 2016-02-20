@@ -14,8 +14,18 @@ function listReducer(state = Immutable.List(['Code More!']), action) {
   }
 }
 
+function editReducer(state = {'edit': false}, action) {
+  switch (action.type) {
+    case 'editNew':
+      return Object.assign({}, {'edit': true})
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
-  todosList: listReducer
+  todosList: listReducer,
+  edit: editReducer
 })
 
 export default rootReducer;
