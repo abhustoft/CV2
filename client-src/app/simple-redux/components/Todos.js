@@ -7,8 +7,8 @@ import { editNew } from '../actions'
 
 var Todos = React.createClass({
   render: function() {
-    const dispatch = this.props.dispatch;
-    const myToDos = this.props.myState.todosList;
+    const dispatch  = this.props.dispatch;
+    const myToDos   = this.props.myState.todosList;
     const editState = this.props.myState.edit;
 
     console.log('This state for Todos: ', this.props);

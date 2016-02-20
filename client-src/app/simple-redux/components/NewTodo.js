@@ -3,12 +3,9 @@ import { connect } from 'react-redux'
 
 var NewTodo = React.createClass({
   render: function() {
-    const onChange = this.props.onChange;
-    const onClick = this.props.onClick;
-    const edit = this.props.editMe;
-    console.log('NewTodo got props: ', this.props);
-    var divStyle = {
-      color: edit ? 'blue' : 'grey'
+    const {onChange, onClick, editMe} = this.props;
+    const divStyle = {
+      color: editMe.edit ? 'blue' : 'grey'
     };
     return (
       <div onClick={onClick}>
