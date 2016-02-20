@@ -1,3 +1,3 @@
 import { createStore } from 'redux';
-import todos from './reducers/todos'
-export default createStore(todos)
+import rootReducers from './reducers/reducers'
+export default createStore(rootReducers)

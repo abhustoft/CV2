@@ -1,6 +1,7 @@
 import Immutable from 'immutable'
+import {combineReducers} from  'redux'
 
-export default (state = Immutable.List(['Code More!']), action) => {
+function listReducer(state = Immutable.List(['Code More!']), action) {
   switch(action.type) {
     case 'addTodo':
       console.log('Handle action addTodo, set state ', action);
@@ -12,3 +13,9 @@ export default (state = Immutable.List(['Code More!']), action) => {
       return state
   }
 }
+
+const rootReducer = combineReducers({
+  todosList: listReducer
+})
+
+export default rootReducer;
