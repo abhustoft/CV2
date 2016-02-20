@@ -26,6 +26,7 @@ var Todos = React.createClass({
             console.log(e.target);
             dispatch(editNew('cliecked to edit'));
           }}
+          editMe = {editState}
         />
         {myToDos.map((todo, index) => <p key={index}>{todo}</p>)}
       </div>
