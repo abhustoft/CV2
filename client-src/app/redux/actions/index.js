@@ -12,10 +12,9 @@ export function deleteTodo(index){
   }
 }
 
-export function editNew(txt){
+export function editCVDescription(){
   return {
-    type: 'editNew',
-    txt
+    type: 'editCVDescription'
   }
 }
 
