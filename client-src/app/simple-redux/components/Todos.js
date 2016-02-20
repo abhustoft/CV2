@@ -7,10 +7,7 @@ import { editNew } from '../actions'
 
 var Todos = React.createClass({
   render: function() {
-    const dispatch  = this.props.dispatch;
-    const myToDos   = this.props.myState.todosList;
-    const editState = this.props.myState.edit;
-
+    const {dispatch, myState} = this.props;
     console.log('This state for Todos: ', this.props);
     return (
       <div>
@@ -26,9 +23,9 @@ var Todos = React.createClass({
             console.log(e.target);
             dispatch(editNew('cliecked to edit'));
           }}
-          editMe = {editState}
+          editMe = {myState.edit}
         />
-        {myToDos.map((todo, index) => <p key={index}>{todo}</p>)}
+        {myState.todosList.map((todo, index) => <p key={index}>{todo}</p>)}
       </div>
     )
   }
