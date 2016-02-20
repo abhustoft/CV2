@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import NewTodo from './NewTodo'
-import { addTodo } from '../actions/actions'
-import { editNew } from '../actions/actions'
+import { addTodo } from '../actions'
+import { editNew } from '../actions'
 
 var Todos = React.createClass({
   render: function() {

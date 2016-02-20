@@ -17,7 +17,7 @@ function listReducer(state = Immutable.List(['Code More!']), action) {
 function editReducer(state = {'edit': false}, action) {
   switch (action.type) {
     case 'editNew':
-      return Object.assign({}, {'edit': true})
+      return Object.assign({}, {'edit': !state.edit})
     default:
       return state
   }
