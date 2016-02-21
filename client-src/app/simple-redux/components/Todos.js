@@ -8,6 +8,10 @@ import { editNew } from '../actions'
 var Todos = React.createClass({
   render: function() {
     const {dispatch, myState} = this.props
+    const sendIt = function () {
+      console.log('Clicked the profile');
+      dispatch(editNew('clicked to edit'));
+    }
     return (
       <div>
         <h1>Todos</h1>
@@ -17,9 +21,7 @@ var Todos = React.createClass({
               e.target.value = ''
             }
           }}
-          onClick={e => {
-            dispatch(editNew('cliecked to edit'));
-          }}
+          onClick={sendIt}
           editMe = {myState.edit}
         />
         {myState.todosList.map((todo, index) => <p key={index}>{todo}</p>)}

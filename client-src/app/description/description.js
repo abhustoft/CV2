@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-var Profile = React.createClass({
+var Description = React.createClass({
 
   render: function() {
     const
@@ -26,4 +26,4 @@ var Profile = React.createClass({
   }
 });
 
-export {Profile}
+export {Description}

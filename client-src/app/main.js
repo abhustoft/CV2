@@ -9,17 +9,21 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 
 
-import {MainContent} from './profile/profile';
+import MainContent from './main-content/MainContent';
 import {Projects} from './projects/projects';
 import {ReposContainer} from './gitHub/gitHub';
 import {WorkExperience} from './work/work';
 
 console.log(marked('I am using __markdown__.'));
 
+store.subscribe(() => {
+  console.log('Current MainContent state: ', store.getState());
+});
+
 ReactDom.render(
-  //<Provider store={store}>
-    <MainContent />,
-  //</Provider>,
+  <Provider store={store}>
+    <MainContent />
+  </Provider>,
   document.getElementById('cv-profile')
 );
 

@@ -1,9 +1,13 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
+import { connect } from 'react-redux'
+
 import {Logo} from '../logo/logo';
 import {Photo} from '../photo/photo';
-import {Profile} from '../description/description';
+import {Description} from '../description/description';
 import {KeyInfo} from '../keyInfo/keyInfo';
+
+import { editNew } from '../redux/actions'
 
 var MainContent = React.createClass({
   loadProfileText: function() {
@@ -33,11 +37,18 @@ var MainContent = React.createClass({
     this.loadName();
   },
   render: function() {
+    const {dispatch, myState} = this.props
+    const sendIt = function () {
+      console.log('Clicked the profile');
+      dispatch(editNew('clicked to edit'));
+    }
     return (
-      <div className="cv-profile">
+      <div className="cv-profile" onClick={sendIt}>
         <Logo />
-        <Profile profileTexts = {this.state.profileTexts}
-        name = {this.state.name}/>
+        <Description
+          profileTexts = {this.state.profileTexts}
+          name = {this.state.name}
+        />
         <Photo />
         <KeyInfo />
       </div>
@@ -45,4 +56,11 @@ var MainContent = React.createClass({
   }
 });
 
-export {MainContent}
+
+function mapStateToProps(myState) {
+  return {
+    myState
+  }
+}
+
+export default connect(mapStateToProps)(MainContent)
