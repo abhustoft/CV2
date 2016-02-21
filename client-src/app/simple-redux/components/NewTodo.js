@@ -7,8 +7,12 @@ var NewTodo = React.createClass({
     const colorClass = editMe.edit ? 'blue' : 'grey';
     const divStyle = {color: colorClass};
     return (
-      <div onClick={onClick}>
-        <h3 style={divStyle} className={colorClass}>New</h3>
+      <div>
+        <h3 style={divStyle}
+            className={colorClass}
+            onClick={onClick}>
+          New
+        </h3>
         <input type="text" onKeyUp={onChange}/>
       </div>
     )
