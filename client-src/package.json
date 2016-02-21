@@ -36,8 +36,8 @@
       "react": "npm:react@^0.14.7",
       "react-dom": "npm:react-dom@^0.14.7",
       "react-redux": "npm:react-redux@^4.0.6",
-      "redux": "npm:redux@^3.0.5",
-      "rx": "npm:rx@^4.0.7",
+      "redux": "npm:redux@^3.3.1",
+      "rx": "npm:rx@^4.4.0",
       "whatwg-fetch": "npm:whatwg-fetch@^0.10.1"
     },
     "devDependencies": {

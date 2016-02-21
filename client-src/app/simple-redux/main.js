@@ -1,9 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import store from './store'
+import configureStore from './store'
 import Todos from './components/Todos'
 
+
+const initialState = {
+  todosList: ['First and foremost', ' Second'],
+  edit: {edit: true}
+}
+
+const store = configureStore(initialState);
 
 store.subscribe(() => {
   console.log('Current state: ', store.getState());
