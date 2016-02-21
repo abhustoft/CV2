@@ -1,8 +1,10 @@
+/*eslint-disable no-unused-vars*/
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import marked from 'marked';
 import * as Rx from 'rx';
+/*eslint-enable no-unused-vars*/
 
+import marked from 'marked';
 import { Provider } from 'react-redux'
 import store from './redux/store'
 
