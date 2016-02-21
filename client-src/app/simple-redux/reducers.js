@@ -1,15 +1,13 @@
 import Immutable from 'immutable'
 import {combineReducers} from  'redux'
 
-function listReducer(state = Immutable.List(['Code More!']), action) {
+function listReducer(state = ['Code More!'], action) {
   switch(action.type) {
     case 'addTodo':
-      console.log('Handle action addTodo, set state ', action);
-      return state.unshift(action.todo)
+      return [...state, action.todo]
 
     case 'editNew':
-      console.log('Handle action editNew, set state ', action);
-      return state.unshift(action.txt)
+      return [...state, action.txt]
 
     default:
       return state

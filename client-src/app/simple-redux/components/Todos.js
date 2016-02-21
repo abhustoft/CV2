@@ -7,20 +7,17 @@ import { editNew } from '../actions'
 
 var Todos = React.createClass({
   render: function() {
-    const {dispatch, myState} = this.props;
-    console.log('This state for Todos: ', this.props);
+    const {dispatch, myState} = this.props
     return (
       <div>
         <h1>Todos</h1>
         <NewTodo onChange={e => {
             if(e.keyCode == 13){
-              console.log(e.target.value);
               dispatch(addTodo(e.target.value))
               e.target.value = ''
             }
           }}
           onClick={e => {
-            console.log(e.target);
             dispatch(editNew('cliecked to edit'));
           }}
           editMe = {myState.edit}
