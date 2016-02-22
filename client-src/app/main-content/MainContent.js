@@ -46,10 +46,11 @@ var MainContent = React.createClass({
       <div className="cv-profile" onClick={sendIt}>
         <Logo />
         <Description
+          dispatch={dispatch}
           profileTexts = {this.state.profileTexts}
           name = {this.state.name}
         />
-        <Photo />
+        <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
         <KeyInfo />
       </div>
     );

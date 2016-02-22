@@ -1,0 +1,248 @@
+{
+  "checksum": {
+    "previous": "f6064a9117c7641abb97843692c0d1d1256138a9152848e919ccc073edf22c8a",
+    "current": "f6064a9117c7641abb97843692c0d1d1256138a9152848e919ccc073edf22c8a"
+  },
+  "fonts": [
+    "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font/Flaticon.ttf",
+    "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font/Flaticon.svg",
+    "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font/Flaticon.woff",
+    "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font/Flaticon.eot"
+  ],
+  "glyphs": {
+    "aperture": {
+      "codepoint": 61696,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/aperture.svg"
+    },
+    "aperture-1": {
+      "codepoint": 61697,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/aperture-1.svg"
+    },
+    "auto-flash": {
+      "codepoint": 61698,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/auto-flash.svg"
+    },
+    "blitz-flash": {
+      "codepoint": 61699,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/blitz-flash.svg"
+    },
+    "brightness-option": {
+      "codepoint": 61700,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/brightness-option.svg"
+    },
+    "camera-big-screen-size": {
+      "codepoint": 61701,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/camera-big-screen-size.svg"
+    },
+    "camera-screen": {
+      "codepoint": 61702,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/camera-screen.svg"
+    },
+    "camera-screen-1": {
+      "codepoint": 61703,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/camera-screen-1.svg"
+    },
+    "camera-small-screen-size": {
+      "codepoint": 61704,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/camera-small-screen-size.svg"
+    },
+    "camera-stand": {
+      "codepoint": 61705,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/camera-stand.svg"
+    },
+    "camera-timer": {
+      "codepoint": 61706,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/camera-timer.svg"
+    },
+    "clapperboard": {
+      "codepoint": 61707,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/clapperboard.svg"
+    },
+    "compact-camera": {
+      "codepoint": 61708,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/compact-camera.svg"
+    },
+    "digital-camera": {
+      "codepoint": 61709,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/digital-camera.svg"
+    },
+    "eye": {
+      "codepoint": 61710,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/eye.svg"
+    },
+    "film-roll": {
+      "codepoint": 61711,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/film-roll.svg"
+    },
+    "film-roll-1": {
+      "codepoint": 61712,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/film-roll-1.svg"
+    },
+    "film-strip": {
+      "codepoint": 61713,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/film-strip.svg"
+    },
+    "flash": {
+      "codepoint": 61714,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/flash.svg"
+    },
+    "flash-off": {
+      "codepoint": 61715,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/flash-off.svg"
+    },
+    "flip-camera": {
+      "codepoint": 61716,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/flip-camera.svg"
+    },
+    "focus": {
+      "codepoint": 61717,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/focus.svg"
+    },
+    "focus-1": {
+      "codepoint": 61718,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/focus-1.svg"
+    },
+    "landscape": {
+      "codepoint": 61719,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/landscape.svg"
+    },
+    "landscape-photo": {
+      "codepoint": 61720,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/landscape-photo.svg"
+    },
+    "macro": {
+      "codepoint": 61721,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/macro.svg"
+    },
+    "memory-card": {
+      "codepoint": 61722,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/memory-card.svg"
+    },
+    "minute-countdown": {
+      "codepoint": 61723,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/minute-countdown.svg"
+    },
+    "objective": {
+      "codepoint": 61724,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/objective.svg"
+    },
+    "objective-1": {
+      "codepoint": 61725,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/objective-1.svg"
+    },
+    "old-camera": {
+      "codepoint": 61726,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/old-camera.svg"
+    },
+    "old-camera-1": {
+      "codepoint": 61727,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/old-camera-1.svg"
+    },
+    "old-video-camera": {
+      "codepoint": 61728,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/old-video-camera.svg"
+    },
+    "panorama-with-right-arrow": {
+      "codepoint": 61729,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/panorama-with-right-arrow.svg"
+    },
+    "photo-camera": {
+      "codepoint": 61730,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/photo-camera.svg"
+    },
+    "photo-camera-1": {
+      "codepoint": 61731,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/photo-camera-1.svg"
+    },
+    "photo-camera-with-flash": {
+      "codepoint": 61732,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/photo-camera-with-flash.svg"
+    },
+    "photograph": {
+      "codepoint": 61733,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/photograph.svg"
+    },
+    "portrait": {
+      "codepoint": 61734,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/portrait.svg"
+    },
+    "quarter": {
+      "codepoint": 61735,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/quarter.svg"
+    },
+    "reflector": {
+      "codepoint": 61736,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/reflector.svg"
+    },
+    "scenic": {
+      "codepoint": 61737,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/scenic.svg"
+    },
+    "screen-grid": {
+      "codepoint": 61738,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/screen-grid.svg"
+    },
+    "shake-camera": {
+      "codepoint": 61739,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/shake-camera.svg"
+    },
+    "three-quarters": {
+      "codepoint": 61740,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/three-quarters.svg"
+    },
+    "usb-cable": {
+      "codepoint": 61741,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/usb-cable.svg"
+    },
+    "video-camera": {
+      "codepoint": 61742,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/video-camera.svg"
+    },
+    "video-camera-1": {
+      "codepoint": 61743,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/video-camera-1.svg"
+    },
+    "video-file-list": {
+      "codepoint": 61744,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/video-file-list.svg"
+    },
+    "webcam": {
+      "codepoint": 61745,
+      "source": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg/webcam.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": false,
+    "css_selector": ".flaticon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "Flaticon",
+    "force": true,
+    "input": {
+      "templates": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg",
+      "vectors": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/svg"
+    },
+    "no_hash": true,
+    "output": {
+      "css": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font",
+      "fonts": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font",
+      "preview": "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font"
+    },
+    "preprocessor_path": null,
+    "quiet": true,
+    "templates": [
+      "../../../../../sites/flaticon/libraries/webfont/templates/flaticon.html",
+      "../../../../../sites/flaticon/libraries/webfont/templates/_flaticon.scss",
+      "../../../../../sites/flaticon/libraries/webfont/templates/flaticon.css"
+    ]
+  },
+  "templates": [
+    "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font/flaticon.html",
+    "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font/_flaticon.scss",
+    "/var/www/static/flaticon/zip_packs/112141-cameras-and-camcorders-rounded/font/flaticon.css"
+  ]
+}

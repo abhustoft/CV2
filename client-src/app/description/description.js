@@ -1,12 +1,13 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
+import { togglePhoto } from '../redux/actions'
 
 var Description = React.createClass({
 
   render: function() {
-    const
-      name = this.props.name.map(({FullName}) => FullName),
-      paragraphs = this.props.profileTexts
+    const {dispatch} = this.props
+    const name = this.props.name.map(({FullName}) => FullName)
+    const paragraphs = this.props.profileTexts
         .map(function({Paragraph, Sequence}) {
           return (
             <div key={Sequence}>
@@ -14,12 +15,22 @@ var Description = React.createClass({
             </div>
           );
         })
-        .sort((a, b) => {return a.key - b.key;});
+        .sort((a, b) => {return a.key - b.key;})
 
-      return (
+    const togglePhotoView = function () {
+      dispatch(togglePhoto());
+    }
+
+    return (
       <div className="cv-description">
         <div className="cv-description__heading">Konsulentprofil</div>
-        <div className="cv-description__name">{name}</div>
+        <div className="cv-description__name"
+             onClick={togglePhotoView}>
+          {name}
+        </div>
+        <img  src="app/images/photo-camera-with-flash.svg" alt="GitHub logo"
+              className="cv-description__photo"
+              onClick={togglePhotoView}></img>
         {paragraphs}
       </div>
     );

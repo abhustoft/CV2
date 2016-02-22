@@ -6,3 +6,10 @@ export function editNew(txt){
   }
 }
 
+export function togglePhoto(){
+  return {
+    type: 'togglePhoto'
+  }
+}
+
+
