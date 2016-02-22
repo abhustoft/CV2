@@ -39,7 +39,6 @@ var MainContent = React.createClass({
   render: function() {
     const {dispatch, myState} = this.props
     const sendIt = function () {
-      console.log('Clicked the profile');
       dispatch(editNew('clicked to edit'));
     }
     return (

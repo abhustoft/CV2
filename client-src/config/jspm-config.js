@@ -27,6 +27,7 @@ System.config({
     "react-redux": "npm:react-redux@4.4.0",
     "react-tools": "npm:react-tools@0.13.3",
     "redux": "npm:redux@3.3.1",
+    "redux-localstorage": "npm:redux-localstorage@0.4.0",
     "rx": "npm:rx@4.0.8",
     "whatwg-fetch": "npm:whatwg-fetch@0.10.1",
     "github:jspm/nodelibs-assert@0.1.0": {
