@@ -1,7 +1,7 @@
 # CV - an app to test the following technologies:
 
 ## Set up
-* otto dev
+* otto dev ('otto dev address' to get VM's IP address)
 * otto dev ssh
 * sudo npm install gulp -g
 * sudo npm install jspm -g
@@ -10,8 +10,7 @@
 * npm install
 * cd client-src
 * npm install
-* jspm install
-* gulp styl
+* gulp styl (or gulp watch)
 * cd ../server
 * node server.js
 * In the browser, load `otto dev address`:3000
@@ -19,14 +18,16 @@
 ## Current POC
 * loopback
 * React
+* Redux
 * Ecmascript 2015
 * Babel transpiler
 * jspm module loader
 * Otto VM
 * CSS Stylus
+* CSS Flexbox
 * BEM
 * Rx.js
-* Gulp file
+* Gulp
 
 ## To do
 * Test: http://facebook.github.io/react/docs/test-utils.html#shallow-rendering, https://github.com/airbnb/enzyme, Karma/Mocha, Chai, Sinon
