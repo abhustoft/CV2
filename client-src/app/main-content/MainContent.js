@@ -6,6 +6,7 @@ import {Logo} from '../logo/logo';
 import {Photo} from '../photo/photo';
 import {Description} from '../description/description';
 import {KeyInfo} from '../keyInfo/keyInfo';
+import {Projects} from '../projects/projects';
 
 import { editNew } from '../redux/actions'
 
@@ -39,18 +40,20 @@ var MainContent = React.createClass({
   render: function() {
     const {dispatch, myState} = this.props
     const sendIt = function () {
+      console.log('Clicked the profile');
       dispatch(editNew('clicked to edit'));
     }
     return (
       <div className="cv-profile" onClick={sendIt}>
         <Logo />
         <Description
-          dispatch={dispatch}
           profileTexts = {this.state.profileTexts}
           name = {this.state.name}
+          dispatch={dispatch}
         />
         <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
         <KeyInfo />
+        <Projects />
       </div>
     );
   }

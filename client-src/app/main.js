@@ -28,11 +28,6 @@ ReactDom.render(
 );
 
 ReactDom.render(
-  <Projects />,
-  document.getElementById('cv-projects')
-);
-
-ReactDom.render(
   <WorkExperience url="/api/WorkExperiences" pollInterval={18000} />,
   document.getElementById('cv-work')
 );

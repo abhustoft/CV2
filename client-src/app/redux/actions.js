@@ -1,3 +1,6 @@
+export const ADD_PROJECT = 'ADD_PROJECT'
+export const TOGGLE_PROJECT = 'TOGGLE_PROJECT'
+
 
 export function editNew(txt){
   return {
@@ -7,9 +10,21 @@ export function editNew(txt){
 }
 
 export function togglePhoto(){
+  return {type: 'togglePhoto'}
+}
+
+export function showProjects(id){
+  return {type: TOGGLE_PROJECT, id}
+}
+
+export function addProject(id){
   return {
-    type: 'togglePhoto'
+    type: ADD_PROJECT,
+    hide: true,
+    id
   }
 }
+
+
 
 

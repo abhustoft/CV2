@@ -3,9 +3,6 @@ import * as ReactDom from 'react-dom';
 import { togglePhoto } from '../redux/actions'
 
 var Photo = React.createClass({
-  componentDidMount: function() {
-    console.log('Phto component rendered');
-  },
   render: function() {
     const {dispatch, showPhoto} = this.props;
     const viewClass = showPhoto.show ? '' : 'cv-hidden';
