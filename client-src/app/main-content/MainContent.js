@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { connect } from 'react-redux'
 
-import {Logo} from '../logo/logo';
 import {Photo} from '../photo/photo';
 import {Description} from '../description/description';
 import {KeyInfo} from '../keyInfo/keyInfo';
@@ -46,7 +45,6 @@ var MainContent = React.createClass({
     return (
       <div className="cv-first-page" onClick={sendIt}>
         <div className="cv-profile">
-          <Logo />
           <Description
             profileTexts = {this.state.profileTexts}
             name = {this.state.name}

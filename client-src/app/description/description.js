@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { togglePhoto } from '../redux/actions'
+import {Logo} from '../logo/logo';
 
 var Description = React.createClass({
 
@@ -23,6 +24,7 @@ var Description = React.createClass({
 
     return (
       <div className="cv-description">
+        <Logo />
         <div className="cv-description__heading">Konsulentprofil</div>
         <div className="cv-description__name"
              onClick={togglePhotoView}>
