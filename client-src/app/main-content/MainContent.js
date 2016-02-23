@@ -44,16 +44,18 @@ var MainContent = React.createClass({
       dispatch(editNew('clicked to edit'));
     }
     return (
-      <div className="cv-profile" onClick={sendIt}>
-        <Logo />
-        <Description
-          profileTexts = {this.state.profileTexts}
-          name = {this.state.name}
-          dispatch={dispatch}
-        />
-        <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
-        <KeyInfo />
-        <Projects />
+      <div className="cv-first-page" onClick={sendIt}>
+        <div className="cv-profile">
+          <Logo />
+          <Description
+            profileTexts = {this.state.profileTexts}
+            name = {this.state.name}
+            dispatch={dispatch}
+          />
+          <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
+          <KeyInfo />
+        </div>
+        <Projects dispatch={dispatch} showProjects={myState.showProjects}/>
       </div>
     );
   }

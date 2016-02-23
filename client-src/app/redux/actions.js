@@ -17,9 +17,10 @@ export function showProjects(id){
   return {type: TOGGLE_PROJECT, id}
 }
 
-export function addProject(id){
+export function addProject(name, id){
   return {
     type: ADD_PROJECT,
+    name: name,
     hide: true,
     id
   }

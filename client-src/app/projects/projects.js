@@ -9,9 +9,11 @@ var Projects = React.createClass({
     fetch('/api/Projects')
       .then(response => response.json())
       .then(json => {
-        console.log(json);
+        console.log('Projects fetched: ', json);
         this.setState({projects: json});
-        //dispatch(addProject(json.id))
+        json.forEach( (project) => {
+          this.props.dispatch(addProject(project.Company, project.id))
+        })
       });
   },
 
@@ -24,6 +26,9 @@ var Projects = React.createClass({
   },
 
   render: function() {
+    const {showProjects} = this.props;
+    console.log('Got showProjects state: ', showProjects)
+
     const projects = this.state.projects
       .map(function({id,
         Company,
@@ -38,9 +43,13 @@ var Projects = React.createClass({
           const formattedFrom = From.substring(0,7)
           const formattedTo = To.substring(0,7)
 
-          //const {dispatch, showProjects} = this.props;
-          //const viewClass = showProjects.show ? '' : 'cv-hide';
-          const cvClass = `cv-project` //`cv-project ${viewClass}`
+          const shouldHide = showProjects.filter( project => {
+            return (project.id === id) && project.hide
+          })
+
+          let viewClass = shouldHide.length ? 'cv-hide' : '';
+
+          const cvClass = `cv-project ${viewClass}`
 
           return (
             <div key={id} className={cvClass}>

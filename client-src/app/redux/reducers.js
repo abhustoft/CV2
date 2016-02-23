@@ -24,8 +24,10 @@ function projectReducer(state, action) {
     case ADD_PROJECT:
       return {
         id: action.id,
-        hide: !state.hide
+        name: action.name,
+        hide: true
       }
+
     case TOGGLE_PROJECT:
       if (state.id !== action.id) {
         return state
@@ -35,6 +37,7 @@ function projectReducer(state, action) {
         ...state,
         hide: !state.hide
       }
+
     default:
       return state
   }
@@ -44,6 +47,14 @@ function projectReducer(state, action) {
 function projectsReducer(state = [], action) {
   switch (action.type) {
     case 'ADD_PROJECT':
+      const alreadyInState = state.findIndex(project => {
+        return project.id === action.id
+      })
+
+      if (alreadyInState > -1) {
+        return state
+      }
+
       return [
         ...state,
         projectReducer(undefined, action)
