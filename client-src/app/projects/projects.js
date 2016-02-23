@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-import { addProject } from '../redux/actions'
+import { addProject, toggleProject } from '../redux/actions'
 
 var Projects = React.createClass({
 
@@ -26,7 +26,7 @@ var Projects = React.createClass({
   },
 
   render: function() {
-    const {showProjects} = this.props;
+    const {dispatch, showProjects} = this.props;
     console.log('Got showProjects state: ', showProjects)
 
     const projects = this.state.projects
@@ -51,7 +51,12 @@ var Projects = React.createClass({
 
           const cvClass = `cv-project ${viewClass}`
 
-          return (
+          const toggleProjectView = function () {
+            dispatch(toggleProject(id));
+          };
+
+
+        return (
             <div key={id} className={cvClass}>
               <div className="cv-project__period">
                 <div className="cv-project__from">{formattedFrom} - </div>
@@ -59,7 +64,7 @@ var Projects = React.createClass({
               </div>
 
               <div className="cv-project__content">
-                <div className="cv-project__company">{Company}</div>
+                <div className="cv-project__company" onClick={toggleProjectView}>{Company}</div>
                 <div className="cv-project__sub-content">
                   <p className="cv-project__company-description">{CompanyDescription}</p>
                   <p className="cv-project__description">{Description}</p>

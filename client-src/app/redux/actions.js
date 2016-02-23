@@ -13,7 +13,7 @@ export function togglePhoto(){
   return {type: 'togglePhoto'}
 }
 
-export function showProjects(id){
+export function toggleProject(id){
   return {type: TOGGLE_PROJECT, id}
 }
 

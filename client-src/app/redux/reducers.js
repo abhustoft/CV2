@@ -33,10 +33,11 @@ function projectReducer(state, action) {
         return state
       }
 
-      return {
+      const nyst = {
         ...state,
         hide: !state.hide
       }
+      return nyst
 
     default:
       return state
@@ -61,7 +62,7 @@ function projectsReducer(state = [], action) {
       ]
     case 'TOGGLE_PROJECT':
       return state.map(project => {
-        projectReducer(project, action)
+        return projectReducer(project, action)
       })
     default:
       return state
