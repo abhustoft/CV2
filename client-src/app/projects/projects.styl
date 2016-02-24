@@ -5,7 +5,9 @@ text-width = 40rem;
 
 .cv-projects {
   order: 4;
+  padding-top: logo-height;
 }
+
 .cv-projects__list {
   display: flex;
   flex-direction: row;
@@ -33,7 +35,16 @@ text-width = 40rem;
   .cv-project__period {
     order: 2;
   }
+}
 
+.cv-project--size {
+  height: 2rem;
+}
+
+@media all and (max-width:700px) {
+  .cv-project--size {
+    height: 4rem;
+  }
 }
 
 .cv-project__period {
@@ -83,24 +94,25 @@ text-width = 40rem;
 }
 
 .cv-project__sub-content {
-  transition: max-height .4s ease-out;
-  max-height: 600px;  // Used as an end-point for the transition
-                      // by .cv-project--hide
-                      // From http://css3.bradshawenterprises.com/animating_height/
   overflow: hidden;
 }
 
-.cv-projects__heading {
-  color: capgemini-light-blue;
-  font-size: small-header;
+@media all and (min-width:700px) {
+  .cv-project__sub-content {
+    transition: max-height .4s ease-out;
+    max-height: 600px; // Used as an end-point for the transition
+    // by .cv-project--hide
+    // From http://css3.bradshawenterprises.com/animating_height/
+  }
 }
 
 .cv-project--hide {
   max-height: 0;
 }
 
-.cv-project--size {
-  height: 2rem;
+.cv-projects__heading {
+  color: capgemini-light-blue;
+  font-size: small-header;
 }
 
 .cv-project__tools {
