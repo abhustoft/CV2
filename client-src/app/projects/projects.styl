@@ -10,12 +10,30 @@ text-width = 40rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .cv-project {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
+  max-width: 50rem;
+}
+
+@media all and (max-width:700px) {
+  .cv-project {
+    flex-direction: column;
+  }
+
+  .cv-project__content {
+    order: 1;
+  }
+
+  .cv-project__period {
+    order: 2;
+  }
+
 }
 
 .cv-project__period {
@@ -25,7 +43,7 @@ text-width = 40rem;
   font-weight: bold;
   min-width: 9rem;
   white-space: pre;
-  padding-right: 5rem;
+  padding: .2rem 5rem 0 .2rem;
 }
 
 @media all and (max-width:900px) {
@@ -34,7 +52,13 @@ text-width = 40rem;
   }
 }
 
+.cv-project__to,
+.cv-project__from {
+  color: capgemini-dark-blue;
+}
+
 .cv-project__company {
+  color: capgemini-dark-blue;
   font-weight: bold;
 }
 
@@ -49,7 +73,8 @@ text-width = 40rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  min-width: 30rem;
+  padding-top: 0.2rem;
+  width: 30rem;
 
   p {
     margin-top: .25rem;
@@ -58,7 +83,7 @@ text-width = 40rem;
 }
 
 .cv-project__sub-content {
-
+  transition: height 4s ease-in-out 1s;
 }
 
 .cv-projects__heading {
@@ -68,5 +93,14 @@ text-width = 40rem;
 
 .cv-project--hide {
   display: none;
+  opacity: 0;
+}
+
+.cv-project--size {
+  height: 2rem;
+}
+
+.cv-project__tools {
+  max-width: 35rem;
 }
 

@@ -47,16 +47,18 @@ var Projects = React.createClass({
             return (project.id === id) && project.hide
           })
 
-          let viewClass = shouldHide.length ? 'cv-project--hide' : '';
+          let viewClass = shouldHide.length ? 'cv-project--hide' : ''
+          let sizeClass = shouldHide.length ? 'cv-project--size' : ''
 
           const contentClasses = `cv-project__sub-content ${viewClass}`
+          const projectClasses = `cv-project ${sizeClass}`
 
           const toggleProjectView = function () {
             dispatch(toggleProject(id));
           };
 
         return (
-            <div key={id} className="cv-project">
+            <div key={id} className={projectClasses}>
               <div className="cv-project__period">
                 <div className="cv-project__from">{formattedFrom} - </div>
                 <div className="cv-project__to">{formattedTo}</div>

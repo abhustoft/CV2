@@ -50,8 +50,8 @@ var MainContent = React.createClass({
             name = {this.state.name}
             dispatch={dispatch}
           />
-          <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
           <KeyInfo />
+          <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
         </div>
         <Projects dispatch={dispatch} showProjects={myState.showProjects}/>
       </div>
