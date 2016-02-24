@@ -83,7 +83,8 @@ text-width = 40rem;
 }
 
 .cv-project__sub-content {
-  transition: height 4s ease-in-out 1s;
+  transition: opacity 1s ease-out;
+  overflow: hidden;
 }
 
 .cv-projects__heading {
@@ -92,8 +93,9 @@ text-width = 40rem;
 }
 
 .cv-project--hide {
-  display: none;
   opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .cv-project--size {
