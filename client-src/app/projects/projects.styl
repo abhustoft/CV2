@@ -83,7 +83,10 @@ text-width = 40rem;
 }
 
 .cv-project__sub-content {
-  transition: opacity 1s ease-out;
+  transition: max-height .4s ease-out;
+  max-height: 600px;  // Used as an end-point for the transition
+                      // by .cv-project--hide
+                      // From http://css3.bradshawenterprises.com/animating_height/
   overflow: hidden;
 }
 
@@ -93,9 +96,7 @@ text-width = 40rem;
 }
 
 .cv-project--hide {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
+  max-height: 0;
 }
 
 .cv-project--size {
