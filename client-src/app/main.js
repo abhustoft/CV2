@@ -10,7 +10,6 @@ import store from './redux/store'
 
 
 import MainContent from './main-content/MainContent';
-import {Projects} from './projects/projects';
 import {ReposContainer} from './gitHub/gitHub';
 import {WorkExperience} from './work/work';
 
