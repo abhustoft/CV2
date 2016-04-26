@@ -11,7 +11,7 @@ var WorkExperience = React.createClass({
       .then(response => response.json())
       .then(json => {
         this.setState({data: json});
-        console.log(json);
+        console.log('Loaded roles from server: ', json);
       });
   },
 

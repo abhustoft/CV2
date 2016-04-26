@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "$(npm bin)/jspm install;$(npm bin)/gulp styl",
-    "test": "jest"
+    "test": "jest",
+    "eslint": "$(npm bin)/gulp eslint"
   },
   "jest": {
     "scriptPreprocessor": "./node_modules/babel-jest",
