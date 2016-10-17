@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-import * as JQuery from 'jquery';
+import * as jQuery from 'jquery';
 import * as Rx from 'rx';
 
 import {GetRepos} from './gitHub__buttons';
@@ -19,19 +19,19 @@ var ReposContainer = React.createClass({
     const getReposClickStream = Rx.Observable.fromEvent(getButton, 'click');
     const clearClickStream = Rx.Observable.fromEvent(clearButton, 'click').map(() => []);
 
-    const requestStream = getReposClickStream.startWith('startup click')
-      .map(() => url)
-      .flatMap((url) => {return Rx.Observable.fromPromise(jQuery.getJSON(url));})
-      .map((repoArray) => {
-        const trimmedRepos = repoArray.map((bigRepo) => {
-          return {name: bigRepo.name, id: bigRepo.id};
-        });
-        return trimmedRepos;})
-      .merge(clearClickStream);
+    // const requestStream = getReposClickStream.startWith('startup click')
+    //   .map(() => url)
+    //   .flatMap((url) => {return Rx.Observable.fromPromise(jQuery.getJSON(url));})
+    //   .map((repoArray) => {
+    //     const trimmedRepos = repoArray.map((bigRepo) => {
+    //       return {name: bigRepo.name, id: bigRepo.id};
+    //     });
+    //     return trimmedRepos;})
+    //   .merge(clearClickStream);
 
-    requestStream.subscribe(function(repos) {
-      containerThis.setState({repos: repos});
-    });
+    // requestStream.subscribe(function(repos) {
+    //   containerThis.setState({repos: repos});
+    // });
 
   },
 

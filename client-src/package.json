@@ -64,7 +64,7 @@
     "webpack-shell-plugin": "^0.4.3"
   },
   "dependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
