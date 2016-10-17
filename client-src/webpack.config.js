@@ -18,7 +18,7 @@ var config = {
     },
     output: {                     // output folder
         path: './dist',           // folder path
-        filename: '[name].js',     // file names
+        filename: '[name].js',    // file names
         publicPath: './dist/'
     },
     resolve: {
@@ -41,7 +41,6 @@ var config = {
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
-                    presets: ['react', 'es2015', 'es2016', 'es2017', 'stage-2'],
                     cacheDirectory: 'babel-cache'
                 }
             },
