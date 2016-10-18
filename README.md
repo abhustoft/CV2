@@ -37,3 +37,12 @@
 * Greensock animation?
 * Offline? Upup (service workers)? PouchDB?
 
+## Run in Docker container
+docker build -t abhustoft/cv .
+docker images
+docker run -p 3003:3000 -d abhustoft/cv
+docker ps
+docker logs 956c2a63d891
+curl -i localhost:3003
+
+
