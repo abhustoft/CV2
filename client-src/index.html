@@ -11,6 +11,20 @@
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="app/css/screen.css">
 
+  <script>
+    // Check for browser support of service worker
+    if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('service-worker.js')
+     .then(registration => {
+       // Successful registration
+       console.log('Index.html: Service worker registration successful:', registration);
+     }).catch( err => {
+       // Failed registration, service worker won’t be installed
+       console.log('Index.html: Service worker registration failed, error:', err);
+     });
+    }
+  </script>
+
 </head>
 <body>
       <div id="cv-profile">Logo, profile and condensed info</div>
