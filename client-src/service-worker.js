@@ -3,6 +3,9 @@ var urlsToCache = [
   '/',
   '/dist/main.js',
   '/app/css/screen.css'
+  // Production: ( https://jakearchibald.com/2016/caching-best-practices/)
+  // '/dist/main.<hash>.js',
+  // '/app/css/screen.<hash>.css'
 ];
 self.addEventListener('install', function(event) {
   event.waitUntil(
