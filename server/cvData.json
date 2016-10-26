@@ -36,6 +36,9 @@
       "34": "{\"From\":\"2016-02-23T00:00:00.000Z\",\"To\":\"2016-02-23T00:00:00.000Z\",\"Company\":\"Capgemini\",\"CompanyDescription\":\"long desc\",\"Description\":\"what i do\",\"Role\":\"a dev\",\"SWFramework\":\"lots\",\"Technology\":\"all\",\"Tool\":\"hammer\",\"id\":34}",
       "77": "{\"From\":\"2016-02-23T00:00:00.000Z\",\"To\":\"2016-02-23T00:00:00.000Z\",\"Company\":\"Silly Comp\",\"CompanyDescription\":\"long desc\",\"Description\":\"what i do\",\"Role\":\"a dev\",\"SWFramework\":\"lots\",\"Technology\":\"all\",\"Tool\":\"hammer\",\"id\":77}",
       "78": "{\"From\":\"2016-02-23T00:00:00.000Z\",\"To\":\"2016-02-23T00:00:00.000Z\",\"Company\":\"Acme Corp\",\"CompanyDescription\":\"long desc\",\"Description\":\"what i do\",\"Role\":\"a dev\",\"SWFramework\":\"lots\",\"Technology\":\"all\",\"Tool\":\"hammer\",\"id\":78}"
+    },
+    "offline": {
+      "1": "{\"pageContent\":\"<html><head></head><body><h1>Offline</h1></body></html>\",\"id\":1}"
     }
   }
 }

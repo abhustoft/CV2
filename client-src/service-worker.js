@@ -2,7 +2,7 @@
 'use strict';
 
 var config = {
-  version: 'achilles',
+  version: 'v5',
   // Initial caching at startup:
   staticCacheItems: [
     '/app/css/screen.css',
@@ -12,7 +12,7 @@ var config = {
     '/app/images/logo.png',
     '/dist/main.js',
     '/site.js',
-    '/offline/',
+    '/api/offline/',
     '/'
   ],
   cachePathPattern: /^\/(?:(20[0-9]{2}|dist|app|api)\/(.+)?)?$/,
@@ -22,8 +22,12 @@ var config = {
     + '<g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/>'
     + '<text fill="#9B9B9B" font-family="Times New Roman,Times,serif" font-size="72" font-weight="bold">'
     + '<tspan x="93" y="172">offline</tspan></text></g></svg>',
-  offlinePage: '/offline/'
+  offlinePage: '/offline/',
 };
+
+function cacheName (key, opts) {
+  return `${opts.version}-${key}`;
+}
 
 function addToCache (cacheKey, request, response) {
   if (response.ok) {
@@ -44,6 +48,17 @@ function fetchFromCache (event) {
   });
 }
 
+function onActivate (event, opts) {
+  return caches.keys()
+    .then(cacheKeys => {
+      var oldCacheKeys = cacheKeys.filter(key =>
+        key.indexOf(opts.version) !== 0
+      );
+      var deletePromises = oldCacheKeys.map(oldKey => caches.delete(oldKey));
+      return Promise.all(deletePromises);
+    });
+}
+
 function offlineResponse (resourceType, opts) {
   if (resourceType === 'image') {
     return new Response(opts.offlineImage,
@@ -57,7 +72,8 @@ function offlineResponse (resourceType, opts) {
 
 self.addEventListener('install', event => {
   function onInstall (event, opts) {
-    return caches.open('static')
+  	var cacheKey = cacheName('static', opts);
+    return caches.open(cacheKey)
       .then(cache =>
         cache.addAll(opts.staticCacheItems).
         then( () => console.log('Stashed the static stuff.'))
@@ -66,11 +82,16 @@ self.addEventListener('install', event => {
 
   event.waitUntil(
     onInstall(event, config)
+    .then( () => self.skipWaiting() )
   );
+
 });
 
 self.addEventListener('activate', event => {
-
+	event.waitUntil(
+    	onActivate(event, config)
+     		.then( () => self.clients.claim() )
+  	);
 });
 
 self.addEventListener('fetch', event => {
@@ -105,20 +126,27 @@ self.addEventListener('fetch', event => {
       resourceType = 'image';
     }
 
-    cacheKey = resourceType;
+    cacheKey = cacheName(resourceType, opts);
 
     if (resourceType === 'content') {
+    	console.log('Adding request to content:', request);
       event.respondWith(
         fetch(request)
           .then(response => addToCache(cacheKey, request, response))
           .catch(() => fetchFromCache(event))
           .catch(() => offlineResponse(resourceType, opts))
       );
+    // } else  if (resourceType === 'image') {
+
+    // 	console.log('Adding request to image:', request);
+    // 	// Do not cache, I put all images in static!
     } else {
+
+    	console.log('Fetching/Adding request to static:', request);
       event.respondWith(
         fetchFromCache(event)
           .catch(() => fetch(request))
-            .then(response => addToCache(cacheKey, request, response))
+            .then(response => addToCache(cacheName('static', opts), request, response))
           .catch(() => offlineResponse(resourceType, opts))
       );
     }

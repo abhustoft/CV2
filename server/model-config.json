@@ -47,5 +47,9 @@
   "Project": {
     "dataSource": "db",
     "public": true
+  },
+  "offline": {
+    "dataSource": "db",
+    "public": true
   }
 }
