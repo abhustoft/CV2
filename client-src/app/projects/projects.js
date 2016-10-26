@@ -9,7 +9,7 @@ var Projects = React.createClass({
     fetch('/api/Projects')
       .then(response => response.json())
       .then(json => {
-        console.log('Projects fetched: ', json);
+//        console.log('Projects fetched: ', json);
         this.setState({projects: json});
         json.forEach( (project) => {
           this.props.dispatch(addProject(project.Company, project.id))
@@ -27,7 +27,7 @@ var Projects = React.createClass({
 
   render: function() {
     const {dispatch, showProjects} = this.props;
-    console.log('Got showProjects state: ', showProjects)
+    //console.log('Got showProjects state: ', showProjects)
 
     const projects = this.state.projects
       .map(function({id,

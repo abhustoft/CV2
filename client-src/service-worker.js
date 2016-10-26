@@ -3,10 +3,16 @@
 
 var config = {
   version: 'achilles',
+  // Initial caching at startup:
   staticCacheItems: [
     '/app/css/screen.css',
+    '/app/images/consultant.jpg',
+    '/app/images/photo-camera-with-flash.svg',
+    '/app/images/github-octocat.svg',
+    '/app/images/logo.png',
     '/dist/main.js',
     '/site.js',
+    '/offline/',
     '/'
   ],
   cachePathPattern: /^\/(?:(20[0-9]{2}|dist|app|api)\/(.+)?)?$/,
@@ -53,7 +59,8 @@ self.addEventListener('install', event => {
   function onInstall (event, opts) {
     return caches.open('static')
       .then(cache =>
-        cache.addAll(opts.staticCacheItems)
+        cache.addAll(opts.staticCacheItems).
+        then( () => console.log('Stashed the static stuff.'))
       );
   }
 
@@ -77,10 +84,9 @@ self.addEventListener('fetch', event => {
       isFromMyOrigin    : url.origin === self.location.origin
     };
 
-    console.log('Check if url: ', url);
-    console.log('matches: ',opts.cachePathPattern);
-    console.log('If true, cache: ', criteria.matchesPathPattern);
-
+    // console.log('Check if url: ', url);
+    // console.log('matches: ',opts.cachePathPattern);
+    // console.log('If true, cache: ', criteria.matchesPathPattern);
 
     var failingCriteria    = Object.keys(criteria)
       .filter(criteriaKey => !criteria[criteriaKey]);
@@ -90,7 +96,7 @@ self.addEventListener('fetch', event => {
   function onFetch (event, opts) {
     var request = event.request;
     var acceptHeader = request.headers.get('Accept');
-    var resourceType = 'static';
+    var resourceType = 'static';  // Default:If not image or content, put in static cache
     var cacheKey;
 
     if (acceptHeader.indexOf('text/html') !== -1) {

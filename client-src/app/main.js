@@ -17,7 +17,7 @@
  console.log('Am I controlled by a service worker: ', navigator.serviceWorker.controller);
 
  store.subscribe(() => {
-   console.log('Current MainContent state: ', store.getState());
+   //console.log('Current MainContent state: ', store.getState());
  });
 
   ReactDom.render(
