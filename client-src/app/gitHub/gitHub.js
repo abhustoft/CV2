@@ -33,6 +33,11 @@ var ReposContainer = React.createClass({
       containerThis.setState({repos: repos});
     });
 
+
+	fetch(url).then(function(response) {
+  		console.log('Got repos in application: ', response);
+	});
+
   },
 
   getInitialState: function() {

@@ -2,7 +2,7 @@
 'use strict';
 
 var config = {
-  version: 'v9',
+  version: 'v10',
   // Initial caching at startup:
   staticCacheItems: [
     '/app/css/screen.css',
@@ -125,10 +125,11 @@ self.addEventListener('fetch', event => {
 
     cacheKey = cacheName(resourceType, opts);
 
-	if (request.url.indexOf('WorkExperiences') > -1) {
+console.log(request.url);
+	if ((request.url.indexOf('WorkExperiences') > -1) || (request.url.indexOf('repos') > -1)) {
 		event.respondWith(
         fetch(request)
-          .then(response => addToCache(cacheName('WorkExperience', opts), request, response))
+          .then(response => addToCache(cacheName('Changeable', opts), request, response))
           .catch(() => fetchFromCache(event))
           .catch(() => offlineResponse(resourceType, opts))
       );
