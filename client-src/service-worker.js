@@ -119,17 +119,18 @@ self.addEventListener('fetch', event => {
       resourceType = 'content';
     } else if (acceptHeader.indexOf('image') !== -1) {
       resourceType = 'image';
-    }else if (acceptHeader.indexOf('WorkExperience') !== -1) {
-      resourceType = 'WorkExperience';
+    }else if ((request.url.indexOf('WorkExperiences') > -1) || (request.url.indexOf('repos') > -1)) {
+      resourceType = 'Changing';
     }
 
     cacheKey = cacheName(resourceType, opts);
 
 console.log(request.url);
-	if ((request.url.indexOf('WorkExperiences') > -1) || (request.url.indexOf('repos') > -1)) {
+
+	if (resourceType === 'Changing') {
 		event.respondWith(
         fetch(request)
-          .then(response => addToCache(cacheName('Changeable', opts), request, response))
+          .then(response => addToCache(cacheKey, request, response))
           .catch(() => fetchFromCache(event))
           .catch(() => offlineResponse(resourceType, opts))
       );
