@@ -2,7 +2,7 @@
 'use strict';
 
 var config = {
-  version: 'v5',
+  version: 'v9',
   // Initial caching at startup:
   staticCacheItems: [
     '/app/css/screen.css',
@@ -15,7 +15,7 @@ var config = {
     '/api/offline/',
     '/'
   ],
-  cachePathPattern: /^\/(?:(20[0-9]{2}|dist|app|api)\/(.+)?)?$/,
+  cachePathPattern: /^\/(?:(dist|app|api)\/(.+)?)?$/,
   offlineImage: '<svg role="img" aria-labelledby="offline-title"'
     + ' viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">'
     + '<title id="offline-title">Offline</title>'
@@ -75,8 +75,7 @@ self.addEventListener('install', event => {
   	var cacheKey = cacheName('static', opts);
     return caches.open(cacheKey)
       .then(cache =>
-        cache.addAll(opts.staticCacheItems).
-        then( () => console.log('Stashed the static stuff.'))
+        cache.addAll(opts.staticCacheItems)
       );
   }
 
@@ -105,10 +104,6 @@ self.addEventListener('fetch', event => {
       isFromMyOrigin    : url.origin === self.location.origin
     };
 
-    // console.log('Check if url: ', url);
-    // console.log('matches: ',opts.cachePathPattern);
-    // console.log('If true, cache: ', criteria.matchesPathPattern);
-
     var failingCriteria    = Object.keys(criteria)
       .filter(criteriaKey => !criteria[criteriaKey]);
     return !failingCriteria.length;
@@ -124,25 +119,28 @@ self.addEventListener('fetch', event => {
       resourceType = 'content';
     } else if (acceptHeader.indexOf('image') !== -1) {
       resourceType = 'image';
+    }else if (acceptHeader.indexOf('WorkExperience') !== -1) {
+      resourceType = 'WorkExperience';
     }
 
     cacheKey = cacheName(resourceType, opts);
 
-    if (resourceType === 'content') {
-    	console.log('Adding request to content:', request);
+	if (request.url.indexOf('WorkExperiences') > -1) {
+		event.respondWith(
+        fetch(request)
+          .then(response => addToCache(cacheName('WorkExperience', opts), request, response))
+          .catch(() => fetchFromCache(event))
+          .catch(() => offlineResponse(resourceType, opts))
+      );
+
+    } else if (resourceType === 'content') {
       event.respondWith(
         fetch(request)
           .then(response => addToCache(cacheKey, request, response))
           .catch(() => fetchFromCache(event))
           .catch(() => offlineResponse(resourceType, opts))
       );
-    // } else  if (resourceType === 'image') {
-
-    // 	console.log('Adding request to image:', request);
-    // 	// Do not cache, I put all images in static!
     } else {
-
-    	console.log('Fetching/Adding request to static:', request);
       event.respondWith(
         fetchFromCache(event)
           .catch(() => fetch(request))

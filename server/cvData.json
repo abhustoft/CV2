@@ -5,7 +5,7 @@
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
-    "WorkExperience": 4,
+    "WorkExperience": 1477510138082,
     "Name": 2,
     "ProfileText": 14,
     "Project": 80
@@ -19,7 +19,10 @@
     "WorkExperience": {
       "1": "{\"company\":\"scanvest\",\"start\":\"1995-11-17T00:00:00.000Z\",\"end\":\"1996-01-17T00:00:00.000Z\",\"companyDescription\":\"scanvest makes interkom\",\"roleDescription\":\"I made stuff\",\"role\":\"Developer\",\"id\":1}",
       "2": "{\"company\":\"IK\",\"start\":\"1997-01-17T00:00:00.000Z\",\"end\":\"1999-08-17T00:00:00.000Z\",\"companyDescription\":\"SA place in Asker\",\"roleDescription\":\"watched stuff being made\",\"role\":\"Project Manager\",\"id\":2}",
-      "3": "{\"company\":\"IK\",\"start\":\"1997-01-17T00:00:00.000Z\",\"end\":\"1999-08-17T00:00:00.000Z\",\"companyDescription\":\"SA place in Asker - repeating company description!!!\",\"roleDescription\":\"Making things in Asker\",\"role\":\"Developer\",\"id\":3}"
+      "3": "{\"company\":\"IK\",\"start\":\"1997-01-17T00:00:00.000Z\",\"end\":\"1999-08-17T00:00:00.000Z\",\"companyDescription\":\"SA place in Asker - repeating company description!!!\",\"roleDescription\":\"Making things in Asker\",\"role\":\"Developer\",\"id\":3}",
+      "1477510115288": "{\"company\":\"capg\",\"start\":\"1992-11-16T23:00:00.000Z\",\"end\":\"1993-03-31T22:00:00.000Z\",\"companyDescription\":\"bigish\",\"roleDescription\":\"coding\",\"role\":\"dev\",\"id\":1477510115288}",
+      "1477510138080": "{\"company\":\"zxxz\",\"start\":\"1992-11-16T23:00:00.000Z\",\"end\":\"1993-03-31T22:00:00.000Z\",\"companyDescription\":\"zxcxzc\",\"roleDescription\":\"zxczc\",\"role\":\"zxcxzc\",\"id\":1477510138080}",
+      "1477510138081": "{\"company\":\"cappy\",\"start\":\"2016-10-26T00:00:00.000Z\",\"end\":\"2016-10-26T00:00:00.000Z\",\"companyDescription\":\"bigg\",\"roleDescription\":\"devvv\",\"role\":\"codee\",\"id\":1477510138081}"
     },
     "Name": {
       "1": "{\"FullName\":\"Alf Bjørn Hustoft\",\"id\":1}"
