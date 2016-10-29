@@ -4,33 +4,13 @@
   "description": "Prototyping new tech",
   "main": "index.js",
   "scripts": {
-    "postinstall": "$(npm bin)/jspm install;$(npm bin)/gulp styl",
-    "test": "jest",
+    "postinstall": "$(npm bin)/gulp styl",
     "eslint": "$(npm bin)/gulp eslint",
     "build:dev": "webpack -d",
     "build:error": "webpack --display-error-details",
     "build:prod": "PROD=1 webpack",
     "build:prod:min": "PROD=1 webpack -p",
     "build:watch": "webpack --watch"
-  },
-  "jest": {
-    "scriptPreprocessor": "./node_modules/babel-jest",
-    "testPathDirs": [
-      "app/"
-    ],
-    "testFileExtensions": [
-      "js"
-    ],
-    "testPathIgnorePatterns": [
-      "./node_modules/",
-      "./jspm_packages"
-    ],
-    "unmockedModulePathPatterns": [
-      "./node_modules/react",
-      "./node_modules/fbjs",
-      "./node_modules/react-dom",
-      "./node_modules/react-addons-test-utils"
-    ]
   },
   "author": "Alf Bjørn Hustoft",
   "license": "ISC",
@@ -54,11 +34,8 @@
     }
   },
   "devDependencies": {
-    "babel-jest": "*",
     "clean-webpack-plugin": "^0.1.13",
-    "html-dist": "^0.1.0",
-    "jest-cli": "*",
-    "react-addons-test-utils": "~0.14.0",
+    "react-addons-test-utils": "~15.3.2",
     "uglifyjs": "^2.4.10",
     "webpack": "^1.13.2",
     "webpack-shell-plugin": "^0.4.3"
@@ -87,7 +64,6 @@
     "gulp-uglify": "^1.5.1",
     "gulp-watch": "^4.3.5",
     "harmonize": "^1.4.1",
-    "jest-cli": "^0.8",
     "jquery": "^3.1.1",
     "jspm": "^0.16.25",
     "react": "^15.3.2",
