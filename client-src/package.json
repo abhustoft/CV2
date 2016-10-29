@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.13",
-    "react-addons-test-utils": "~15.3.2",
     "uglifyjs": "^2.4.10",
     "webpack": "^1.13.2",
     "webpack-shell-plugin": "^0.4.3"
@@ -67,7 +66,7 @@
     "jquery": "^3.1.1",
     "jspm": "^0.16.25",
     "react": "^15.3.2",
-    "react-addons-test-utils": "~0.14.0",
+    "react-addons-test-utils": "~15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "redux": "^3.6.0",
