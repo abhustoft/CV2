@@ -12,7 +12,6 @@ var config = {
     '/app/images/logo.png',
     '/dist/main.js',
     '/site.js',
-    '/api/offline/',
     '/'
   ],
   cachePathPattern: /^\/(?:(dist|app|api)\/(.+)?)?$/,
@@ -22,7 +21,7 @@ var config = {
     + '<g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/>'
     + '<text fill="#9B9B9B" font-family="Times New Roman,Times,serif" font-size="72" font-weight="bold">'
     + '<tspan x="93" y="172">offline</tspan></text></g></svg>',
-  offlinePage: '/offline/',
+  offlinePage: '<html><head></head><body><h1 style="max-width:20em;margin: 10% auto">You\'re totally offline, man!</h1></body></html>',
 };
 
 function cacheName (key, opts) {
@@ -61,11 +60,15 @@ function onActivate (event, opts) {
 
 function offlineResponse (resourceType, opts) {
   if (resourceType === 'image') {
+  	console.log('returning offline image');
     return new Response(opts.offlineImage,
       { headers: { 'Content-Type': 'image/svg+xml' } }
     );
   } else if (resourceType === 'content') {
-    return caches.match(opts.offlinePage);
+  	console.log('returning offline content');
+  	 return new Response(opts.offlinePage,
+      { headers: { 'Content-Type': 'text/html' } }
+    );
   }
   return undefined;
 }
