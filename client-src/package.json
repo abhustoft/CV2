@@ -4,8 +4,8 @@
   "description": "Prototyping new tech",
   "main": "index.js",
   "scripts": {
-    "postinstall": "$(npm bin)/gulp styl",
-    "eslint": "$(npm bin)/gulp eslint",
+    "postinstall": "./node_modules/gulp/bin/gulp.js styl",
+    "eslint": "./node_modules/gulp/bin/gulp.js eslint",
     "build:dev": "./node_modules/webpack/bin/webpack.js -d",
     "build:error": "./node_modules/webpack/bin/webpack.js --display-error-details",
     "build": "PROD=1 ./node_modules/webpack/bin/webpack.js",
