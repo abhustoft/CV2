@@ -4,8 +4,8 @@
   "main": "server/server.js",
   "scripts": {
     "postinstall": "cd client-src; npm install",
-    "start": "node .",
-    "pretest": "jshint ."
+    "start": "node server/server.js",
+    "build": "cd client-src; npm run build:dev"
   },
   "dependencies": {
     "async": "^1.5.0",

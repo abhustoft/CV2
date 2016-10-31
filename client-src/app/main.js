@@ -4,7 +4,7 @@
  import * as Rx from 'rx';
 /*eslint-enable no-unused-vars*/
 
- import marked from 'marked';
+ //import marked from 'marked';
  import { Provider } from 'react-redux'
  import store from './redux/store'
 
@@ -13,7 +13,7 @@
  import {ReposContainer} from './gitHub/gitHub';
  import {WorkExperience} from './work/work';
 
- console.log(marked('I am using __markdown__.'));
+ //console.log(marked('I am using __markdown__.'));
  console.log('Am I controlled by a service worker: ', navigator.serviceWorker.controller);
 
  store.subscribe(() => {
