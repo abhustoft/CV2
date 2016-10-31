@@ -4,13 +4,12 @@
   "description": "Prototyping new tech",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./node_modules/gulp/bin/gulp.js styl",
     "eslint": "./node_modules/gulp/bin/gulp.js eslint",
-    "build:dev": "./node_modules/webpack/bin/webpack.js -d",
-    "build:error": "./node_modules/webpack/bin/webpack.js --display-error-details",
-    "build": "PROD=1 ./node_modules/webpack/bin/webpack.js",
-    "build:prod:min": "PROD=1 ./node_modules/webpack/bin/webpack.js -p",
-    "build:watch": "./node_modules/webpack/bin/webpack.js --watch"
+    "build:dev": "./node_modules/gulp/bin/gulp.js styl;./node_modules/webpack/bin/webpack.js -d",
+    "build:error": "./node_modules/gulp/bin/gulp.js styl;./node_modules/webpack/bin/webpack.js --display-error-details",
+    "build": "./node_modules/gulp/bin/gulp.js styl; PROD=1 ./node_modules/webpack/bin/webpack.js",
+    "build:prod:min": "./node_modules/gulp/bin/gulp.js styl;PROD=1 ./node_modules/webpack/bin/webpack.js -p",
+    "build:watch": "./node_modules/gulp/bin/gulp.js styl;./node_modules/webpack/bin/webpack.js --watch"
   },
   "author": "Alf Bjørn Hustoft",
   "license": "ISC",
