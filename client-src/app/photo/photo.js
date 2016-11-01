@@ -2,6 +2,8 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { togglePhoto } from '../redux/actions'
 
+require('./photo.styl');
+
 var Photo = React.createClass({
   render: function() {
     const {dispatch, showPhoto} = this.props;

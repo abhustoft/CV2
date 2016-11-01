@@ -3,6 +3,8 @@ import * as ReactDom from 'react-dom';
 
 import { addProject, toggleProject } from '../redux/actions'
 
+require('./projects.styl');
+
 var Projects = React.createClass({
 
   loadProjects: function() {

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
+require('./logo.styl');
+
 var Logo = React.createClass({
   render: function() {
     return (

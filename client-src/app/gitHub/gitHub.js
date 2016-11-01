@@ -7,6 +7,8 @@ import * as Rx from 'rx';
 import {GetRepos} from './gitHub__buttons';
 import {GitHubRepos} from './gitHub__repos';
 
+require('./gitHub.styl');
+
 var ReposContainer = React.createClass({
 
   componentDidMount: function() {

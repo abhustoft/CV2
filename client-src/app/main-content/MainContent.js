@@ -9,6 +9,8 @@ import {Projects} from '../projects/projects';
 
 import { editNew } from '../redux/actions'
 
+require('./MainContent.styl');
+
 var MainContent = React.createClass({
   loadProfileText: function() {
     fetch('/api/ProfileTexts')

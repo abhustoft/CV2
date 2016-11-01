@@ -1,7 +1,8 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 var path = require('path');
 var SRC = path.join(__dirname, 'client-src/');
 var images = path.join(__dirname, 'client-src/', 'image/');
-var styles = path.join(__dirname, 'client-src/');
 var fonts = path.join(__dirname, 'client-src/', 'fonts/');
 var NODE_MODULES = path.join(__dirname, 'node_modules/');
 var webpack = require('webpack');
@@ -46,7 +47,7 @@ var config = {
             },
             {
                 test: /\.styl$/,
-                loader: 'style!css!stylus',
+                loader:  ExtractTextPlugin.extract("style-loader", "css-loader!stylus-loader"),
                 exclude: /node_modules/
             },
             {
@@ -69,7 +70,8 @@ var config = {
         definePlugin,
         //new webpack.optimize.CommonsChunkPlugin('common.js'),
         new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']}),
-        new CleanWebpackPlugin(['dist'], {root: __dirname})
+        new CleanWebpackPlugin(['dist'], {root: __dirname}),
+        new ExtractTextPlugin("style.css", {allChunks: false})
 
     ],
     eslint: {

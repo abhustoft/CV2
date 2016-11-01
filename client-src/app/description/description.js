@@ -3,6 +3,8 @@ import * as ReactDom from 'react-dom';
 import { togglePhoto } from '../redux/actions'
 import {Logo} from '../logo/logo';
 
+require('./description.styl');
+
 var Description = React.createClass({
 
   render: function() {

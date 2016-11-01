@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
+require('./languages.styl');
+
 var Languages = React.createClass({
   render: function() {
     return (

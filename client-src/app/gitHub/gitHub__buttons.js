@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
+require('./gitHub__buttons.styl');
+
 var GetRepos = React.createClass({
   render: function() {
     return (

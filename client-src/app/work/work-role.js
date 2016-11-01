@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
+require('./work-role.styl');
+
 var WorkRole = React.createClass({
   render: function() {
     return (

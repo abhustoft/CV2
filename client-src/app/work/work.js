@@ -4,6 +4,8 @@ import * as ReactDom from 'react-dom';
 import {RoleList} from './role-list';
 import {WorkRoleForm} from './work-role-form';
 
+require('./work.styl');
+
 var WorkExperience = React.createClass({
 
   loadRolesFromServer: function() {
