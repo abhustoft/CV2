@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
-    "postinstall": "cd client-src; pwd; npm install",
     "start": "node server/server.js",
-    "build": "cd client-src; npm run build:dev"
+    "build": "cd client-src; npm install; npm run build:dev"
   },
   "dependencies": {
     "async": "^1.5.0",
