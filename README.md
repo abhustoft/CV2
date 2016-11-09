@@ -27,7 +27,8 @@
 * CSS Flexbox
 * BEM
 * Rx.js
-* Gulp
+* Webpack
+* Docker
 
 ## To do
 * Test: http://facebook.github.io/react/docs/test-utils.html#shallow-rendering, https://github.com/airbnb/enzyme, Karma/Mocha, Chai, Sinon
@@ -44,5 +45,8 @@
 * docker ps                                // List running images
 * docker logs 956c2a63d891                 // Output from image
 * curl -i localhost:3003                   // Load from image
+
+* docker login                             // Log in to dockerhub
+* docker push abhustoft/cv:<ver>           // Push image to dockerhub
 
 
