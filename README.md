@@ -36,12 +36,13 @@
 * CSS http://philipwalton.com/articles/css-architecture/#organize-your-css-into-a-logical-structure
 * Otto or Strongloop deploy
 * Greensock animation?
-* Offline? Upup (service workers)? PouchDB?
+* Offline? Upup (service workers)? PouchDB?docker run --name CVv2 -d -p 8080:3000 -i -t abhustoft/cv
 
 ## Run in Docker container
 * docker build -t abhustoft/cv .           // Build image from Dockerfile
 * docker images                            // List images
-* docker run -p 3003:3000 -d abhustoft/cv  // Run image
+* docker run -p 3003:3000 -d abhustoft/cv  // Run image - Development machine
+* docker run --name CVv2 -d -p 8080:3000 -i -t abhustoft/cv // Run on cloud
 * docker ps                                // List running images
 * docker logs 956c2a63d891                 // Output from image
 * curl -i localhost:3003                   // Load from image
