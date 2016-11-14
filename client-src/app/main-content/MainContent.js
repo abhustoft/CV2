@@ -40,22 +40,20 @@ var MainContent = React.createClass({
   },
   render: function() {
     const {dispatch, myState} = this.props;
-    const sendIt = function () {
-      console.log('Clicked the profile');
-      dispatch(editNew('clicked to edit'));
-    };
+    console.log('Main content got state:', myState);
     return (
-      <div className="cv-first-page" onClick={sendIt}>
+      <div className="cv-first-page">
         <div className="cv-profile">
           <Description
+            show={myState.showDescription}
             profileTexts = {this.state.profileTexts}
             name = {this.state.name}
             dispatch={dispatch}
           />
-          <KeyInfo />
           <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
         </div>
         <Projects dispatch={dispatch} showProjects={myState.showProjects}/>
+        <KeyInfo />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import {combineReducers} from  'redux'
-import { ADD_PROJECT, TOGGLE_PROJECT } from './actions'
+import { ADD_PROJECT, TOGGLE_PROJECT, TOGGLE_DESCRIPTION } from './actions'
 
 function editReducer(state = {'on': false}, action) {
   switch (action.type) {
@@ -19,6 +19,24 @@ function photoReducer(state = {'show': true}, action) {
   }
 }
 
+
+function descriptionReducer(state = {'hide': true}, action) {
+  switch (action.type) {
+
+    case TOGGLE_DESCRIPTION:
+
+      const newState = {
+        ...state,
+        hide: !state.hide
+      };
+      console.log('Reducer returning:', state);
+      return newState;
+
+    default:
+      return state
+  }
+}
+
 function projectReducer(state, action) {
   switch (action.type) {
     case ADD_PROJECT:
@@ -26,7 +44,7 @@ function projectReducer(state, action) {
         id: action.id,
         name: action.name,
         hide: true
-      }
+      };
 
     case TOGGLE_PROJECT:
       if (state.id !== action.id) {
@@ -36,14 +54,13 @@ function projectReducer(state, action) {
       const nyst = {
         ...state,
         hide: !state.hide
-      }
-      return nyst
+      };
+      return nyst;
 
     default:
       return state
   }
 }
-
 
 function projectsReducer(state = [], action) {
   switch (action.type) {
@@ -73,7 +90,8 @@ function projectsReducer(state = [], action) {
 const rootReducer = combineReducers({
   editing: editReducer,
   showingPhoto: photoReducer,
-  showProjects: projectsReducer
+  showProjects: projectsReducer,
+  showDescription: descriptionReducer
 })
 
 export default rootReducer;

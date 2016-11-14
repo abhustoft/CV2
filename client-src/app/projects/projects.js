@@ -29,7 +29,6 @@ var Projects = React.createClass({
 
   render: function() {
     const {dispatch, showProjects} = this.props;
-    console.log('Got showProjects state: ', showProjects)
 
     const projects = this.state.projects
       .map(function({id,
@@ -42,8 +41,8 @@ var Projects = React.createClass({
         SWFramework,
         Technology,
         Tool}) {
-          const formattedFrom = From.substring(0,7)
-          const formattedTo = To.substring(0,7)
+          const formattedFrom = From.substring(0,7);
+          const formattedTo = To.substring(0,7);
 
           const shouldHide = showProjects.filter( project => {
             return (project.id === id) && project.hide
@@ -60,14 +59,14 @@ var Projects = React.createClass({
           };
 
         return (
-            <div key={id} className={projectClasses}>
+            <div key={id} className={projectClasses} onClick={toggleProjectView}>
               <div className="cv-project__period">
                 <div className="cv-project__from">{formattedFrom} - </div>
                 <div className="cv-project__to">{formattedTo}</div>
               </div>
 
               <div className="cv-project__content">
-                <div className="cv-project__company" onClick={toggleProjectView}>{Company}</div>
+                <div className="cv-project__company">{Company}</div>
                 <div className={contentClasses}>
                   <p className="cv-project__company-description">{CompanyDescription}</p>
                   <p className="cv-project__description">{Description}</p>

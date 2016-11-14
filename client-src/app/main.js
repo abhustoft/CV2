@@ -13,6 +13,8 @@
  import {ReposContainer} from './gitHub/gitHub';
  import {WorkExperience} from './work/work';
 
+require('./main.styl');
+
  //console.log(marked('I am using __markdown__.'));
  console.log('Am I controlled by a service worker: ', navigator.serviceWorker.controller);
 
