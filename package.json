@@ -5,7 +5,7 @@
   "scripts": {
     "start": "cd server; node server.js",
     "build": "cd client-src; npm install; npm run build",
-    "deploy": "docker build -t abhustoft/cv; docker push abhustoft/cv"
+    "deploy": "docker build -q -t abhustoft/cv .; docker push abhustoft/cv"
   },
   "dependencies": {
     "async": "^1.5.0",

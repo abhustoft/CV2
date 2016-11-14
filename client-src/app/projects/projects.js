@@ -11,7 +11,7 @@ var Projects = React.createClass({
     fetch('/api/Projects')
       .then(response => response.json())
       .then(json => {
-//        console.log('Projects fetched: ', json);
+        console.log('Projects fetched: ', json);
         this.setState({projects: json});
         json.forEach( (project) => {
           this.props.dispatch(addProject(project.Company, project.id))
@@ -29,7 +29,7 @@ var Projects = React.createClass({
 
   render: function() {
     const {dispatch, showProjects} = this.props;
-    //console.log('Got showProjects state: ', showProjects)
+    console.log('Got showProjects state: ', showProjects)
 
     const projects = this.state.projects
       .map(function({id,
@@ -47,13 +47,13 @@ var Projects = React.createClass({
 
           const shouldHide = showProjects.filter( project => {
             return (project.id === id) && project.hide
-          })
+          });
 
-          let viewClass = shouldHide.length ? 'cv-project--hide' : ''
-          let sizeClass = shouldHide.length ? 'cv-project--size' : ''
+          let viewClass = shouldHide.length ? 'cv-project--hide' : '';
+          let sizeClass = shouldHide.length ? 'cv-project--size' : '';
 
-          const contentClasses = `cv-project__sub-content ${viewClass}`
-          const projectClasses = `cv-project ${sizeClass}`
+          const contentClasses = `cv-project__sub-content ${viewClass}`;
+          const projectClasses = `cv-project ${sizeClass}`;
 
           const toggleProjectView = function () {
             dispatch(toggleProject(id));

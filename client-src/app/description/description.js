@@ -26,7 +26,7 @@ var Description = React.createClass({
 
     return (
       <div className="cv-description">
-        <Logo />
+        {/*<Logo />*/}
         <div className="cv-description__heading">Konsulentprofil</div>
         <div className="cv-description__name"
              onClick={togglePhotoView}>
@@ -34,7 +34,7 @@ var Description = React.createClass({
         </div>
         <img  src="app/images/photo-camera-with-flash.svg" alt="GitHub logo"
               className="cv-description__photo"
-              onClick={togglePhotoView}></img>
+              onClick={togglePhotoView} />
         {paragraphs}
       </div>
     );

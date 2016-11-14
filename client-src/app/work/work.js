@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
 import {RoleList} from './role-list';
-import {WorkRoleForm} from './work-role-form';
+// import {WorkRoleForm} from './work-role-form';
 
 require('./work.styl');
 
@@ -57,7 +57,7 @@ var WorkExperience = React.createClass({
       <div className="cv-work">
         <h4>Work Experience</h4>
         <RoleList workRoles={this.state.data}/>
-        <WorkRoleForm onRoleSubmit={this.handleWorkRoleSubmit}/>
+        {/*<WorkRoleForm onRoleSubmit={this.handleWorkRoleSubmit}/>*/}
       </div>
     );
   }

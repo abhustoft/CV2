@@ -39,11 +39,11 @@ var MainContent = React.createClass({
     this.loadName();
   },
   render: function() {
-    const {dispatch, myState} = this.props
+    const {dispatch, myState} = this.props;
     const sendIt = function () {
       console.log('Clicked the profile');
       dispatch(editNew('clicked to edit'));
-    }
+    };
     return (
       <div className="cv-first-page" onClick={sendIt}>
         <div className="cv-profile">
