@@ -2,15 +2,15 @@
 'use strict';
 
 var config = {
-  version: 'v11',
+  version: 'v14',
   // Initial caching at startup:
   staticCacheItems: [
-    '/app/css/screen.css',
+    '/dist/style.css',
     '/app/images/consultant.jpg',
     '/app/images/photo-camera-with-flash.svg',
     '/app/images/github-octocat.svg',
     '/app/images/logo.png',
-    '/dist/main.js',
+    '/app/main.js',
     '/site.js',
     '/'
   ],
@@ -76,7 +76,7 @@ function offlineResponse (resourceType, opts) {
 self.addEventListener('install', event => {
   function onInstall (event, opts) {
   	var cacheKey = cacheName('static', opts);
-    console.log('SW got install event: ', cacheKey);
+    console.log('SW got install event for ', cacheKey);
     return caches.open(cacheKey)
       .then(cache =>
         cache.addAll(opts.staticCacheItems)
