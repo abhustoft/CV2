@@ -40,9 +40,8 @@ var MainContent = React.createClass({
   },
   render: function() {
     const {dispatch, myState} = this.props;
-    console.log('Main content got state:', myState);
     return (
-      <div className="cv-first-page">
+      <div className="">
         <div className="cv-profile">
           <Description
             show={myState.showDescription}
@@ -50,10 +49,11 @@ var MainContent = React.createClass({
             name = {this.state.name}
             dispatch={dispatch}
           />
+          <Projects dispatch={dispatch} showProjects={myState.showProjects}/>
           <Photo dispatch={dispatch} showPhoto={myState.showingPhoto}/>
+          <KeyInfo />
         </div>
-        <Projects dispatch={dispatch} showProjects={myState.showProjects}/>
-        <KeyInfo />
+
       </div>
     );
   }

@@ -67,7 +67,7 @@ function projectsReducer(state = [], action) {
     case 'ADD_PROJECT':
       const alreadyInState = state.findIndex(project => {
         return project.id === action.id
-      })
+      });
 
       if (alreadyInState > -1) {
         return state
@@ -76,11 +76,11 @@ function projectsReducer(state = [], action) {
       return [
         ...state,
         projectReducer(undefined, action)
-      ]
+      ];
     case 'TOGGLE_PROJECT':
       return state.map(project => {
         return projectReducer(project, action)
-      })
+      });
     default:
       return state
   }
@@ -92,6 +92,6 @@ const rootReducer = combineReducers({
   showingPhoto: photoReducer,
   showProjects: projectsReducer,
   showDescription: descriptionReducer
-})
+});
 
 export default rootReducer;

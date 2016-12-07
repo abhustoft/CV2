@@ -2,7 +2,7 @@
 'use strict';
 
 var config = {
-  version: 'v10',
+  version: 'v11',
   // Initial caching at startup:
   staticCacheItems: [
     '/app/css/screen.css',
@@ -76,6 +76,7 @@ function offlineResponse (resourceType, opts) {
 self.addEventListener('install', event => {
   function onInstall (event, opts) {
   	var cacheKey = cacheName('static', opts);
+    console.log('SW got install event: ', cacheKey);
     return caches.open(cacheKey)
       .then(cache =>
         cache.addAll(opts.staticCacheItems)
@@ -84,7 +85,7 @@ self.addEventListener('install', event => {
 
   event.waitUntil(
     onInstall(event, config)
-    .then( () => self.skipWaiting() )
+    .then( () => {self.skipWaiting()} )
   );
 
 });
