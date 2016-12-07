@@ -2,7 +2,7 @@
 'use strict';
 
 var config = {
-  version: 'v14',
+  version: 'v15',
   // Initial caching at startup:
   staticCacheItems: [
     '/dist/style.css',
