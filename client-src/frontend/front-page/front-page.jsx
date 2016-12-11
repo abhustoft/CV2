@@ -5,7 +5,9 @@ const FrontPage = () => {
   const style = {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    paddingLeft: '5vw',
+    paddingRight: '5vw'
   };
   return (
     <div style={style}>

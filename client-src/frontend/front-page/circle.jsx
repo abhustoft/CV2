@@ -4,11 +4,11 @@ const Circle = ({children}) => {
   const circleStyle = {
     borderRadius: '50%',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     width: '35vw',
     height: '35vw',
     backgroundColor: 'red',
-    marginTop: '1em'
+    marginTop: '10vw'
   };
 
   const center = {
