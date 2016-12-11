@@ -5,12 +5,7 @@ var config = {
   version: 'v15',
   // Initial caching at startup:
   staticCacheItems: [
-    '/dist/style.css',
-    '/app/images/consultant.jpg',
-    '/app/images/photo-camera-with-flash.svg',
-    '/app/images/github-octocat.svg',
-    '/app/images/logo.png',
-    '/app/main.js',
+    '/dist/frontpage.js',
     '/site.js',
     '/'
   ],
