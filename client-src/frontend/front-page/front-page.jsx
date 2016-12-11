@@ -4,7 +4,8 @@ import Circle from './circle.jsx'
 const FrontPage = () => {
   const style = {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    justifyContent: 'space-around'
   };
   return (
     <div style={style}>
