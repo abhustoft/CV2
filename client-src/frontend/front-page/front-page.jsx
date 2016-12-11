@@ -2,10 +2,14 @@ import * as React from 'react';
 import Circle from './circle.jsx'
 
 const FrontPage = () => {
+  const style = {
+    display: 'flex',
+    flexWrap: 'wrap'
+  };
   return (
-    <div>
+    <div style={style}>
       <Circle>Myself</Circle>
-      <div>Body</div>
+      <Circle>Career</Circle>
     </div>
   )
 };
