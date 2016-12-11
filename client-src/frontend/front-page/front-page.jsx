@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as ReactDom from 'react-dom';
+import Circle from './circle.jsx'
 
 const FrontPage = () => {
   return (
     <div>
-      <header>Header</header>
+      <Circle>Myself</Circle>
       <div>Body</div>
     </div>
   )
