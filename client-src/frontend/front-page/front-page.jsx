@@ -11,6 +11,8 @@ const FrontPage = () => {
     <div style={style}>
       <Circle>Myself</Circle>
       <Circle>Career</Circle>
+      <Circle>Projects</Circle>
+      <Circle>Tech</Circle>
     </div>
   )
 };

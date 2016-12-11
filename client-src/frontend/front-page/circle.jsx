@@ -5,10 +5,10 @@ const Circle = ({children}) => {
     borderRadius: '50%',
     display: 'flex',
     justifyContent: 'center',
-    width: '30vw',
-    height: '30vw',
+    width: '35vw',
+    height: '35vw',
     backgroundColor: 'red',
-    border: '1px solid green'
+    marginTop: '1em'
   };
 
   const center = {
