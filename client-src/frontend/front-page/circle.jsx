@@ -5,10 +5,10 @@ const Circle = ({children}) => {
     borderRadius: '50%',
     display: 'flex',
     justifyContent: 'space-around',
-    width: '35vw',
-    height: '35vw',
+    width: '30vw',
+    height: '30vw',
     backgroundColor: 'darkseagreen',
-    marginTop: '10vw'
+    marginTop: '5vw'
   };
 
   const center = {
@@ -18,7 +18,7 @@ const Circle = ({children}) => {
   return (
     <div style={circleStyle}>
       <div style={center}>
-        <h1>{children}</h1>
+        <h3>{children}</h3>
       </div>
     </div>
   )

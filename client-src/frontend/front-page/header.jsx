@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const Header = ({children}) => {
   const headerStyle = {
-    height: '25vh',
+    height: '30vh',
     textAlign: 'center',
     width: '100vw'
   };
