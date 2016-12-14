@@ -15,8 +15,12 @@ const Circle = ({children}) => {
     alignSelf: 'center'
   };
 
+  const buttonClicked = (e) => {
+    console.log('Clicked ', e);
+  };
+
   return (
-    <div style={circleStyle}>
+    <div style={circleStyle} role="button" onClick={buttonClicked}>
       <div style={center}>
         <h3>{children}</h3>
       </div>
