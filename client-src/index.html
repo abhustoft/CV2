@@ -17,10 +17,18 @@
 
 
     <style type="text/css">
+      .header {
+        height: 25vh;
+        text-align: center;
+        width: 100vw;
+      }
+
       .page {
+        background-color: bisque;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        padding-bottom: 10vw;
         padding-left: 5vw;
         padding-right: 5vw;
       }
@@ -31,7 +39,7 @@
         justify-content: space-around;
         width: 35vw;
         height: 35vw;
-        background-color: red;
+        background-color: darkseagreen;
         margin-top: 10vw;
       }
 
@@ -43,22 +51,29 @@
   </head>
   <body>
     <div id="front-page">
+
       <div class="page">
 
-        <div class="circle">
-          <div class="center">Myself</div>
+        <div class="header">
+          <h1>CV</h1>
+          <h2>Alf Bjørn Hustoft</h2>
+          <p>Full CV in an app! Press the buttons to see detailed information on employment record, projects I have worked on, technologies I master and have interest in and a general description of my person.</p>
         </div>
 
         <div class="circle">
-          <div class="center">Career</div>
+          <div class="center"><h1>Myself</h1></div>
         </div>
 
         <div class="circle">
-          <div class="center">Projects</div>
+          <div class="center"><h1>Career</h1></div>
         </div>
 
         <div class="circle">
-          <div class="center">Tech</div>
+          <div class="center"><h1>Projects</h1></div>
+        </div>
+
+        <div class="circle">
+          <div class="center"><h1>Tech</h1></div>
         </div>
       </div>
     </div>

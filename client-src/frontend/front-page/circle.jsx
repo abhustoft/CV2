@@ -7,7 +7,7 @@ const Circle = ({children}) => {
     justifyContent: 'space-around',
     width: '35vw',
     height: '35vw',
-    backgroundColor: 'red',
+    backgroundColor: 'darkseagreen',
     marginTop: '10vw'
   };
 
@@ -18,7 +18,7 @@ const Circle = ({children}) => {
   return (
     <div style={circleStyle}>
       <div style={center}>
-        {children}
+        <h1>{children}</h1>
       </div>
     </div>
   )
