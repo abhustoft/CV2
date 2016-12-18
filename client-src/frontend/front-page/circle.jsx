@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Link} from 'react-router';
 
-const Circle = ({children}) => {
+const Circle = ({page, children}) => {
   const circleStyle = {
     borderRadius: '50%',
     display: 'flex',
@@ -20,7 +20,7 @@ const Circle = ({children}) => {
     <div style={circleStyle} role="button">
       <div style={center}>
         <h3>
-          <Link to="career">{children}</Link>
+          <Link to={page}>{children}</Link>
         </h3>
       </div>
     </div>

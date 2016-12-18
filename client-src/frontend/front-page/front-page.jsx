@@ -27,10 +27,10 @@ const FrontPage = () => {
         <Name>Alf Bjørn Hustoft</Name>
         <p>Full CV in an app! Press the buttons to see detailed information on employment record, projects I have worked on, technologies I master and have interest in and a general description of my person.</p>
       </Header>
-      <Circle>Myself</Circle>
-      <Circle>Career</Circle>
-      <Circle>Projects</Circle>
-      <Circle>Tech</Circle>
+      <Circle page="person">Myself</Circle>
+      <Circle page="career">Career</Circle>
+      <Circle page="projects">Projects</Circle>
+      <Circle page="tech">Tech</Circle>
     </div>;
 
   const NotFound = () => (
