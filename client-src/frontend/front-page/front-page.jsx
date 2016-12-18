@@ -1,8 +1,13 @@
 import * as React from 'react';
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 import Circle from './circle.jsx'
 import Header from './header.jsx'
 import Title from './title.jsx'
 import Name from './name.jsx'
+import Career from '../Career/career.jsx'
+import Person from '../Person/person.jsx'
+import Projects from '../Projects/projects.jsx'
+import Tech from '../Tech/tech.jsx'
 
 const FrontPage = () => {
   const style = {
@@ -14,7 +19,8 @@ const FrontPage = () => {
     paddingLeft: '5vw',
     paddingRight: '5vw'
   };
-  return (
+
+  const Home = () =>
     <div style={style}>
       <Header>
         <Title>CV</Title>
@@ -25,7 +31,20 @@ const FrontPage = () => {
       <Circle>Career</Circle>
       <Circle>Projects</Circle>
       <Circle>Tech</Circle>
-    </div>
+    </div>;
+
+  const NotFound = () => (
+    <h1>404.. This page is not found!</h1>)
+
+  return (
+    <Router history={hashHistory}>
+      <Route path='/' component={Home} />
+      <Route path='/career' component={Career} />
+      <Route path='/person' component={Person} />
+      <Route path='/projects' component={Projects} />
+      <Route path='/tech' component={Tech} />
+      <Route path='*' component={NotFound} />
+    </Router>
   )
 };
 

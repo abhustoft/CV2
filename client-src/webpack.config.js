@@ -15,7 +15,6 @@ var definePlugin = new webpack.DefinePlugin({
 
 var config = {
     entry: {
-        main: './app/main.js',
         frontpage: './frontend/main.js'
     },
     output: {                     // output folder

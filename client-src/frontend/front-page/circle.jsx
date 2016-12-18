@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router';
 
 const Circle = ({children}) => {
   const circleStyle = {
@@ -7,7 +8,7 @@ const Circle = ({children}) => {
     justifyContent: 'space-around',
     width: '30vw',
     height: '30vw',
-    backgroundColor: 'darkseagreen',
+    backgroundColor: 'blue',
     marginTop: '5vw'
   };
 
@@ -15,14 +16,12 @@ const Circle = ({children}) => {
     alignSelf: 'center'
   };
 
-  const buttonClicked = (e) => {
-    console.log('Clicked ', e);
-  };
-
   return (
-    <div style={circleStyle} role="button" onClick={buttonClicked}>
+    <div style={circleStyle} role="button">
       <div style={center}>
-        <h3>{children}</h3>
+        <h3>
+          <Link to="career">{children}</Link>
+        </h3>
       </div>
     </div>
   )
