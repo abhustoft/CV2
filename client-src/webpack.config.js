@@ -15,7 +15,8 @@ var definePlugin = new webpack.DefinePlugin({
 
 var config = {
     entry: {
-        frontpage: './frontend/main.js'
+      frontpage: './frontend/main.js',
+      person: './frontend/Person/person.jsx'
     },
     output: {                     // output folder
         path: './dist',           // folder path

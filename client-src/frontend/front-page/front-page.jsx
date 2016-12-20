@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 import Circle from './circle.jsx'
+import PersonButton from './personButton.jsx'
 import Header from './header.jsx'
 import Title from './title.jsx'
 import Name from './name.jsx'
 import Career from '../Career/career.jsx'
-import Person from '../Person/person.jsx'
 import Projects from '../Projects/projects.jsx'
 import Tech from '../Tech/tech.jsx'
 
@@ -27,7 +27,7 @@ const FrontPage = () => {
         <Name>Alf Bjørn Hustoft</Name>
         <p>Full CV in an app! Press the buttons to see detailed information on employment record, projects I have worked on, technologies I master and have interest in and a general description of my person.</p>
       </Header>
-      <Circle page="person">Myself</Circle>
+      <PersonButton>Myself</PersonButton>
       <Circle page="career">Career</Circle>
       <Circle page="projects">Projects</Circle>
       <Circle page="tech">Tech</Circle>
