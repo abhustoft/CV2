@@ -8,6 +8,7 @@ import Name from './name.jsx'
 import Career from '../Career/career.jsx'
 import Projects from '../Projects/projects.jsx'
 import Tech from '../Tech/tech.jsx'
+import Person from '../Person/person.jsx'
 
 const FrontPage = () => {
   const style = {
@@ -19,6 +20,28 @@ const FrontPage = () => {
     paddingLeft: '5vw',
     paddingRight: '5vw'
   };
+
+  function lazyLoadComponent(lazyModule) {
+    return (location, cb) => {
+      lazyModule(module => cb(null, module))
+    }
+  }
+
+  function lazyLoadComponents(lazyModules) {
+    return (location, cb) => {
+      const moduleKeys = Object.keys(lazyModules);
+      const promises = moduleKeys.map(key =>
+        new Promise(resolve => lazyModules[key](resolve))
+      );
+
+      Promise.all(promises).then(modules => {
+        cb(null, modules.reduce((obj, module, i) => {
+          obj[moduleKeys[i]] = module;
+          return obj;
+        }, {}))
+      })
+    }
+  }
 
   const Home = () =>
     <div style={style}>
@@ -40,7 +63,7 @@ const FrontPage = () => {
     <Router history={hashHistory}>
       <Route path='/' component={Home} />
       <Route path='/career' component={Career} />
-      <Route path='/person' component={Person} />
+      <Route path='/person' getComponent={lazyLoadComponent(Person)} />
       <Route path='/projects' component={Projects} />
       <Route path='/tech' component={Tech} />
       <Route path='*' component={NotFound} />

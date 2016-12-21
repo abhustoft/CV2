@@ -12,15 +12,15 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 var definePlugin = new webpack.DefinePlugin({
     PROD: JSON.stringify(JSON.parse(process.env.PROD || 'false'))
 });
-
+console.log('dirname: ', path.resolve(__dirname, 'frontend', 'Person'));
 var config = {
     entry: {
-      frontpage: './frontend/main.js',
-      person: './frontend/Person/person.jsx'
+      frontpage: './frontend/main.js'
     },
     output: {                     // output folder
         path: './dist',           // folder path
         filename: '[name].js',    // file names
+        chunkFilename: '[id].chunk.js',
         publicPath: './dist/'
     },
     resolve: {
@@ -40,11 +40,16 @@ var config = {
         loaders: [
             {
                 test: [/\.js$/,/\.jsx$/],
-                exclude: /node_modules/,
+                exclude: [/node_modules/],
                 loader: 'babel',
                 query: {
                     cacheDirectory: 'babel-cache'
                 }
+            },
+            {
+              test: /\.jsx$/,
+              include: path.resolve(__dirname, 'frontend', 'Person'),
+              loaders: ['bundle?lazy', 'babel']
             },
             {
                 test: /\.styl$/,

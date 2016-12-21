@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Link} from 'react-router';
-import PersonLoader from '../Person/personLoader.js'
 
 export default class PersonButton extends React.Component {
 
@@ -9,12 +8,10 @@ export default class PersonButton extends React.Component {
   }
 
   componentWillMount() {
-    PersonLoader().then((deps) => {
-      console.log('Loaded: ', deps);
-      });
   }
 
   render() {
+    const children = this.props.children;
     const personStyle = {
       borderRadius: '50%',
       display: 'flex',

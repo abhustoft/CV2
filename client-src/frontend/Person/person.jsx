@@ -1,17 +1,19 @@
 import * as React from 'react';
 
-const Person = () => {
-  const careerStyle = {
+class Person extends React.Component {
 
-  };
+  render() {
 
-  return (
-    <div style={careerStyle} >
-      <div>
-        <h3>This is my person</h3>
+    const careerStyle = {};
+    return (
+
+      <div style={careerStyle}>
+        <div>
+          <h3>This is my person</h3>
+        </div>
       </div>
-    </div>
-  )
-};
+    )
+  }
+}
 
-export default Person;
+module.exports = Person;
