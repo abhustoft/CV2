@@ -27,21 +27,11 @@ const FrontPage = () => {
     }
   }
 
-  function lazyLoadComponents(lazyModules) {
-    return (location, cb) => {
-      const moduleKeys = Object.keys(lazyModules);
-      const promises = moduleKeys.map(key =>
-        new Promise(resolve => lazyModules[key](resolve))
-      );
+  // Trigger webpack loader to immediately fetch the chunk
+  //Person((reactComponent) => reactComponent);
 
-      Promise.all(promises).then(modules => {
-        cb(null, modules.reduce((obj, module, i) => {
-          obj[moduleKeys[i]] = module;
-          return obj;
-        }, {}))
-      })
-    }
-  }
+  // Trigger delayed fetch of chunk
+  window.setTimeout(Person, 2000, (reactComponent) => reactComponent);
 
   const Home = () =>
     <div style={style}>
