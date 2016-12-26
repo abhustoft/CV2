@@ -7,11 +7,17 @@ export default function starter(state = NOT_RUNNING, action) {
 
     case 'USER_FETCH_REQUESTED':
       console.log('Reducer got user_fetch_requested, for:', action.user);
-      return action.user;
+      return {
+        user: action.user,
+        repos: undefined
+      };
 
     case 'USER_FETCH_SUCCEEDED':
           console.log('Reducer got user_fetch_succeeded, and:', action);
-          return action.repos;
+          return {
+            user: undefined,
+            repos: action.repos
+          };
 
     default:
       return state

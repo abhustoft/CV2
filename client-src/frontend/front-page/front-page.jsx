@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { Router, Route, hashHistory, browserHistory } from 'react-router';
+import {connect} from 'react-redux';
 
 import Circle from './circle.jsx'
 import PersonButton from './personButton.jsx'
@@ -11,7 +12,7 @@ import Projects from '../Projects/projects.jsx'
 import Tech from '../Tech/tech.jsx'
 import Person from '../Person/person.jsx'
 
-const FrontPage = () => {
+const FrontPage = (props) => {
   const style = {
     backgroundColor: 'bisque',
     display: 'flex',
@@ -21,6 +22,9 @@ const FrontPage = () => {
     paddingLeft: '5vw',
     paddingRight: '5vw'
   };
+
+  console.log('frontpage got props:', props)
+
   function lazyLoadComponent(lazyModule) {
     return (location, cb) => {
       lazyModule(module => cb(null, module))
@@ -61,4 +65,11 @@ const FrontPage = () => {
   )
 };
 
-export default FrontPage;
+function mapStateToProps(state) {
+  console.log('Mapping state to props:', state);
+  return {
+    githubRepos: state
+  };
+}
+
+export default connect(mapStateToProps)(FrontPage);

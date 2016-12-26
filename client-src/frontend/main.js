@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-
+import { Provider } from 'react-redux'
 
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
@@ -22,12 +22,12 @@ sagaMiddleware.run(mySaga);
 store.dispatch({type: 'START', text: 'hei sann'});
 store.dispatch({type: 'USER_FETCH_REQUESTED', user: 'abhustoft'});
 
-
-
 import FrontPage from './front-page/front-page.jsx';
 
 ReactDom.render(
-  <FrontPage />,
+  <Provider store={store}>
+    <FrontPage />
+  </Provider>,
   document.getElementById('front-page')
 );
 
