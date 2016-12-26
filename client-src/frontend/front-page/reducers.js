@@ -11,7 +11,7 @@ export default function starter(state = NOT_RUNNING, action) {
 
     case 'USER_FETCH_SUCCEEDED':
           console.log('Reducer got user_fetch_succeeded, and:', action);
-          return action.reporepo;
+          return action.repos;
 
     default:
       return state

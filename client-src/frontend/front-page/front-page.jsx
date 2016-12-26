@@ -21,7 +21,6 @@ const FrontPage = () => {
     paddingLeft: '5vw',
     paddingRight: '5vw'
   };
-
   function lazyLoadComponent(lazyModule) {
     return (location, cb) => {
       lazyModule(module => cb(null, module))

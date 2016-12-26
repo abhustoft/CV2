@@ -8,8 +8,6 @@ import createSagaMiddleware from 'redux-saga'
 import reducer from './front-page/reducers'
 import mySaga from './front-page/sagas'
 
-import { helloSaga } from './front-page/sagas'
-
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
@@ -21,7 +19,6 @@ const store = createStore(
 
 // then run the saga
 sagaMiddleware.run(mySaga);
-sagaMiddleware.run(helloSaga)
 store.dispatch({type: 'START', text: 'hei sann'});
 store.dispatch({type: 'USER_FETCH_REQUESTED', user: 'abhustoft'});
 
