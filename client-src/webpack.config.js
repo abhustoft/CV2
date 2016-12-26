@@ -43,7 +43,9 @@ var config = {
                 exclude: [/node_modules/],
                 loader: 'babel',
                 query: {
-                    cacheDirectory: 'babel-cache'
+                    cacheDirectory: 'babel-cache',
+                    presets: [ "es2015" ],
+                    plugins: [ "transform-runtime" ]
                 }
             },
             {
