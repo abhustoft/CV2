@@ -36,6 +36,7 @@ const FrontPage = (props) => {
 
   // Trigger delayed fetch of chunk
   window.setTimeout(Person, 2000, (reactComponent) => reactComponent);
+  window.setTimeout(Career, 3000, (reactComponent) => reactComponent);
 
   const Home = () =>
     <div style={style}>
@@ -56,7 +57,7 @@ const FrontPage = (props) => {
   return (
     <Router history={hashHistory}>
       <Route path='/' component={Home} />
-      <Route path='/career' component={Career} />
+      <Route path='/career' component={lazyLoadComponent(Career)} />
       <Route path='/person' getComponent={lazyLoadComponent(Person)} />
       <Route path='/projects' component={Projects} />
       <Route path='/tech' component={Tech} />

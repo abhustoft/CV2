@@ -54,6 +54,11 @@ var config = {
               loaders: ['bundle?lazy', 'babel']
             },
             {
+              test: /\.jsx$/,
+              include: path.resolve(__dirname, 'frontend', 'Career'),
+              loaders: ['bundle?lazy', 'babel']
+            },
+            {
                 test: /\.styl$/,
                 loader:  ExtractTextPlugin.extract("style-loader", "css-loader!stylus-loader"),
                 exclude: /node_modules/
