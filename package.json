@@ -4,7 +4,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "cd server; node server.js",
-    "build": "cd client-src; npm install; npm run build",
+    "build": "cd client-src; yarn; npm run build",
     "deploy": "docker build -q -t abhustoft/cv .; docker push abhustoft/cv"
   },
   "dependencies": {

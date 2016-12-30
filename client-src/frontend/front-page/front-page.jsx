@@ -23,7 +23,7 @@ const FrontPage = (props) => {
     paddingRight: '5vw'
   };
 
-  console.log('frontpage got props:', props)
+  console.log('frontpage got props:', props);
 
   function lazyLoadComponent(lazyModule) {
     return (location, cb) => {
@@ -51,7 +51,7 @@ const FrontPage = (props) => {
     </div>;
 
   const NotFound = () => (
-    <h1>404.. This page is not found!</h1>)
+    <h1>404.. This page is not found!</h1>);
 
   return (
     <Router history={hashHistory}>
@@ -68,7 +68,8 @@ const FrontPage = (props) => {
 function mapStateToProps(state) {
   console.log('Mapping state to props:', state);
   return {
-    githubRepos: state
+    user: state.user,
+    repos: state.gitHub_repositories
   };
 }
 

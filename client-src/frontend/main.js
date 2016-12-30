@@ -5,22 +5,21 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
-import reducer from './front-page/reducers'
-import mySaga from './front-page/sagas'
+import reducer from './GitHub/reducers'
+import mySaga from './GitHub/sagas'
 
-// create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
-// mount it on the Store
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(sagaMiddleware));
 
-// then run the saga
 sagaMiddleware.run(mySaga);
-store.dispatch({type: 'START', text: 'hei sann'});
-store.dispatch({type: 'USER_FETCH_REQUESTED', user: 'abhustoft'});
+
+
+window.setTimeout(store.dispatch, 4000, {type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
+//store.dispatch({type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
 
 import FrontPage from './front-page/front-page.jsx';
 
