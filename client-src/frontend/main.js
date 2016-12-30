@@ -1,6 +1,8 @@
-import * as React from 'react';
+import * as React from 'react';         // eslint-disable-line no-unused-vars
 import * as ReactDom from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux'  // eslint-disable-line no-unused-vars
+
+import FrontPage from './front-page/front-page.jsx'; // eslint-disable-line no-unused-vars
 
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
@@ -21,7 +23,6 @@ sagaMiddleware.run(mySaga);
 window.setTimeout(store.dispatch, 6000, {type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
 //store.dispatch({type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
 
-import FrontPage from './front-page/front-page.jsx';
 
 ReactDom.render(
   <Provider store={store}>
