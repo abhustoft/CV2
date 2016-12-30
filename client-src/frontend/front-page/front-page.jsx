@@ -7,10 +7,10 @@ import PersonButton from './personButton.jsx'
 import Header from './header.jsx'
 import Title from './title.jsx'
 import Name from './name.jsx'
-import Career from '../Career/career.jsx'
 import Projects from '../Projects/projects.jsx'
 import Tech from '../Tech/tech.jsx'
 import Person from '../Person/person.jsx'
+import Career from '../Career/career.jsx'
 
 const FrontPage = (props) => {
   const style = {

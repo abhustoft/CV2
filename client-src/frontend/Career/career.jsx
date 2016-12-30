@@ -1,17 +1,19 @@
 import * as React from 'react';
 
-const Career = () => {
-  const careerStyle = {
+class Career extends React.Component{
 
-  };
+  render() {
+    const careerStyle = {
 
-  return (
-    <div style={careerStyle} >
-      <div>
-        <h3>This is my career</h3>
+    };
+    return (
+      <div style={careerStyle}>
+        <div>
+          <h3>This is my career</h3>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 };
 
-export default Career;
+module.exports = Career;

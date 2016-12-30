@@ -12,7 +12,7 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 var definePlugin = new webpack.DefinePlugin({
     PROD: JSON.stringify(JSON.parse(process.env.PROD || 'false'))
 });
-console.log('dirname: ', path.resolve(__dirname, 'frontend', 'Person'));
+
 var config = {
     entry: {
       frontpage: './frontend/main.js'
