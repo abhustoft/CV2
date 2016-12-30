@@ -7,8 +7,8 @@ import FrontPage from './front-page/front-page.jsx'; // eslint-disable-line no-u
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
-import reducer from './GitHub/reducers'
-import mySaga from './GitHub/sagas'
+import reducer from './front-page/state/reducers'
+import mySaga from './front-page/state/sagas'
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,10 +19,8 @@ const store = createStore(
 
 sagaMiddleware.run(mySaga);
 
-
 window.setTimeout(store.dispatch, 6000, {type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
-//store.dispatch({type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
-
+store.dispatch({type: 'LOAD_COMPONENTS'});
 
 ReactDom.render(
   <Provider store={store}>

@@ -1,13 +1,12 @@
 import * as React from 'react';
-import * as ReactDom from 'react-dom';
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 import {Photo} from '../photo/photo';
 import {Description} from '../description/description';
 import {KeyInfo} from '../keyInfo/keyInfo';
 import {Projects} from '../projects/projects';
 
-import { editNew } from '../redux/actions'
+import {editNew} from '../redux/actions'
 
 require('./MainContent.styl');
 

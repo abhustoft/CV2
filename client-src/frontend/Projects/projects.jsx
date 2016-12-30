@@ -1,17 +1,17 @@
 import * as React from 'react';
 
-const Projects = () => {
-  const careerStyle = {
+class Projects  extends React.Component {
+    render() {
+        const careerStyle = {};
 
-  };
+        return (
+            <div style={careerStyle}>
+                <div>
+                    <h3>This is my project</h3>
+                </div>
+            </div>
+        )
+    };
+}
 
-  return (
-    <div style={careerStyle} >
-      <div>
-        <h3>This is my project</h3>
-      </div>
-    </div>
-  )
-};
-
-export default Projects;
+module.exports = Projects;

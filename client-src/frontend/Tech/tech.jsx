@@ -1,17 +1,18 @@
 import * as React from 'react';
 
-const Tech = () => {
-  const techStyle = {
+class Tech  extends React.Component {
 
-  };
+    render() {
+        const techStyle = {};
 
-  return (
-    <div style={techStyle} >
-      <div>
-        <h3>This is my tech</h3>
-      </div>
-    </div>
-  )
-};
+        return (
+            <div style={techStyle}>
+                <div>
+                    <h3>This is my tech</h3>
+                </div>
+            </div>
+        )
+    };
+}
 
-export default Tech;
+module.exports = Tech;

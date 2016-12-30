@@ -2,13 +2,13 @@ import * as React from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import {connect} from 'react-redux';
 
-import Circle from './circle.jsx'
-import PersonButton from './personButton.jsx'
-import Header from './header.jsx'
-import Title from './title.jsx'
-import Name from './name.jsx'
+import Circle from './components/circle.jsx'
+import PersonButton from './components/personButton.jsx'
+import Header from './components/header.jsx'
+import Title from './components/title.jsx'
+import Name from './components/name.jsx'
 import Projects from '../Projects/projects.jsx'
-import Tech from '../Tech/tech.jsx'
+import Tech from   '../Tech/tech.jsx'
 import Person from '../Person/person.jsx'
 import Career from '../Career/career.jsx'
 
@@ -23,20 +23,11 @@ const FrontPage = (props) => {
     paddingRight: '5vw'
   };
 
-  console.log('frontpage got props:', props);
-
   function lazyLoadComponent(lazyModule) {
     return (location, cb) => {
       lazyModule(module => cb(null, module))
     }
   }
-
-  // Trigger webpack loader to immediately fetch the chunk
-  //Person((reactComponent) => reactComponent);
-
-  // Trigger delayed fetch of chunk
-  window.setTimeout(Person, 2000, (reactComponent) => reactComponent);
-  window.setTimeout(Career, 3000, (reactComponent) => reactComponent);
 
   const Home = () =>
     <div style={style}>
@@ -57,17 +48,16 @@ const FrontPage = (props) => {
   return (
     <Router history={hashHistory}>
       <Route path='/' component={Home} />
-      <Route path='/career' component={lazyLoadComponent(Career)} />
-      <Route path='/person' getComponent={lazyLoadComponent(Person)} />
-      <Route path='/projects' component={Projects} />
-      <Route path='/tech' component={Tech} />
+      <Route path='/career'   getComponent={lazyLoadComponent(Career)} />
+      <Route path='/person'   getComponent={lazyLoadComponent(Person)} />
+      <Route path='/projects' getComponent={lazyLoadComponent(Projects)} />
+      <Route path='/tech'     getComponent={lazyLoadComponent(Tech)} />
       <Route path='*' component={NotFound} />
     </Router>
   )
 };
 
 function mapStateToProps(state) {
-  console.log('Mapping state to props:', state);
   return {
     user: state.user,
     repos: state.gitHub_repositories

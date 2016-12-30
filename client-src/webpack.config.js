@@ -30,17 +30,17 @@ var config = {
         }
     },
     module: {
-        preLoaders: [
-            {
-                test: /\.js$/,
-                loader: "eslint-loader",
-                exclude: /node_modules/
-            }
-         ],
+        // preLoaders: [
+        //     {
+        //         test: [/\.js$/,/\.jsx$/],
+        //         loader: "eslint-loader",
+        //         exclude: /node_modules/
+        //     }
+        //  ],
         loaders: [
             {
                 test: [/\.js$/,/\.jsx$/],
-                exclude: [/node_modules/],
+                exclude: [/node_modules/, /Person/, /Career/, /Tech/],
                 loader: 'babel',
                 query: {
                     cacheDirectory: 'babel-cache',
@@ -54,9 +54,19 @@ var config = {
               loaders: ['bundle?lazy', 'babel']
             },
             {
-              test: /\.jsx$/,
-              include: path.resolve(__dirname, 'frontend', 'Career'),
-              loaders: ['bundle?lazy', 'babel']
+                test: /\.jsx$/,
+                include: path.resolve(__dirname, 'frontend', 'Career'),
+                loaders: ['bundle?lazy', 'babel']
+            },
+            {
+                test: /\.jsx$/,
+                include: path.resolve(__dirname, 'frontend', 'Tech'),
+                loaders: ['bundle?lazy', 'babel']
+            },
+            {
+                test: /\.jsx$/,
+                include: path.resolve(__dirname, 'frontend', 'Projects'),
+                loaders: ['bundle?lazy', 'babel']
             },
             {
                 test: /\.styl$/,

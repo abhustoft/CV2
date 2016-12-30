@@ -3,9 +3,7 @@ import * as React from 'react';
 class Career extends React.Component{
 
   render() {
-    const careerStyle = {
-
-    };
+    const careerStyle = {};
     return (
       <div style={careerStyle}>
         <div>
