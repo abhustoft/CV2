@@ -18,7 +18,7 @@ const store = createStore(
 sagaMiddleware.run(mySaga);
 
 
-window.setTimeout(store.dispatch, 4000, {type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
+window.setTimeout(store.dispatch, 6000, {type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
 //store.dispatch({type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
 
 import FrontPage from './front-page/front-page.jsx';

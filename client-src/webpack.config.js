@@ -93,7 +93,7 @@ var config = {
 if (process.env.PROD === '1') {
     console.log('Load image from a fictous CDN');
     //config.output.publicPath = 'http://cdn/'
-    config.output.publicPath = '../webpack-tut/dist/'
+    config.output.publicPath = './dist/'
 }
 
 module.exports = config;
