@@ -2,7 +2,7 @@
 'use strict';
 
 var config = {
-  version: 'v15',
+  version: 'v16',
   // Initial caching at startup:
   staticCacheItems: [
     '/dist/frontpage.js',
@@ -124,7 +124,7 @@ self.addEventListener('fetch', event => {
 
     cacheKey = cacheName(resourceType, opts);
 
-console.log(request.url);
+    console.log('Service worker is caching:', request.url);
 
 	if (resourceType === 'Changing') {
 		event.respondWith(

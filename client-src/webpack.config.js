@@ -20,7 +20,7 @@ var config = {
     output: {                     // output folder
         path: './dist',           // folder path
         filename: '[name].js',    // file names
-        chunkFilename: '[id].chunk.js',
+        chunkFilename: '[name].js',
         publicPath: './dist/'
     },
     resolve: {
@@ -51,22 +51,22 @@ var config = {
             {
               test: /\.jsx$/,
               include: path.resolve(__dirname, 'frontend', 'Person'),
-              loaders: ['bundle?lazy', 'babel']
+              loaders: ['bundle?lazy&name=person', 'babel']
             },
             {
                 test: /\.jsx$/,
                 include: path.resolve(__dirname, 'frontend', 'Career'),
-                loaders: ['bundle?lazy', 'babel']
+                loaders: ['bundle?lazy&name=career', 'babel']
             },
             {
                 test: /\.jsx$/,
                 include: path.resolve(__dirname, 'frontend', 'Tech'),
-                loaders: ['bundle?lazy', 'babel']
+                loaders: ['bundle?lazy&name=tech', 'babel']
             },
             {
                 test: /\.jsx$/,
                 include: path.resolve(__dirname, 'frontend', 'Projects'),
-                loaders: ['bundle?lazy', 'babel']
+                loaders: ['bundle?lazy&name=projects', 'babel']
             },
             {
                 test: /\.styl$/,
