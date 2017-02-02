@@ -25,7 +25,10 @@ const FrontPage = (props) => {
 
   function lazyLoadComponent(lazyModule) {
     return (location, cb) => {
-      lazyModule(module => cb(null, module))
+      lazyModule(module => {
+         cb(null, module);
+         // cb(null, props => <module {...props} items='myItem' />)
+      })
     }
   }
 
@@ -48,20 +51,23 @@ const FrontPage = (props) => {
   return (
     <Router history={hashHistory}>
       <Route path='/' component={Home} />
-      <Route path='/career'   getComponent={lazyLoadComponent(Career)} />
-      <Route path='/person'   getComponent={lazyLoadComponent(Person)} />
-      <Route path='/projects' getComponent={lazyLoadComponent(Projects)} />
-      <Route path='/tech'     getComponent={lazyLoadComponent(Tech)} />
+      <Route path='/career'                     getComponent={lazyLoadComponent(Career)}   />
+      <Route path='/person'   user={props.user} getComponent={lazyLoadComponent(Person)}   />
+      <Route path='/projects'                   getComponent={lazyLoadComponent(Projects)} />
+      <Route path='/tech'                       getComponent={lazyLoadComponent(Tech)}     />
       <Route path='*' component={NotFound} />
     </Router>
   )
 };
 
 function mapStateToProps(state) {
+    console.log('state to map:', state);
   return {
     user: state.user,
     repos: state.gitHub_repositories
   };
 }
 
-export default connect(mapStateToProps)(FrontPage);
+const mapDispatchToProps = (dispatch) => ({dispatch});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FrontPage);
