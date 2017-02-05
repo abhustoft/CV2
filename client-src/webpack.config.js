@@ -1,5 +1,5 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 var SRC = path.join(__dirname, 'client-src/');
 var images = path.join(__dirname, 'client-src/', 'image/');
@@ -15,7 +15,7 @@ var definePlugin = new webpack.DefinePlugin({
 
 var config = {
     entry: {
-      frontpage: './frontend/main.js'
+      frontpage: './frontend/frontpage.js'
     },
     output: {                     // output folder
         path: './dist',           // folder path
@@ -82,10 +82,6 @@ var config = {
                 test: /\.(ttf$|woff)$/,
                 loader: "url",
                 include: fonts
-            },
-            {   // Move a file (that has been required!)
-                test: /\.tst$/,
-                loader: "file?name=[path][name].[hash].[ext]"
             }
         ]
     },
@@ -94,7 +90,10 @@ var config = {
         //new webpack.optimize.CommonsChunkPlugin('common.js'),
         new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']}),
         new CleanWebpackPlugin(['dist'], {root: __dirname}),
-        new ExtractTextPlugin("style.css", {allChunks: false})
+        new ExtractTextPlugin("style.css", {allChunks: false}),
+        new CopyWebpackPlugin([
+            { from: './frontend/images/favicons', to: 'images/favicons' }
+            ])
 
     ],
     eslint: {

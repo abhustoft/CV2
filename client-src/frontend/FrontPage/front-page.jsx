@@ -26,8 +26,9 @@ const FrontPage = (props) => {
   function lazyLoadComponent(lazyModule) {
     return (location, cb) => {
       lazyModule(module => {
-         cb(null, module);
-         // cb(null, props => <module {...props} items='myItem' />)
+         //cb(null, module);
+          console.log('module:', module)
+         cb(null, props => <module  items='myItem' />)
       })
     }
   }
