@@ -1,11 +1,16 @@
-const NO_STATE = 'State not set';
 import Projects from '../../Projects/projects.jsx'
 import Tech from   '../../Tech/tech.jsx'
 import Person from '../../Person/person.jsx'
 import Career from '../../Career/career.jsx'
 import * as React from 'react';
 
-export default function starter(state = NO_STATE, action) {
+const initialState = {
+    warpPersonButton: false,
+    loadingComponents: false,
+    user: 'unknown'
+};
+
+export default function starter(state = initialState, action) {
     switch (action.type) {
         case 'LOAD_COMPONENTS':
             // Trigger webpack loader to fetch the chunk
@@ -14,11 +19,15 @@ export default function starter(state = NO_STATE, action) {
             setTimeout(Career,   3000, (reactComponent) => reactComponent);
             setTimeout(Tech,     4000, (reactComponent) => reactComponent);
             setTimeout(Projects, 4000, (reactComponent) => reactComponent);
-            return {
+            return Object.assign({}, state, {
                 loadingComponents: true,
-                user: 'Alf Bjørn'
-            };
-        case 'CAREER_LOADED':
+                user:'Alf Bjørn'
+            });
+        case 'WARP_PERSON_BUTTON':
+
+            return Object.assign({}, state, {
+                warpPersonButton: true
+            });
 
         default:
             return state

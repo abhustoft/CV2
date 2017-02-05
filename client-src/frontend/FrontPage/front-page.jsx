@@ -48,22 +48,25 @@ const FrontPage = (props) => {
   const NotFound = () => (
     <h1>404.. This page is not found!</h1>);
 
+  console.log('Ready to set new props:', props);
   return (
     <Router history={hashHistory}>
-      <Route path='/'                           component={Home} />
-      <Route path='/career'                     getComponent={loadComponent(Career)}   />
-      <Route path='/person'   user={props.user} getComponent={loadComponent(Person)}   />
-      <Route path='/projects'                   getComponent={loadComponent(Projects)} />
-      <Route path='/tech'                       getComponent={loadComponent(Tech)}     />
+      <Route path='/'                       component={Home} />
+      <Route path='/career'                 getComponent={loadComponent(Career)}   />
+      <Route path='/person'   props={props} getComponent={loadComponent(Person)}   />
+      <Route path='/projects'               getComponent={loadComponent(Projects)} />
+      <Route path='/tech'                   getComponent={loadComponent(Tech)}     />
       <Route path='*' component={NotFound} />
     </Router>
   )
 };
 
 function mapStateToProps(state) {
+    console.log('mapper state:', state);
   return {
-    user: state.user,
-    repos: state.gitHub_repositories
+      user: state.user,
+      repos: state.gitHub_repositories,
+      warpPersonButton: 'kan ikke endres??' // TODO: state.warpPersonButton
   };
 }
 
