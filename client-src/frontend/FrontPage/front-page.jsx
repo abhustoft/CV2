@@ -2,15 +2,15 @@ import * as React from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import {connect} from 'react-redux';
 
-import Circle from './components/circle.jsx'
+import Circle from       './components/circle.jsx'
+import Header from       './components/header.jsx'
+import Title from        './components/title.jsx'
+import Name from         './components/name.jsx'
+import Projects from     '../Projects/projects.jsx'
+import Tech from         '../Tech/tech.jsx'
+import Person from       '../Person/person.jsx'
 import PersonButton from './components/personButton.jsx'
-import Header from './components/header.jsx'
-import Title from './components/title.jsx'
-import Name from './components/name.jsx'
-import Projects from '../Projects/projects.jsx'
-import Tech from   '../Tech/tech.jsx'
-import Person from '../Person/person.jsx'
-import Career from '../Career/career.jsx'
+import Career from       '../Career/career.jsx'
 
 const FrontPage = (props) => {
   const style = {
@@ -23,7 +23,7 @@ const FrontPage = (props) => {
     paddingRight: '5vw'
   };
 
-  function lazyLoadComponent(lazyModule) {
+  function loadComponent(lazyModule) {
     return (location, cb) => {
       lazyModule(module => {
          cb(null, module);
@@ -50,11 +50,11 @@ const FrontPage = (props) => {
 
   return (
     <Router history={hashHistory}>
-      <Route path='/' component={Home} />
-      <Route path='/career'                     getComponent={lazyLoadComponent(Career)}   />
-      <Route path='/person'   user={props.user} getComponent={lazyLoadComponent(Person)}   />
-      <Route path='/projects'                   getComponent={lazyLoadComponent(Projects)} />
-      <Route path='/tech'                       getComponent={lazyLoadComponent(Tech)}     />
+      <Route path='/'                           component={Home} />
+      <Route path='/career'                     getComponent={loadComponent(Career)}   />
+      <Route path='/person'   user={props.user} getComponent={loadComponent(Person)}   />
+      <Route path='/projects'                   getComponent={loadComponent(Projects)} />
+      <Route path='/tech'                       getComponent={loadComponent(Tech)}     />
       <Route path='*' component={NotFound} />
     </Router>
   )

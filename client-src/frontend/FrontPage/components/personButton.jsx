@@ -18,7 +18,7 @@ export default class PersonButton extends React.Component {
       justifyContent: 'space-around',
       width: '30vw',
       height: '30vw',
-      backgroundColor: 'blue',
+      backgroundColor: 'hotpink',
       marginTop: '5vw'
     };
 
