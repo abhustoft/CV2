@@ -26,9 +26,8 @@ const FrontPage = (props) => {
   function lazyLoadComponent(lazyModule) {
     return (location, cb) => {
       lazyModule(module => {
-         //cb(null, module);
-          console.log('module:', module)
-         cb(null, props => <module  items='myItem' />)
+         cb(null, module);
+
       })
     }
   }
@@ -62,7 +61,6 @@ const FrontPage = (props) => {
 };
 
 function mapStateToProps(state) {
-    console.log('state to map:', state);
   return {
     user: state.user,
     repos: state.gitHub_repositories
