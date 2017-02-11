@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
-import {connect} from 'react-redux';
 
 import Circle from       './components/circle.jsx'
 import Header from       './components/header.jsx'
@@ -26,11 +25,18 @@ const FrontPage = (props) => {
   function loadComponent(lazyModule) {
     return (location, cb) => {
       lazyModule(module => {
-         cb(null, module);
+          // console.log('creating module? : ',module);
+         cb(null, module,);
 
       })
     }
   }
+
+    const isReactComponent = (obj) => Boolean(obj && obj.prototype && Boolean(obj.prototype.isReactComponent));
+    const component = (component) => {
+        return isReactComponent(component) ? {component} :
+            { getComponent: (loc, cb)=> component(comp => cb(null, comp.default || comp))}
+    };
 
   const Home = () =>
     <div style={style}>
@@ -48,28 +54,16 @@ const FrontPage = (props) => {
   const NotFound = () => (
     <h1>404.. This page is not found!</h1>);
 
-  console.log('Ready to set new props:', props);
   return (
     <Router history={hashHistory}>
-      <Route path='/'                       component={Home} />
-      <Route path='/career'                 getComponent={loadComponent(Career)}   />
-      <Route path='/person'   props={props} getComponent={loadComponent(Person)}   />
-      <Route path='/projects'               getComponent={loadComponent(Projects)} />
-      <Route path='/tech'                   getComponent={loadComponent(Tech)}     />
-      <Route path='*' component={NotFound} />
+      <Route path='/'         component={Home}/>
+      <Route path='/career'   getComponent={loadComponent(Career)}/>
+      <Route path='/person'   {...component(Person)}/>
+      <Route path='/projects' {...component(Projects)} />
+      <Route path='/tech'     getComponent={loadComponent(Tech)}/>
+      <Route path='*'         component={NotFound}/>
     </Router>
   )
 };
 
-function mapStateToProps(state) {
-    console.log('mapper state:', state);
-  return {
-      user: state.user,
-      repos: state.gitHub_repositories,
-      warpPersonButton: 'kan ikke endres??' // TODO: state.warpPersonButton
-  };
-}
-
-const mapDispatchToProps = (dispatch) => ({dispatch});
-
-export default connect(mapStateToProps, mapDispatchToProps)(FrontPage);
+export default FrontPage;

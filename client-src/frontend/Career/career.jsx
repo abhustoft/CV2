@@ -3,7 +3,7 @@ import * as React from 'react';
 class Career extends React.Component {
 
     componentDidMount() {
-        console.log('Me mounted:', this.props);
+        console.log('Career mounted:', this.props);
         // this.props.dispatch({type: 'CAREER_MOUNTED'});
     }
 

@@ -1,20 +1,31 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
 
 class Person extends React.Component {
 
-  render() {
-    const careerStyle = {};
-    console.log('Person props:', this.props);
-      this.props.route.props.dispatch({type: 'WARP_PERSON_BUTTON'});
+    componentDidMount() {
+        this.props.dispatch({type: 'WARP_PERSON_BUTTON'});
+    }
 
-    return (
-      <div style={careerStyle}>
-        <div>
-          <h3>This is my person: {this.props.route.props.user}</h3>
-        </div>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <div>
+                    <h3>This is my person: {this.props.user}</h3>
+                    {this.props.warpPersonButton && <div>warp me</div>}
+                </div>
+            </div>
+        )
+    }
 }
 
-module.exports = Person;
+function mapStateToProps(state) {
+    return {
+        user: state.user,
+        warpPersonButton: state.warpPersonButton
+    };
+}
+
+const mapDispatchToProps = (dispatch) => ({dispatch});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Person);
