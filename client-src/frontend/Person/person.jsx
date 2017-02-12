@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
+require('./personButton.styl');
 
 class Person extends React.Component {
 
