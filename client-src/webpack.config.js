@@ -23,26 +23,18 @@ var config = {
         chunkFilename: '[name].js',
         publicPath: './dist/'
     },
-    resolve: {
-        root: [SRC, NODE_MODULES],  // root folders for Webpack resolving, so we can now call require('greet')
-        alias: {
-            'actions': path.join(SRC, 'actions/'), // sample alias, calling require('actions/file') will resolve to ./src/actions/file.js
-        }
-    },
     module: {
-        // preLoaders: [
-        //     {
-        //         test: [/\.js$/,/\.jsx$/],
-        //         loader: "eslint-loader",
-        //         exclude: /node_modules/
-        //     }
-        //  ],
-        loaders: [
+        rules: [
+            // {
+            //     test: /\.js$/,
+            //     enforce: "pre",
+            //     loader: "eslint-loader"
+            // },
             {
                 test: [/\.js$/,/\.jsx$/],
                 exclude: [/node_modules/, /Person/, /Career/, /Tech/],
-                loader: 'babel',
-                query: {
+                loader: 'babel-loader',
+                options: {
                     cacheDirectory: 'babel-cache',
                     presets: [ "es2015" ],
                     plugins: [ "transform-runtime" ]
@@ -51,36 +43,36 @@ var config = {
             {
               test: /\.jsx$/,
               include: path.resolve(__dirname, 'frontend', 'Person'),
-              loaders: ['bundle?lazy&name=person', 'babel']
+              use: ['bundle-loader?lazy&name=person', 'babel-loader']
             },
             {
                 test: /\.jsx$/,
                 include: path.resolve(__dirname, 'frontend', 'Career'),
-                loaders: ['bundle?lazy&name=career', 'babel']
+                use: ['bundle-loader?lazy&name=career', 'babel-loader']
             },
             {
                 test: /\.jsx$/,
                 include: path.resolve(__dirname, 'frontend', 'Tech'),
-                loaders: ['bundle?lazy&name=tech', 'babel']
+                use: ['bundle-loader?lazy&name=tech', 'babel-loader']
             },
             {
                 test: /\.jsx$/,
                 include: path.resolve(__dirname, 'frontend', 'Projects'),
-                loaders: ['bundle?lazy&name=projects', 'babel']
+                use: ['bundle-loader?lazy&name=projects', 'babel-loader']
             },
             {
                 test: /\.styl$/,
-                loader:  ExtractTextPlugin.extract("style-loader", "css-loader!stylus-loader"),
+                use:  ['style-loader','css-loader','stylus-loader'],
                 exclude: /node_modules/
             },
             {
                 test: /\.(jpg|png)$/,
-                loader: "url?limit=2",
+                loader: "url-loader?limit=2",
                 include: images
             },
             {
                 test: /\.(ttf$|woff)$/,
-                loader: "url",
+                loader: "url-loader",
                 include: fonts
             }
         ]
@@ -90,15 +82,11 @@ var config = {
         //new webpack.optimize.CommonsChunkPlugin('common.js'),
         new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']}),
         new CleanWebpackPlugin(['dist'], {root: __dirname}),
-        new ExtractTextPlugin("style.css", {allChunks: false}),
         new CopyWebpackPlugin([
             { from: './frontend/images/favicons', to: 'images/favicons' }
             ])
 
     ],
-    eslint: {
-        configFile: '.eslintrc'
-    },
     watchOptions: {
         poll: 500
     }
