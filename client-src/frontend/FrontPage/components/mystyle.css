@@ -1,9 +1,14 @@
 .personButtonStyle {
-    borderRadius: 50%;
+    border-radius: 50%;
     display: flex;
-    justifyContent: space-around;
+    justify-content: space-around;
     width: 30vw;
     height: 30vw;
-    backgroundColor: grey;
-    marginTop: 5vw;
+    background-color: grey;
+    margin-top: 5vw;
 }
+
+
+    body {
+        background: red;
+    }

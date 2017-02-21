@@ -13,6 +13,12 @@ var definePlugin = new webpack.DefinePlugin({
     PROD: JSON.stringify(JSON.parse(process.env.PROD || 'false'))
 });
 
+const extractCSS = new ExtractTextPlugin({
+    filename: '[name].bundle.css',
+    allChunks: true,
+});
+const extractStyl = new ExtractTextPlugin('[name].styl');
+
 var config = {
     entry: {
       frontpage: './frontend/frontpage.js'
@@ -60,10 +66,19 @@ var config = {
                 include: path.resolve(__dirname, 'frontend', 'Projects'),
                 use: ['bundle-loader?lazy&name=projects', 'babel-loader']
             },
+            // {
+            //     test: /\.css$/,
+            //     use: extractCSS.extract({
+            //         use: 'css-loader?importLoaders=1',
+            //     })
+            // },
+            {
+                test: /\.css$/,
+                use : ['style-loader', 'css-loader?modules=true']
+            },
             {
                 test: /\.styl$/,
-                use:  ['style-loader','css-loader','stylus-loader'],
-                exclude: /node_modules/
+                use: extractStyl.extract(['css-loader','styl-loader'])
             },
             {
                 test: /\.(jpg|png)$/,
@@ -84,8 +99,9 @@ var config = {
         new CleanWebpackPlugin(['dist'], {root: __dirname}),
         new CopyWebpackPlugin([
             { from: './frontend/images/favicons', to: 'images/favicons' }
-            ])
-
+            ]),
+        extractCSS,
+        extractStyl
     ],
     watchOptions: {
         poll: 500
