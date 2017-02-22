@@ -17,7 +17,10 @@ const extractCSS = new ExtractTextPlugin({
     filename: '[name].bundle.css',
     allChunks: true,
 });
-const extractStyl = new ExtractTextPlugin('[name].styl');
+const extractStylus = new ExtractTextPlugin({
+    filename: '[name].stylus.css',
+    allChunks: true,
+});
 
 var config = {
     entry: {
@@ -31,11 +34,6 @@ var config = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.js$/,
-            //     enforce: "pre",
-            //     loader: "eslint-loader"
-            // },
             {
                 test: [/\.js$/,/\.jsx$/],
                 exclude: [/node_modules/, /Person/, /Career/, /Tech/],
@@ -69,17 +67,23 @@ var config = {
             // {
             //     test: /\.css$/,
             //     use: extractCSS.extract({
-            //         use: 'css-loader?importLoaders=1',
+            //         use: ['css-loader?importLoaders=1']
             //     })
             // },
             {
                 test: /\.css$/,
-                use : ['style-loader', 'css-loader?modules=true']
+                use : ['style-loader', 'css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]']
             },
             {
                 test: /\.styl$/,
-                use: extractStyl.extract(['css-loader','styl-loader'])
+                use: ['style-loader', 'css-loader?importLoaders=1&modules=true&localIdentName=[name]__[local]___[hash:base64:5]', 'stylus-loader']
             },
+            // {
+            //     test: /\.styl$/,
+            //     use: extractStylus.extract({
+            //         use: ['css-loader?importLoaders=1&modules=true&localIdentName=[name]__[local]___[hash:base64:5]', 'stylus-loader']
+            //     })
+            // },
             {
                 test: /\.(jpg|png)$/,
                 loader: "url-loader?limit=2",
@@ -101,7 +105,7 @@ var config = {
             { from: './frontend/images/favicons', to: 'images/favicons' }
             ]),
         extractCSS,
-        extractStyl
+        extractStylus
     ],
     watchOptions: {
         poll: 500

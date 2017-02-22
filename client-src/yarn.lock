@@ -1968,9 +1968,9 @@ har-validator@~2.0.6:
     is-my-json-valid "^2.12.4"
     pinkie-promise "^2.0.0"
 
-harmonize@^1.4.1:
-  version "1.33.7"
-  resolved "https://registry.yarnpkg.com/harmonize/-/harmonize-1.33.7.tgz#00ae35afe46e5d837a0cc38422e37750cc6425f5"
+harmonize@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/harmonize/-/harmonize-2.0.0.tgz#a5e30b69b68d73e3ec3c0418391f110a80e8d4f7"
 
 has-ansi@^2.0.0:
   version "2.0.0"
@@ -3772,9 +3772,9 @@ style-loader@^0.13.1:
   dependencies:
     loader-utils "^0.2.7"
 
-stylus-loader@^2.3.1:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-2.4.0.tgz#2ffbf2854a2071086b88bc338f423ad985b43544"
+stylus-loader@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-2.5.0.tgz#4f921afc99f7a3d2f89d45ebcbc145822bf3fe71"
   dependencies:
     loader-utils "^0.2.9"
     when "~3.6.x"

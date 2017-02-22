@@ -9,15 +9,7 @@ export default class PersonButton extends React.Component {
         super(props);
     }
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
   render() {
-    console.log('styles:', styles);
-    debugger
     const children = this.props.children;
     const center = {
       alignSelf: 'center'

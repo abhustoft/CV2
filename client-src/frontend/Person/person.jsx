@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
+import styles from './person.styl';
 
 class Person extends React.Component {
 
@@ -9,7 +10,7 @@ class Person extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.personStyle}>
                 <div>
                     <h3>This is my person: {this.props.user}</h3>
                     {this.props.warpPersonButton && <div>warp me</div>}

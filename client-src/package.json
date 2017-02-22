@@ -39,7 +39,7 @@
     "eslint-loader": "^1.5.0",
     "extract-text-webpack-plugin": "2.0.0-rc.3",
     "gulp": "^3.9.1",
-    "harmonize": "^1.4.1",
+    "harmonize": "^2.0.0",
     "jquery": "^3.1.1",
     "marked": "^0.3.6",
     "react": "^15.3.2",
@@ -52,7 +52,7 @@
     "redux-saga": "^0.14.0",
     "rx": "^4.1.0",
     "style-loader": "^0.13.1",
-    "stylus-loader": "^2.3.1",
+    "stylus-loader": "^2.5.0",
     "whatwg-fetch": "^2.0.1",
     "yargs": "^6.5.0"
   }
