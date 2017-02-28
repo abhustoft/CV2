@@ -5,7 +5,7 @@ import styles from './person.styl';
 class Person extends React.Component {
 
     componentDidMount() {
-        this.props.dispatch({type: 'WARP_PERSON_BUTTON'});
+        this.props.dispatch({type: 'WARP_PERSON'});
     }
 
     render() {

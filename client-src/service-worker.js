@@ -5,7 +5,7 @@ var config = {
   version: 'v16',
   // Initial caching at startup:
   staticCacheItems: [
-    '/dist/frontpage.js',
+    '/dist/index.js',
     '/site.js',
     '/'
   ],

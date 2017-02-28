@@ -11,7 +11,9 @@ const initialState = {
 };
 
 export default function starter(state = initialState, action) {
+
     switch (action.type) {
+
         case 'LOAD_COMPONENTS':
             // Trigger webpack loader to fetch the chunk
             //Person(component => component);
@@ -19,12 +21,13 @@ export default function starter(state = initialState, action) {
             setTimeout(Career,   3000, (reactComponent) => reactComponent);
             setTimeout(Tech,     4000, (reactComponent) => reactComponent);
             setTimeout(Projects, 4000, (reactComponent) => reactComponent);
+
             return Object.assign({}, state, {
                 loadingComponents: true,
                 user:'Alf Bjørn'
             });
-        case 'WARP_PERSON_BUTTON':
 
+        case 'WARP_PERSON_BUTTON':
             return Object.assign({}, state, {
                 warpPersonButton: true
             });

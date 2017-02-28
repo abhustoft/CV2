@@ -1,15 +1,15 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var path = require('path');
-var SRC = path.join(__dirname, 'client-src/');
-var images = path.join(__dirname, 'client-src/', 'image/');
-var fonts = path.join(__dirname, 'client-src/', 'fonts/');
-var NODE_MODULES = path.join(__dirname, 'node_modules/');
-var webpack = require('webpack');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+const SRC = path.join(__dirname, 'client-src/');
+const images = path.join(__dirname, 'client-src/', 'image/');
+const fonts = path.join(__dirname, 'client-src/', 'fonts/');
+const NODE_MODULES = path.join(__dirname, 'node_modules/');
+const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
-var definePlugin = new webpack.DefinePlugin({
+const definePlugin = new webpack.DefinePlugin({
     PROD: JSON.stringify(JSON.parse(process.env.PROD || 'false'))
 });
 
@@ -22,9 +22,9 @@ const extractStylus = new ExtractTextPlugin({
     allChunks: true,
 });
 
-var config = {
+const config = {
     entry: {
-      frontpage: './frontend/frontpage.js'
+      index: './app/index.js'
     },
     output: {                     // output folder
         path: './dist',           // folder path
@@ -46,22 +46,22 @@ var config = {
             },
             {
               test: /\.jsx$/,
-              include: path.resolve(__dirname, 'frontend', 'Person'),
+              include: path.resolve(__dirname, 'app', 'Person'),
               use: ['bundle-loader?lazy&name=person', 'babel-loader']
             },
             {
                 test: /\.jsx$/,
-                include: path.resolve(__dirname, 'frontend', 'Career'),
+                include: path.resolve(__dirname, 'app', 'Career'),
                 use: ['bundle-loader?lazy&name=career', 'babel-loader']
             },
             {
                 test: /\.jsx$/,
-                include: path.resolve(__dirname, 'frontend', 'Tech'),
+                include: path.resolve(__dirname, 'app', 'Tech'),
                 use: ['bundle-loader?lazy&name=tech', 'babel-loader']
             },
             {
                 test: /\.jsx$/,
-                include: path.resolve(__dirname, 'frontend', 'Projects'),
+                include: path.resolve(__dirname, 'app', 'Projects'),
                 use: ['bundle-loader?lazy&name=projects', 'babel-loader']
             },
             // {
@@ -102,7 +102,7 @@ var config = {
         new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']}),
         new CleanWebpackPlugin(['dist'], {root: __dirname}),
         new CopyWebpackPlugin([
-            { from: './frontend/images/favicons', to: 'images/favicons' }
+            { from: './app/images/favicons', to: 'images/favicons' }
             ]),
         extractCSS,
         extractStylus

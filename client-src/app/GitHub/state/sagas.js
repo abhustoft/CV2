@@ -11,8 +11,8 @@ function* fetchUser(action) {
     }
 }
 
-function* frontpageSaga() {
+function* githubSaga() {
     yield takeEvery('FETCH_GITHUB_REPOSITORIES', fetchUser);
 }
 
-export default frontpageSaga;
+export default githubSaga;

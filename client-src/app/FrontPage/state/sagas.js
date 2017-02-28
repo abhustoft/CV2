@@ -1,7 +1,7 @@
 import {call, put, takeEvery} from 'redux-saga/lib/effects'
 
 function* loadComponents() {
-    console.log('Frontpage saga ready');
+    yield put({type: 'FETCH_GITHUB_REPOSITORIES', user: 'abhustoft'});
 }
 
 function* frontpageSaga() {
