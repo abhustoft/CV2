@@ -10,10 +10,14 @@ class Person extends React.Component {
 
     render() {
         return (
-            <div className={styles.personStyle}>
-                <div>
+            <div className={`${styles.personStyle}`}>
+                <div className={`${styles.about}`}>
                     <h3>This is my person: {this.props.user}</h3>
                     {this.props.warpPersonButton && <div>warp me</div>}
+                </div>
+
+                <div className={`${styles.myPhoto}`}>
+                    The photo
                 </div>
             </div>
         )
