@@ -13,15 +13,6 @@ const definePlugin = new webpack.DefinePlugin({
     PROD: JSON.stringify(JSON.parse(process.env.PROD || 'false'))
 });
 
-const extractCSS = new ExtractTextPlugin({
-    filename: '[name].bundle.css',
-    allChunks: true,
-});
-const extractStylus = new ExtractTextPlugin({
-    filename: '[name].stylus.css',
-    allChunks: true,
-});
-
 const config = {
     entry: {
       index: './app/index.js'
@@ -64,26 +55,6 @@ const config = {
                 include: path.resolve(__dirname, 'app', 'Projects'),
                 use: ['bundle-loader?lazy&name=projects', 'babel-loader']
             },
-            // {
-            //     test: /\.css$/,
-            //     use: extractCSS.extract({
-            //         use: ['css-loader?importLoaders=1']
-            //     })
-            // },
-            {
-                test: /\.css$/,
-                use : ['style-loader', 'css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]']
-            },
-            {
-                test: /\.styl$/,
-                use: ['style-loader', 'css-loader?importLoaders=1&modules=true&localIdentName=[name]__[local]___[hash:base64:5]', 'stylus-loader']
-            },
-            // {
-            //     test: /\.styl$/,
-            //     use: extractStylus.extract({
-            //         use: ['css-loader?importLoaders=1&modules=true&localIdentName=[name]__[local]___[hash:base64:5]', 'stylus-loader']
-            //     })
-            // },
             {
                 test: /\.(jpg|png)$/,
                 loader: "url-loader?limit=2",
@@ -103,9 +74,7 @@ const config = {
         new CleanWebpackPlugin(['dist'], {root: __dirname}),
         new CopyWebpackPlugin([
             { from: './app/images/favicons', to: 'images/favicons' }
-            ]),
-        extractCSS,
-        extractStylus
+            ])
     ],
     watchOptions: {
         poll: 500

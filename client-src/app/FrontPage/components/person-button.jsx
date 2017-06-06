@@ -1,9 +1,10 @@
 import * as React from 'react';
 import {Link} from 'react-router';
+import injectSheet from 'react-jss'
 
-import styles from './mystyle.css';
+import styles from './person-button-styles.js';
 
-export default class PersonButton extends React.Component {
+class PersonButton extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ export default class PersonButton extends React.Component {
     };
 
     return (
-      <div className={styles.personButtonStyle} role="button">
+      <div className={this.props.classes.personButton} role="button">
         <div style={center}>
           <h3>
             <Link to="person">{children}</Link>
@@ -25,5 +26,7 @@ export default class PersonButton extends React.Component {
       </div>
     )
   }
-};
+}
+
+export default injectSheet(styles)(PersonButton);
 

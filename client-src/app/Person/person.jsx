@@ -1,22 +1,25 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import styles from './person.styl';
+import injectSheet from 'react-jss'
+import styles from './styles.js';
 
 class Person extends React.Component {
+
 
     componentDidMount() {
         this.props.dispatch({type: 'WARP_PERSON'});
     }
 
     render() {
+        const classes = this.props.classes;
         return (
-            <div className={`${styles.personStyle}`}>
-                <div className={`${styles.about}`}>
+            <div className={this.props.classes.person}>
+                <div className={this.props.classes.about}>
                     <h3>This is my person: {this.props.user}</h3>
                     {this.props.warpPersonButton && <div>warp me</div>}
                 </div>
 
-                <div className={`${styles.myPhoto}`}>
+                <div className={this.props.classes.myPhoto}>
                     The photo
                 </div>
             </div>
@@ -33,4 +36,6 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch) => ({dispatch});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Person);
+const styledPerson = injectSheet(styles)(Person);
+
+export default connect(mapStateToProps, mapDispatchToProps)(styledPerson);
