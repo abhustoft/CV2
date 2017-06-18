@@ -1,4 +1,4 @@
-# CV - an app to test the following technologies:
+# CV - an app to investigate web app development technologies:
 
 ## Set up
 * sudo npm install gulp -g
