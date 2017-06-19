@@ -1,27 +1,43 @@
 const styles = {
-    person: {
-        border: '1px solid lightseagreen',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(10, 10vw)',
-        gridTemplateRows: 'repeat(5, 20%)',
-        gridTemplateAreas: 'photo photo photo . . . . . . .',
-        gridColumnGap: '5px',
-        gridRowGap: '5px',
 
-        justifyItems: 'stretch',
-        alignItems: 'stretch',
+    person: {
+        // border: '1px solid lightseagreen',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(5, 20%)',
+        gridTemplateRows: 'repeat(5, 20vh)',
+        gridTemplateAreas: 'photo photo photo . ',
+        // gridColumnGap: '5px',
+        // gridRowGap: '5px',
+        //
+        // justifyItems: 'stretch',
+        // alignItems: 'stretch',
 
     },
 
-
-    myPhoto: {
-        border: '1px dashed #99D3FF',
-        gridArea: 'photo'
+    photo: {
+        // border: '1px solid blue',
+        // borderRadius: '5px',
+        backgroundColor: 'grey',
+        gridColumn: '1 / 2 ',
+        gridRow: '1 / 3',
     },
 
     about: {
-        border: '1px dashed indianred',
-        gridArea: '4 / 6 / 4 / 6',
+        // border: '1px dashed indianred',
+        // borderRadius: '5px',
+        backgroundColor: 'yellow',
+        gridColumn: '2 / span 4',
+        gridRow: '1 / 3',
+    },
+
+    profile: {
+        margin: '0',
+        padding: '0',
+        // border: '1px solid brown',
+        // borderRadius: '5px',
+        backgroundColor: 'green',
+        gridColumn: '1 / span 5',
+        gridRow: '3 / span 3',
     }
 };
 

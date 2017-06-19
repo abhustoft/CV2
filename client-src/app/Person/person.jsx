@@ -5,6 +5,22 @@ import styles from './styles.js';
 
 class Person extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        // fetch('/api/Names')
+        //     .then(response => response.json())
+        //     .then(json => {
+        //         this.setState({name: json});
+        //     });
+
+        fetch('/api/ProfileTexts')
+            .then(response => response.json())
+            .then(json => {
+                console.log('profile:', json);
+                this.setState({profileTexts: json});
+            });
+    }
 
     componentDidMount() {
         this.props.dispatch({type: 'WARP_PERSON'});
@@ -14,14 +30,19 @@ class Person extends React.Component {
         const classes = this.props.classes;
         return (
             <div className={this.props.classes.person}>
-                <div className={this.props.classes.about}>
-                    <h3>This is my person: {this.props.user}</h3>
-                    {this.props.warpPersonButton && <div>warp me</div>}
-                </div>
-
-                <div className={this.props.classes.myPhoto}>
+                <div className={this.props.classes.photo}>
                     The photo
                 </div>
+
+                <div className={this.props.classes.about}>
+                    <h3>about</h3>
+                </div>
+
+                <ul className={this.props.classes.profile}>
+                    profile
+                </ul>
+
+
             </div>
         )
     }
