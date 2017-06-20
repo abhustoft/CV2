@@ -31,7 +31,9 @@ class Person extends React.Component {
         return (
             <div className={this.props.classes.person}>
                 <div className={this.props.classes.photo}>
-                    The photo
+                    <p>The photo is in this space</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
                 </div>
 
                 <div className={this.props.classes.about}>
@@ -40,6 +42,22 @@ class Person extends React.Component {
 
                 <ul className={this.props.classes.profile}>
                     profile
+                    <p>mee</p>
+                    <p>jjjj</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
+                    <p>mee</p>
+                    <p>jjjj</p>
                 </ul>
 
 
