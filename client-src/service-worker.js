@@ -2,7 +2,7 @@
 'use strict';
 
 var config = {
-  version: 'v16',
+  version: 'v17',
   // Initial caching at startup:
   staticCacheItems: [
     '/dist/index.js',
