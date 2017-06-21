@@ -1,9 +1,10 @@
 {
   "final:after": {
-    "loopback#errorHandler": {
-      "params": {
-        "includeStack": false
+      "strong-error-handler": {
+          "params": {
+              "debug": true,
+              "log": true
+          }
       }
-    }
   }
 }
